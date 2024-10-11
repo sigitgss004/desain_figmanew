@@ -3,19 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Car Wash Highlight</title>
   <style>
     body {
       margin: 0;
       padding: 0;
       font-family: Inter, sans-serif;
+      background-color: #ffffff; /* Background for the entire body */
     }
 
     .container {
       width: 100%;
       min-height: 100vh;
       position: relative;
-      background: white;
       overflow-x: hidden;
       display: flex;
       flex-direction: column;
@@ -37,7 +37,6 @@
     }
 
     .footer {
-      width: 100%;
       text-align: center;
       padding: 50px 0;
       background-color: #4D869C;
@@ -90,7 +89,7 @@
     }
 
     .overlay {
-      width: 100%;
+      width: 100vw; /* Make it full-width */
       height: 400px;
       position: relative;
       background: linear-gradient(90deg, #4D869C 50%, #FFFFFF 50%);
@@ -98,16 +97,19 @@
       align-items: center;
       justify-content: center;
       z-index: 1;
+      margin: 0;
+      padding: 0;
     }
 
     .content-wrapper {
+      width: 100%; /* Full width of the content */
+      max-width: 1200px; /* Max width for large screens */
+      padding: 20px;
+      box-sizing: border-box;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      width: 100%;
-      max-width: 1200px;
-      padding: 20px;
-      box-sizing: border-box;
+      z-index: 2;
     }
 
     .car-img {
@@ -120,10 +122,19 @@
     .text-box {
       color: #000;
       padding-left: 20px;
+      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
+      border-radius: 10px; /* Rounded corners for aesthetics */
     }
 
-    .title {
-      font-size: 48px;
+    .title-highlight {
+      font-size: 45px; /* Ukuran font untuk "HighLight of" */
+      font-weight: bold;
+      margin: 0;
+      color: #000;
+    }
+
+    .title-carwash {
+      font-size: 48px; /* Ukuran font untuk "Car Wash" lebih besar */
       font-weight: bold;
       margin: 0;
       color: #000;
@@ -140,13 +151,13 @@
     .centered-text {
       width: 100%;
       text-align: center;
-      font-size: 30px;
+      font-size: 50px;
       font-weight: bold;
-      margin-top: 100px; /* Gunakan nilai yang lebih besar */
-      margin-bottom: 40px;
+      margin-top: 100px;
+      margin-bottom: 90px;
       color: #000000;
-      position: relative; /* Agar top berfungsi */
-      top: 30px; /* Atur jarak vertikal tambahan */
+      position: relative;
+      top: 30px;
     }
 
     @media (max-width: 768px) {
@@ -162,10 +173,15 @@
 
       .text-box {
         padding-left: 0;
+        padding: 20px; /* Added padding for better mobile readability */
       }
 
-      .title {
-        font-size: 36px;
+      .title-highlight {
+        font-size: 30px; /* Ukuran font "HighLight of" untuk mobile */
+      }
+
+      .title-carwash {
+        font-size: 36px; /* Ukuran font "Car Wash" untuk mobile */
       }
 
       .description {
@@ -174,7 +190,7 @@
 
       .centered-text {
         font-size: 20px;
-        margin-top: 50px; /* Jarak lebih kecil di layar kecil */
+        margin-top: 50px;
       }
     }
   </style>
@@ -190,7 +206,6 @@
         <a href="http://localhost:8080/produk" class="nav-item">Produk</a>
         <a href="http://localhost:8080/aktivitas" class="nav-item">Aktivitas</a>
         <a href="http://localhost:8080/kontak" class="nav-item">Kontak</a>
-        <a href="http://localhost:8080/bahasa" class="nav-item">Bahasa</a>
       </div>
       <img class="logo" src="/upload/logo.png" alt="Logo">
     </div>
@@ -200,8 +215,10 @@
       <div class="content-wrapper">
         <img class="car-img" src="/upload/fotoberanda.png" alt="Gambar Mobil" />
         <div class="text-box">
-          <h1 class="title">HighLight of Car Wasbuyg</h1>
-          <p class="description">Menjadikan setiap mobil tampil memukau, membuat setiap perjalanan lebih istimewa.</p>
+          <h1 class="title-highlight">HighLight of</h1>
+          <h1 class="title-carwash">Car Wash</h1>
+          <p class="description">Menjadikan setiap mobil tampil memukau,</p>
+          <p class="description">Membuat setiap perjalanan lebih istimewa.</p>
         </div>
       </div>
     </div>
