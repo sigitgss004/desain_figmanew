@@ -200,7 +200,7 @@
       <div class="content-wrapper">
         <img class="car-img" src="/upload/fotoberanda.png" alt="Gambar Mobil" />
         <div class="text-box">
-          <h1 class="title">HighLight of Car Wash</h1>
+          <h1 class="title">HighLight of Car Wasbuyg</h1>
           <p class="description">Menjadikan setiap mobil tampil memukau, membuat setiap perjalanan lebih istimewa.</p>
         </div>
       </div>
