@@ -89,35 +89,42 @@
     }
 
     .overlay {
-      width: 100vw; /* Make it full-width */
-      height: 400px;
-      position: relative;
-      background: linear-gradient(90deg, #4D869C 50%, #FFFFFF 50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1;
-      margin-bottom: 50px; /* Tambahkan margin bawah */
-      padding: 0;
-    }
+  width: 100vw; /* Tetap full width */
+  height: 250px; /* Ubah dari 400px ke 250px untuk mengurangi tinggi */
+  position: relative;
+  background: linear-gradient(90deg, #4D869C 50%, #BFE1F2 50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+  margin-bottom: 50px;
+  padding: 0;
+  background-image: url('/upload/your-background-image.jpg'); /* Contoh jika ingin gambar */
+  background-size: cover; /* Menyesuaikan gambar dengan ukuran elemen */
+  background-position: center; /* Posisi gambar agar berada di tengah */
+}
+ 
 
-    .content-wrapper {
-      width: 100%; /* Full width of the content */
-      max-width: 1200px; /* Max width for large screens */
-      padding: 20px;
-      box-sizing: border-box;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      z-index: 2;
-    }
 
-    .car-img {
-      max-width: 50%;
-      height: auto;
-      object-fit: contain;
-      z-index: 1;
-    }
+.content-wrapper {
+  background-color: #BFE1F2; /* Warna semi-transparan di belakang gambar */
+  padding: 20px;
+  border-radius: 10px; /* Opsional untuk mempercantik */
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  position: relative; /* Tambahkan agar elemen ini bisa diatur z-index-nya */
+  z-index: 1; /* Pastikan background berada di layer belakang */
+}
+
+.car-img {
+  max-width: 50%;
+  height: auto;
+  object-fit: contain;
+  z-index: 2; /* Z-index lebih tinggi untuk memastikan gambar ada di depan */
+  position: relative; /* Aktifkan z-index dengan relative positioning */
+}
+
 
     .text-box {
       color: #000;
@@ -126,50 +133,64 @@
       border-radius: 10px; /* Rounded corners for aesthetics */
     }
 
-    .title-highlight {
-      font-size: 45px; /* Ukuran font untuk "HighLight of" */
-      font-weight: bold;
-      margin: 0;
-      color: #000;
-    }
-
-    .title-carwash {
-      font-size: 48px; /* Ukuran font untuk "Car Wash" lebih besar */
-      font-weight: bold;
-      margin: 0;
-      color: #000;
-    }
-
-    .description {
-      font-size: 16px;
-      font-weight: 400;
-      margin-top: 10px;
-      color: #333;
-    }
-
-    /* Teks di bawah gambar overlay */
     .centered-text {
-      width: 100%;
-      text-align: center;
-      font-size: 50px;
-      font-weight: bold;
-      margin: 30px 0; /* Kurangi margin untuk menambah jarak antara bagian overlay dan bagian lain */
-      color: #000000;
-      position: relative;
-      z-index: 2;
-    }
+  width: 100%;
+  text-align: center;
+  font-size: 50px;
+  font-weight: bold;
+  margin-top: 400px; /* Jarak atas ditambahkan di sini */
+  margin-bottom: 10px; /* Margin bawah, sesuaikan jika perlu */
+  color: #000000;
+  position: relative;
+  z-index: 2;
+}
 
-    /* Bagian Tentang Kami */
-    .about-section {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin: 50px auto;
-      padding: 20px;
-      max-width: 1200px;
-      position: relative;
-      z-index: 2; /* Pastikan bagian ini berada di atas overlay */
-    }
+
+    .text-overlay {
+  position: absolute;
+  top: 60%;
+  right: 150px; /* Lebih mendekatkan teks ke tepi */
+  transform: translateY(-50%);
+  text-align: right;
+  color: #000;
+  z-index: 2;
+}
+
+
+.title-highlight {
+  font-size: 100px;
+  font-weight: bold;
+  margin: 10px;
+  color: #000000;
+  word-spacing: 0px;
+  position: relative;
+  top: 50px; /* Geser teks ke bawah */
+}
+
+.title-carwash {
+  font-size: 100px;
+  font-weight: bold;
+  margin: 10px;
+  color: #000;
+  word-spacing: 0px;
+  position: relative;
+  top: 30px; /* Geser teks ke bawah */
+}
+
+
+
+.description {
+  font-size: 20px;
+  font-weight: normal;
+  margin: 10px 0;
+  color: #000;
+  word-spacing: 30px;
+  position: relative;
+  top: 40px; /* Geser teks ke bawah */
+  left: 0px; /* Geser teks ke kiri */
+}
+
+
 
     .text-box-about {
       width: 50%;
@@ -225,12 +246,57 @@
     }
 
     .about-background {
-      width: 100%;
-      background-color: #d0ecf6; /* Warna latar belakang biru */
-      padding: 200px 0; /* Menambah ruang di atas dan bawah */
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan untuk memberikan efek kedalaman */
-      z-index: 1; /* Pastikan berada di bawah konten */
-    }
+  display: flex; /* Flexbox untuk menampilkan gambar dan teks berdampingan */
+  align-items: center; /* Menjaga gambar dan teks sejajar secara vertikal */
+  justify-content: space-between;
+  background-color: transparent; /* Membuat latar belakang transparan */
+  margin: 20px auto;
+  padding: 0;
+  width: 80%;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0, ); /* Bayangan di sekitar elemen */
+}
+
+.about-text {
+  width: 50%;
+  background-color: #d0ecf6; /* Latar belakang untuk teks */
+  padding: 20px;
+  border-radius: 20px 20px 20px
+   20px;
+  box-sizing: border-box;
+}
+
+.about-image {
+  width: 50%;
+  height: 100%;
+  border-radius: 0 20px 20px 0;
+  overflow: hidden; /* Agar gambar tidak keluar dari sudut membulat */
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Menjaga proporsi gambar */
+}
+
+
+.about-text {
+  width: 50%; /* Lebar teks 50% */
+  margin-right: 20px; /* Jarak antara teks dan gambar */
+}
+
+.about-image {
+  width: 50%; /* Lebar gambar 50% */
+  border-radius: 20px; /* Sudut membulat pada gambar */
+  overflow: hidden; /* Menghindari gambar keluar dari sudut membulat */
+}
+
+.about-image img {
+  width: 100%; /* Gambar memenuhi kolom */
+  height: auto; /* Memastikan gambar proporsional */
+  object-fit: cover; /* Menjaga agar gambar tidak terdistorsi */
+}
+
+
 
     @media (max-width: 768px) {
       .content-wrapper {
@@ -256,8 +322,6 @@
         font-size: 36px; /* Ukuran font "Car Wash" untuk mobile */
       }
 
-
-
       .description {
         font-size: 14px;
       }
@@ -280,6 +344,26 @@
       .image-box-about img {
         border-radius: 20px;
       }
+
+      .read-more-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #3a78b3; /* Warna tombol */
+  color: white; /* Warna teks */
+  padding: 12px 30px; /* Padding untuk ruang di dalam tombol */
+  border-radius: 30px; /* Membuat tombol berbentuk oval */
+  font-weight: bold; /* Menebalkan teks */
+  font-size: 16px; /* Ukuran teks */
+  margin-top: 20px; /* Jarak antara teks terakhir dan tombol */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Animasi transisi */
+}
+
+.read-more-btn:hover {
+  background-color: #2a4d69; /* Warna tombol saat hover */
+  transform: scale(1.05); /* Efek zoom kecil saat hover */
+}
+
+
     }
   </style>
 </head>
@@ -298,63 +382,43 @@
       <img class="logo" src="/upload/logo.png" alt="LuxeWash Auto Detail Logo">
     </div>
 
-    <!-- Overlay -->
-    <div class="overlay">
-      <div class="content-wrapper">
-        <img class="car-img" src="/upload/fotoberanda.png" alt="Gambar Mobil" />
-        <div class="text-box">
-          <h1 class="title-highlight">HighLight of</h1>
-          <h1 class="title-carwash">Car Wash</h1>
-          <p class="description">Menjadikan setiap mobil tampil memukau,</p>
-          <p class="description">kembali seperti baru.</p>
-        </div>
-      </div>
+<div class="overlay">
+  <div class="content-wrapper">
+    <img class="car-img" src="/upload/fotoberanda.png" alt="Gambar Mobil" />
+    <div class="text-overlay">
+      <p class="title-highlight">Highlight of</p>
+      <p class="title-carwash">Car Wash</p>
+      <p class="description">Menjadikan setiap mobil tampil memukau,</p>
+      <p class="description">membuat setiap perjalanan lebih istimewa.</p>
     </div>
-
-    <!-- Teks "LuxeWash Auto Detail" -->
-    <div class="centered-text">
-      LuxeWash Auto Detail
-    </div>
-
-    <!-- Tentang Kami -->
-    <div class="about-section">
-      <div class="text-box-about">
-        <h2>Tentang Kami</h2>
-        <h1>LuxeWash Auto Detail</h1>
-        <p>LuxeWash Auto Detail adalah layanan detailing mobil premium yang berdedikasi untuk memberikan hasil terbaik bagi setiap kendaraan pelanggan kami. Kami menggunakan teknik dan bahan terbaik untuk memastikan mobil Anda selalu tampil seperti baru.</p>
-        <a href="#" class="read-more-btn">Selengkapnya</a>
-      </div>
-      <div class="image-box-about">
-        <img src="/upload/profiltentang.jpg" alt="Tentang Kami">
-      </div>
-    </div>
-
-<!-- Bagian Galeri Aktivitas -->
-<div class="gallery-section">
-    <h2 class="gallery-title">Galeri Aktivitas Kami</h2>
-    <div class="gallery-grid">
-        <!-- Gambar 1 -->
-        <div class="gallery-item">
-            <img src="/upload/activity1.jpg" alt="Cuci Mobil Reguler" />
-        </div>
-        <!-- Gambar 2 -->
-        <div class="gallery-item">
-            <img src="/upload/activity2.jpg" alt="Detailing Interior" />
-        </div>
-        <!-- Gambar 3 -->
-        <div class="gallery-item">
-            <img src="/upload/activity3.jpg" alt="Cuci Mesin" />
-        </div>
-        <!-- Gambar 4 -->
-        <div class="gallery-item">
-            <img src="/upload/activity4.jpg" alt="Polishing" />
-        </div>
-    </div>
+  </div>
 </div>
 
 
-    <!-- Latar Belakang Biru di Bawah Konten -->
-    <div class="about-background"></div>
+
+ <!-- Teks "LuxeWash Auto Detail" -->
+<div class="centered-text">
+Kilau Sempurna, Perjalanan Luar Biasa
+</div>
+
+
+<!-- Latar Belakang Biru di Bawah Konten dengan Teks dan Gambar -->
+<div class="about-background">
+  <div class="about-text">
+    <p>Selamat datang di LuxeWash Auto Detail, tempat di mana mobil Anda mendapatkan perawatan terbaik dengan layanan cuci mobil profesional yang berkomitmen untuk memberikan hasil sempurna menggunakan teknologi terkini dan produk ramah lingkungan. Kami memahami bahwa mobil Anda adalah cerminan gaya hidup dan kebanggaan Anda, sehingga kami menawarkan berbagai paket layanan, mulai dari cuci eksterior yang cepat hingga detailing menyeluruh, dengan fokus pada detail dan kepuasan pelanggan, memastikan setiap kendaraan meninggalkan kilauan yang luar biasa.</p>
+    <p>LuxeWash Auto Detail berdiri sejak tahun 2014, dengan visi untuk menjadi penyedia layanan cuci mobil terbaik di kota ini. Dimulai dari sebuah lokasi kecil, kami telah berkembang pesat berkat dedikasi kami terhadap kualitas dan kepuasan pelanggan.</p>
+    <!-- Tombol Baca Selengkapnya -->
+    <a href="#" class="read-more-btn">Baca Selengkapnya</a>
+  </div>
+
+  <!-- Gambar di sebelah teks -->
+  <div class="about-image">
+    <img src="/upload/fotocar.jpg" alt="Gambar tentang LuxeWash">
+  </div>
+</div>
+
+
+
 
     <!-- Footer -->
     <div class="footer">

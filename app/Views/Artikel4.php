@@ -225,7 +225,7 @@
       margin-top: 40px;
     }
   </style>
-</head>
+</head> 
 <body>
   <div class="container">
     <div class="header">
