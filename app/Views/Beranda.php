@@ -105,7 +105,6 @@
 }
  
 
-
 .content-wrapper {
   background-color: #BFE1F2; /* Warna semi-transparan di belakang gambar */
   padding: 20px;
@@ -138,7 +137,7 @@
   text-align: center;
   font-size: 50px;
   font-weight: bold;
-  margin-top: 400px; /* Jarak atas ditambahkan di sini */
+  margin-top: 300px; /* Jarak atas ditambahkan di sini */
   margin-bottom: 10px; /* Margin bawah, sesuaikan jika perlu */
   color: #000000;
   position: relative;
@@ -178,7 +177,6 @@
 }
 
 
-
 .description {
   font-size: 20px;
   font-weight: normal;
@@ -189,7 +187,6 @@
   top: 40px; /* Geser teks ke bawah */
   left: 0px; /* Geser teks ke kiri */
 }
-
 
 
     .text-box-about {
@@ -256,6 +253,7 @@
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0, ); /* Bayangan di sekitar elemen */
 }
 
+
 .about-text {
   width: 50%;
   background-color: #d0ecf6; /* Latar belakang untuk teks */
@@ -295,8 +293,6 @@
   height: auto; /* Memastikan gambar proporsional */
   object-fit: cover; /* Menjaga agar gambar tidak terdistorsi */
 }
-
-
 
     @media (max-width: 768px) {
       .content-wrapper {
@@ -363,6 +359,13 @@
   transform: scale(1.05); /* Efek zoom kecil saat hover */
 }
 
+.blue-background {
+  width: 100%;
+  height: 200px; /* Sesuaikan tinggi sesuai kebutuhan */
+  background-color: #4D869C; /* Warna biru yang diinginkan */
+  margin-top: 20px; /* Jarak dari elemen sebelumnya */
+}
+
 
     }
   </style>
@@ -394,8 +397,6 @@
   </div>
 </div>
 
-
-
  <!-- Teks "LuxeWash Auto Detail" -->
 <div class="centered-text">
 Kilau Sempurna, Perjalanan Luar Biasa
@@ -411,12 +412,15 @@ Kilau Sempurna, Perjalanan Luar Biasa
     <a href="#" class="read-more-btn">Baca Selengkapnya</a>
   </div>
 
+
   <!-- Gambar di sebelah teks -->
   <div class="about-image">
     <img src="/upload/fotocar.jpg" alt="Gambar tentang LuxeWash">
   </div>
 </div>
 
+<!-- Kotak background biru -->
+<div class="blue-background"></div>
 
 
 
