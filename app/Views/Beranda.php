@@ -358,16 +358,93 @@
   background-color: #2a4d69; /* Warna tombol saat hover */
   transform: scale(1.05); /* Efek zoom kecil saat hover */
 }
-
-.blue-background {
-  width: 100%;
-  height: 200px; /* Sesuaikan tinggi sesuai kebutuhan */
-  background-color: #4D869C; /* Warna biru yang diinginkan */
-  margin-top: 20px; /* Jarak dari elemen sebelumnya */
+}
+      /* Hanya tambahkan styling ini agar aman dan tidak mengganggu konten lain */
+.image-card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Menyesuaikan kolom secara otomatis */
+    gap: 20px; /* Spasi antara kartu-kartu */
+    margin: 20px 0; /* Margin atas dan bawah, aman agar tidak terlalu mepet konten lain */
 }
 
 
-    }
+
+.card {
+    background-color: #000000;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0,);
+    overflow: hidden;
+    text-align: center;
+    padding: 10px;
+}
+
+.card img {
+    max-width: 100%; /* Gambar responsif, tidak melebihi lebar card */
+    height: auto;
+}
+
+.card .label {
+    background-color: #B3E5FC;
+    color: #000000;
+    padding: 10px;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.card.premium .label {
+    background-color: #B3E5FC;
+    border: 2px solid #00BFFF;
+}
+
+        .content {
+            max-width: 400px;
+            color: #000000;
+            text-align: left;
+        }
+        .content h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .content p {
+            font-size: 16px;
+            line-height: 1.5;
+            margin-bottom: 20px;
+        }
+        .content .button {
+            background-color: #FFFFFF;
+            color: #6BA3B6;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+
+  .card-container-background {
+  background-color: #4D869C;
+  padding: 10px; /* Ubah padding menjadi lebih kecil */
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 40px;
+  display: grid; /* Tetap menggunakan grid layout */
+  grid-template-columns: repeat(2, 1fr); /* Membuat 2 kolom yang sama lebar */
+  grid-gap: 20px; /* Menambahkan jarak antar kartu */
+  max-width: 1400px; /* Tambah lebar maksimum untuk container */
+  margin: 0 auto; /* Centering kontainer */
+}
+
+.card {
+  background-color: transparent;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: center;
+  padding: 20px; /* Menambahkan padding untuk isi kartu */
+  width: 100%; /* Pastikan kartu mengambil lebar penuh dari grid */
+}
+
+
+  }
   </style>
 </head>
 <body>
@@ -419,10 +496,39 @@ Kilau Sempurna, Perjalanan Luar Biasa
   </div>
 </div>
 
-<!-- Kotak background biru -->
-<div class="blue-background"></div>
+<div class="container">
+   <!-- Tambahkan div pembungkus untuk card -->
+   <div class="card-container-background">
+      <div class="card">
+         <img alt="Image of car exterior cleaning" height="200" src="https://storage.googleapis.com/a1aa/image/UCaKeDpB1jUncqzj1Ug4euYfEDYXSyBVI7vFTCLrEdRFfJecC.jpg" width="200"/>
+         <div class="label">Cuci Eksterior</div>
+      </div>
+      <div class="card">
+         <img alt="Image of car interior cleaning" height="200" src="https://storage.googleapis.com/a1aa/image/39dtpS16Gw7LH5NDTHGe2nLPbSmlfbXZof0gqLiAxSCf9JecC.jpg" width="200"/>
+         <div class="label">Cuci Interior</div>
+      </div>
+      <div class="card">
+         <img alt="Image of car detailing" height="200" src="https://storage.googleapis.com/a1aa/image/qnoYd7Zug2YREpztFldhC4wU2Nej1w4TCeNHAq1Q8XNgfEPnA.jpg" width="200"/>
+         <div class="label">Detailing</div>
+      </div>
+      <div class="card premium">
+         <img alt="Image of premium car service" height="200" src="https://storage.googleapis.com/a1aa/image/k5WfWj9hBSXzJi87Lm8hnQ0MPm3S1UvsofbWU5L7fUP9eJecC.jpg" width="200"/>
+         <div class="label">Premium</div>
+      </div>
+   </div>
+</div>
 
-
+  <div class="content">
+   <h1>
+    Aktivitas
+   </h1>
+   <p>
+    Aktivitas 2Kami merujuk pada berbagai kegiatan dan layanan yang kami lakukan secara rutin untuk memastikan mobil pelanggan selalu dalam kondisi terbaik. Ini mencakup pembersihan harian, perawatan berkala, pelatihan tim, kampanye kesadaran lingkungan, dan promosi khusus, semuanya dirancang untuk memberikan hasil yang optimal dan kepuasan maksimal bagi pelanggan.
+   </p>
+   <a class="button" href="#">
+    BACA SELENGKAPNYA
+   </a>
+  </div>
 
     <!-- Footer -->
     <div class="footer">
