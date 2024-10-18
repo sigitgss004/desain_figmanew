@@ -391,6 +391,8 @@
     font-weight: bold;
 }
 
+
+
 .card.premium .label {
     background-color: #B3E5FC;
     border: 2px solid #00BFFF;
@@ -419,29 +421,56 @@
             font-weight: bold;
         }
 
+ /* Mengatur elemen body dan html agar tidak memiliki margin/padding */
+body, html {
+  padding: 0;
+  margin: 0;
+}
 
-  .card-container-background {
+/* Mengatur kontainer utama */
+.container {
+  width: 100vw; /* Mengatur lebar penuh viewport */
+  max-width: 100%; /* Pastikan tidak ada batasan maksimal */
+  margin: 0; /* Hapus margin */
+  padding: 0; /* Hapus padding */
+}
+
+.card-container-background {
   background-color: #4D869C;
-  padding: 10px; /* Ubah padding menjadi lebih kecil */
+  padding: 400px; /* Tambahkan padding untuk jarak di sekitar kartu */
   border-radius: 10px;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  margin-bottom: 40px;
-  display: grid; /* Tetap menggunakan grid layout */
-  grid-template-columns: repeat(2, 1fr); /* Membuat 2 kolom yang sama lebar */
-  grid-gap: 20px; /* Menambahkan jarak antar kartu */
-  max-width: 1400px; /* Tambah lebar maksimum untuk container */
-  margin: 0 auto; /* Centering kontainer */
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* Dua kolom dengan lebar yang sama */
+  grid-gap: 0px; /* Menghilangkan gap antar kartu */
 }
 
 .card {
-  background-color: transparent;
+  background-color: rgba(255, 255, 255, 0.5);
   border-radius: 10px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   overflow: hidden;
-  text-align: center;
-  padding: 20px; /* Menambahkan padding untuk isi kartu */
-  width: 100%; /* Pastikan kartu mengambil lebar penuh dari grid */
+  text-align: left;
+  padding: 0;
+  width: 100%; /* Pastikan kartu mengisi penuh kolomnya */
+  margin: 0; /* Tidak ada margin antar kartu */
 }
+
+.card img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+}
+
+
+
+
+
+
+
+
+
 
 
   }
@@ -518,17 +547,7 @@ Kilau Sempurna, Perjalanan Luar Biasa
    </div>
 </div>
 
-  <div class="content">
-   <h1>
-    Aktivitas
-   </h1>
-   <p>
-    Aktivitas 2Kami merujuk pada berbagai kegiatan dan layanan yang kami lakukan secara rutin untuk memastikan mobil pelanggan selalu dalam kondisi terbaik. Ini mencakup pembersihan harian, perawatan berkala, pelatihan tim, kampanye kesadaran lingkungan, dan promosi khusus, semuanya dirancang untuk memberikan hasil yang optimal dan kepuasan maksimal bagi pelanggan.
-   </p>
-   <a class="button" href="#">
-    BACA SELENGKAPNYA
-   </a>
-  </div>
+ 
 
     <!-- Footer -->
     <div class="footer">
