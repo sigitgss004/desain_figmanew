@@ -435,32 +435,67 @@ body, html {
   padding: 0; /* Hapus padding */
 }
 
-.card-container-background {
-  background-color: #4D869C;
-  padding: 400px; /* Tambahkan padding untuk jarak di sekitar kartu */
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* Dua kolom dengan lebar yang sama */
-  grid-gap: 0px; /* Menghilangkan gap antar kartu */
+
+ 
+.box {
+    background-color: #4D869C;
+    color: white;
+    padding: 20px;
+    width: 1400px;
+    height: 400px;
+    display: flex;
+    justify-content: flex-start;
 }
 
-.card {
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
-  text-align: left;
-  padding: 0;
-  width: 100%; /* Pastikan kartu mengisi penuh kolomnya */
-  margin: 0; /* Tidak ada margin antar kartu */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 200px); /* Lebar kolom 200px */
+    gap: 20px; /* Jarak antar foto */
 }
 
-.card img {
-  display: block;
-  max-width: 100%;
-  height: auto;
-  margin: 0;
+.photo-container {
+    position: relative; /* Posisi relatif untuk kontainer */
+    width: 100%;
+    height: 200px; /* Sesuaikan tinggi kontainer */
+}
+
+.photo-grid img {
+    width: 100%; /* Gambar memenuhi kolom */
+    height: 200px; /* Tinggi tetap */
+    object-fit: cover;
+    border-radius: 5px; /* Membulatkan sudut gambar */
+}
+
+/* Latar belakang putih di belakang teks */
+.photo-info-bg {
+    position: absolute;
+    top: 10px; /* Posisi kotak latar belakang sedikit di atas */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white; /* Warna latar belakang putih */
+    width: 100%;
+    height: 50px; /* Ketinggian kotak latar belakang */
+    border-radius: 0px; /* Sudut kotak putih */
+    z-index: 1; /* Agar berada di bawah teks */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0,); /* Menambahkan sedikit bayangan */
+}
+
+/* Teks */
+.photo-info {
+    position: absolute;
+    top: 15px; /* Posisikan teks agar sedikit di tengah kotak latar belakang */
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: rgba(193, 226, 226, 0.8); /* Warna latar belakang semi-transparan */
+    color: #004d66; /* Warna teks */
+    padding: 5px 20px;
+    border-radius: 0px; /* Membulatkan sudut teks */
+    font-weight: bold;
+    font-size: 14px; /* Ukuran font */
+    text-align: center;
+    z-index: 2; /* Teks di atas latar belakang putih */
+    text-transform: uppercase; /* Mengubah teks menjadi huruf besar */
+    letter-spacing: 1px; /* Memberi jarak antar huruf */
 }
 
 
@@ -473,7 +508,11 @@ body, html {
 
 
 
-  }
+ 
+
+
+
+  
   </style>
 </head>
 <body>
@@ -525,29 +564,37 @@ Kilau Sempurna, Perjalanan Luar Biasa
   </div>
 </div>
 
-<div class="container">
-   <!-- Tambahkan div pembungkus untuk card -->
-   <div class="card-container-background">
-      <div class="card">
-         <img alt="Image of car exterior cleaning" height="200" src="https://storage.googleapis.com/a1aa/image/UCaKeDpB1jUncqzj1Ug4euYfEDYXSyBVI7vFTCLrEdRFfJecC.jpg" width="200"/>
-         <div class="label">Cuci Eksterior</div>
-      </div>
-      <div class="card">
-         <img alt="Image of car interior cleaning" height="200" src="https://storage.googleapis.com/a1aa/image/39dtpS16Gw7LH5NDTHGe2nLPbSmlfbXZof0gqLiAxSCf9JecC.jpg" width="200"/>
-         <div class="label">Cuci Interior</div>
-      </div>
-      <div class="card">
-         <img alt="Image of car detailing" height="200" src="https://storage.googleapis.com/a1aa/image/qnoYd7Zug2YREpztFldhC4wU2Nej1w4TCeNHAq1Q8XNgfEPnA.jpg" width="200"/>
-         <div class="label">Detailing</div>
-      </div>
-      <div class="card premium">
-         <img alt="Image of premium car service" height="200" src="https://storage.googleapis.com/a1aa/image/k5WfWj9hBSXzJi87Lm8hnQ0MPm3S1UvsofbWU5L7fUP9eJecC.jpg" width="200"/>
-         <div class="label">Premium</div>
-      </div>
-   </div>
+
+<div class="box">
+    <div class="photo-grid">
+        <div class="photo-container">
+            <div class="photo-info-bg"></div> <!-- Latar belakang putih -->
+            <div class="photo-info">Cuci Eksterior</div>
+            <img src="/upload/faktivitas1.jpg" alt="Foto 1">
+        </div>
+        <div class="photo-container">
+            <div class="photo-info-bg"></div> <!-- Latar belakang putih -->
+            <div class="photo-info">Cuci Interior</div>
+            <img src="/upload/faktivitas2.jpg" alt="Foto 2">
+        </div>
+        <div class="photo-container">
+            <div class="photo-info-bg"></div> <!-- Latar belakang putih -->
+            <div class="photo-info">Detailing</div>
+            <img src="/upload/faktivitas3.jpg" alt="Foto 3">
+        </div>
+        <div class="photo-container">
+            <div class="photo-info-bg"></div> <!-- Latar belakang putih -->
+            <div class="photo-info">Premium</div>
+            <img src="/upload/faktivitas4.jpg" alt="Foto 4">
+        </div>
+    </div>
 </div>
 
- 
+
+
+
+
+
 
     <!-- Footer -->
     <div class="footer">
