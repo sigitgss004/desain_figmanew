@@ -442,60 +442,101 @@ body, html {
     color: white;
     padding: 20px;
     width: 1400px;
-    height: 400px;
+    height: auto; /* Sesuaikan tinggi secara otomatis */
     display: flex;
     justify-content: flex-start;
+    align-items: flex-start;
 }
 
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(2, 200px); /* Lebar kolom 200px */
-    gap: 20px; /* Jarak antar foto */
+    gap: 30px; /* Jarak antar foto */
+    margin-left: 90px; /* Menggeser ke kiri */
 }
 
 .photo-container {
-    position: relative; /* Posisi relatif untuk kontainer */
+    position: relative;
     width: 100%;
     height: 200px; /* Sesuaikan tinggi kontainer */
 }
 
 .photo-grid img {
-    width: 100%; /* Gambar memenuhi kolom */
+    width: 100%;
     height: 200px; /* Tinggi tetap */
     object-fit: cover;
-    border-radius: 5px; /* Membulatkan sudut gambar */
+    border-radius: 10px; /* Membulatkan sudut gambar */
 }
 
-/* Latar belakang putih di belakang teks */
 .photo-info-bg {
     position: absolute;
-    top: 10px; /* Posisi kotak latar belakang sedikit di atas */
+    top: 0px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: white; /* Warna latar belakang putih */
+    background-color: white;
     width: 100%;
-    height: 50px; /* Ketinggian kotak latar belakang */
-    border-radius: 0px; /* Sudut kotak putih */
-    z-index: 1; /* Agar berada di bawah teks */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0,); /* Menambahkan sedikit bayangan */
+    height: 35px;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
-/* Teks */
 .photo-info {
     position: absolute;
-    top: 15px; /* Posisikan teks agar sedikit di tengah kotak latar belakang */
+    top: 10px;
     left: 50%;
     transform: translateX(-50%);
-    background-color: rgba(193, 226, 226, 0.8); /* Warna latar belakang semi-transparan */
-    color: #004d66; /* Warna teks */
-    padding: 5px 20px;
-    border-radius: 0px; /* Membulatkan sudut teks */
+    background-color: #9EDBDB;
+    color: #ffffff;
+    padding: 0px 5px;
+    border-radius: 5px;
     font-weight: bold;
-    font-size: 14px; /* Ukuran font */
+    font-size: 16px;
     text-align: center;
-    z-index: 2; /* Teks di atas latar belakang putih */
-    text-transform: uppercase; /* Mengubah teks menjadi huruf besar */
-    letter-spacing: 1px; /* Memberi jarak antar huruf */
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 90%;
+    max-width: 100%;
+}
+
+.description {
+    text-align: right; /* Teks di dalam deskripsi akan rata ke kanan */
+    max-width: 500px;
+    color: white;
+    margin-left: 50px; /* Sedikit margin kiri untuk jarak dari gambar */
+}
+
+
+.description h2 {
+    font-size: 36px;
+    font-weight: bold;
+    color: white; /* Warna judul menjadi putih */
+}
+
+.description p {
+    font-size: 16px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: white; /* Warna paragraf menjadi putih */
+}
+
+.read-more-btn {
+    background-color: #87CEEB;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.read-more-btn:hover {
+    background-color: #000000; /* Efek hover pada tombol */
 }
 
 
@@ -504,11 +545,6 @@ body, html {
 
 
 
-
-
-
-
- 
 
 
 
@@ -568,30 +604,33 @@ Kilau Sempurna, Perjalanan Luar Biasa
 <div class="box">
     <div class="photo-grid">
         <div class="photo-container">
-            <div class="photo-info-bg"></div> <!-- Latar belakang putih -->
+            <div class="photo-info-bg"></div>
             <div class="photo-info">Cuci Eksterior</div>
             <img src="/upload/faktivitas1.jpg" alt="Foto 1">
         </div>
         <div class="photo-container">
-            <div class="photo-info-bg"></div> <!-- Latar belakang putih -->
+            <div class="photo-info-bg"></div>
             <div class="photo-info">Cuci Interior</div>
             <img src="/upload/faktivitas2.jpg" alt="Foto 2">
         </div>
         <div class="photo-container">
-            <div class="photo-info-bg"></div> <!-- Latar belakang putih -->
+            <div class="photo-info-bg"></div>
             <div class="photo-info">Detailing</div>
             <img src="/upload/faktivitas3.jpg" alt="Foto 3">
         </div>
         <div class="photo-container">
-            <div class="photo-info-bg"></div> <!-- Latar belakang putih -->
+            <div class="photo-info-bg"></div>
             <div class="photo-info">Premium</div>
             <img src="/upload/faktivitas4.jpg" alt="Foto 4">
         </div>
     </div>
+
+    <div class="description">
+        <h2>Aktivitas</h2>
+        <p>Aktivitas Kami merujuk pada berbagai kegiatan dan layanan yang kami lakukan secara rutin untuk memastikan mobil pelanggan selalu dalam kondisi terbaik. Ini mencakup pembersihan harian, perawatan berkala, pelatihan tim, kampanye kesadaran lingkungan, dan promosi khusus, semuanya dirancang untuk memberikan hasil yang optimal dan kepuasan maksimal bagi pelanggan.</p>
+        <button class="read-more-btn">Baca Selengkapnya</button>
+    </div>
 </div>
-
-
-
 
 
 
