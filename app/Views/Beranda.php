@@ -451,8 +451,8 @@ body, html {
 .photo-grid {
     display: grid;
     grid-template-columns: repeat(2, 200px); /* Lebar kolom 200px */
-    gap: 30px; /* Jarak antar foto */
-    margin-left: 90px; /* Menggeser ke kiri */
+    gap: 50px; /* Jarak antar foto */
+    margin-left: 100px; /* Menggeser ke kiri */
 }
 
 .photo-container {
@@ -480,7 +480,12 @@ body, html {
     z-index: 1;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
-
+.description {
+    text-align: right; /* Teks di dalam deskripsi akan rata ke kanan */
+    max-width: 500px;
+    color: #000000;
+    margin-left: 50px; /* Sedikit margin kiri untuk jarak dari gambar */
+}
 .photo-info {
     position: absolute;
     top: 10px;
@@ -500,34 +505,40 @@ body, html {
     max-width: 100%;
 }
 
-.description {
-    text-align: right; /* Teks di dalam deskripsi akan rata ke kanan */
+
+
+
+.description2 {
+    text-align: right;
     max-width: 500px;
     color: white;
-    margin-left: 50px; /* Sedikit margin kiri untuk jarak dari gambar */
+    margin-left: 200px; /* Menggeser elemen ke kanan */
+    transform: translateY(-40px); /* Geser elemen ke atas */
 }
 
 
-.description h2 {
-    font-size: 36px;
+.description2 h2 {
+    font-size: 70px; /* Diperbesar dari 50px menjadi 70px */
     font-weight: bold;
-    color: white; /* Warna judul menjadi putih */
+    color: white;
+    margin-bottom: 15px; /* Jarak bawah judul */
 }
 
-.description p {
-    font-size: 16px;
+.description2 p {
+    font-size: 19px; /* Diperbesar dari 90px menjadi 100px */
     line-height: 1.6;
+    margin-top: 10px; /* Jarak atas isi deskripsi */
     margin-bottom: 20px;
-    color: white; /* Warna paragraf menjadi putih */
+    color: white;
 }
 
 .read-more-btn {
     background-color: #87CEEB;
     color: white;
-    padding: 10px 20px;
+    padding: 15px 30px; /* Padding diperbesar untuk menyesuaikan ukuran tombol */
     border: none;
     border-radius: 5px;
-    font-size: 16px;
+    font-size: 20px; /* Ukuran font diperbesar dari 16px menjadi 20px */
     font-weight: bold;
     cursor: pointer;
     text-transform: uppercase;
@@ -541,14 +552,6 @@ body, html {
 
 
 
-
-
-
-
-
-
-
-  
   </style>
 </head>
 <body>
@@ -625,7 +628,7 @@ Kilau Sempurna, Perjalanan Luar Biasa
         </div>
     </div>
 
-    <div class="description">
+    <div class="description2">
         <h2>Aktivitas</h2>
         <p>Aktivitas Kami merujuk pada berbagai kegiatan dan layanan yang kami lakukan secara rutin untuk memastikan mobil pelanggan selalu dalam kondisi terbaik. Ini mencakup pembersihan harian, perawatan berkala, pelatihan tim, kampanye kesadaran lingkungan, dan promosi khusus, semuanya dirancang untuk memberikan hasil yang optimal dan kepuasan maksimal bagi pelanggan.</p>
         <button class="read-more-btn">Baca Selengkapnya</button>
