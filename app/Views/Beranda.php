@@ -137,8 +137,8 @@
   text-align: center;
   font-size: 50px;
   font-weight: bold;
-  margin-top: 300px; /* Jarak atas ditambahkan di sini */
-  margin-bottom: 10px; /* Margin bawah, sesuaikan jika perlu */
+  margin-top: 250px; /* Jarak atas ditambahkan di sini */
+  margin-bottom: 100px; /* Margin bawah, sesuaikan jika perlu */
   color: #000000;
   position: relative;
   z-index: 2;
@@ -446,7 +446,10 @@ body, html {
     display: flex;
     justify-content: flex-start;
     align-items: flex-start;
+    margin-top: 150px; /* Jarak atas ditambahkan di sini */
+  margin-bottom: 50px; /* Margin bawah, sesuaikan jika perlu */
 }
+
 
 .photo-grid {
     display: grid;
@@ -509,7 +512,7 @@ body, html {
 
 
 .description2 {
-    text-align: right;
+    text-align: left;
     max-width: 500px;
     color: white;
     margin-left: 200px; /* Menggeser elemen ke kanan */
@@ -551,6 +554,145 @@ body, html {
 }
 
 
+.box-right {
+    background-color: #4D869C;
+    color: white;
+    padding: 20px;
+    width: 1400px;
+    height: auto;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 150px;
+    margin-bottom: 50px;
+    flex-direction: row-reverse; /* Gambar di kanan, deskripsi di kiri */
+}
+
+.photo-grid-right {
+    display: grid;
+    grid-template-columns: repeat(2, 200px); /* Lebar kolom 200px */
+    gap: 50px; /* Jarak antar foto */
+    margin-right: 100px; /* Menggeser ke kanan */
+}
+
+.photo-container-right {
+    position: relative;
+    width: 100%;
+    height: 200px; /* Sesuaikan tinggi kontainer */
+}
+
+.photo-grid-right img {
+    width: 100%;
+    height: 200px; /* Tinggi tetap */
+    object-fit: cover;
+    border-radius: 10px; /* Membulatkan sudut gambar */
+}
+
+.photo-info-bg-right {
+    position: absolute;
+    top: 0px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: white;
+    width: 100%;
+    height: 35px;
+    border-radius: 10px;
+    z-index: 1;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.photo-info-right {
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #9EDBDB;
+    color: #ffffff;
+    padding: 0px 5px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 16px;
+    text-align: center;
+    z-index: 2;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    width: 90%;
+    max-width: 100%;
+}
+
+.description-right {
+    text-align: left; /* Teks di dalam deskripsi akan rata ke kiri */
+    max-width: 500px;
+    color: white;
+    margin-right: 200px; /* Menggeser elemen ke kiri */
+    transform: translateY(-40px); /* Geser elemen ke atas */
+}
+
+.description-right h2 {
+    font-size: 70px; /* Diperbesar dari 50px menjadi 70px */
+    font-weight: bold;
+    color: white;
+    margin-bottom: 15px; /* Jarak bawah judul */
+}
+
+.description-right p {
+    font-size: 19px;
+    line-height: 1.6;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.read-more-btn-right {
+    background-color: #87CEEB;
+    color: white;
+    padding: 15px 30px; /* Padding diperbesar untuk menyesuaikan ukuran tombol */
+    border: none;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.read-more-btn-right:hover {
+    background-color: #000000; /* Efek hover pada tombol */
+}
+
+
+.about-section {
+    margin: 20px;
+}
+
+.sub-heading {
+    color: #2C7A92;
+    font-size: 19px;
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-family: 'Arial', sans-serif;
+    margin-left: -490px; /* Menggeser sub-judul ke kiri */
+    margin-bottom: 5px;  /* Mengurangi jarak bawah sub-judul */
+    margin-top: 10px;  /* Menggeser sub-judul ke bawah */
+}
+
+.main-heading {
+    color: #000000;
+    font-size: 36px;
+    font-weight: bold;
+    margin-left: -490px; /* Menggeser judul utama ke kiri */
+    font-family: 'Arial', sans-serif;
+    margin-top: 10px;  /* Menggeser judul utama ke bawah */
+    margin-bottom: 5px;  /* Mengurangi jarak bawah sub-judul */
+
+}
+
+
+
+
+
+
 
   </style>
 </head>
@@ -581,11 +723,16 @@ body, html {
   </div>
 </div>
 
+
+
  <!-- Teks "LuxeWash Auto Detail" -->
 <div class="centered-text">
 Kilau Sempurna, Perjalanan Luar Biasa
 </div>
-
+<div class="about-section">
+    <h3 class="sub-heading">TENTANG KAMI</h3>
+    <h1 class="main-heading">LuxeWash Auto Detail</h1>
+</div>
 
 <!-- Latar Belakang Biru di Bawah Konten dengan Teks dan Gambar -->
 <div class="about-background">
@@ -593,8 +740,8 @@ Kilau Sempurna, Perjalanan Luar Biasa
     <p>Selamat datang di LuxeWash Auto Detail, tempat di mana mobil Anda mendapatkan perawatan terbaik dengan layanan cuci mobil profesional yang berkomitmen untuk memberikan hasil sempurna menggunakan teknologi terkini dan produk ramah lingkungan. Kami memahami bahwa mobil Anda adalah cerminan gaya hidup dan kebanggaan Anda, sehingga kami menawarkan berbagai paket layanan, mulai dari cuci eksterior yang cepat hingga detailing menyeluruh, dengan fokus pada detail dan kepuasan pelanggan, memastikan setiap kendaraan meninggalkan kilauan yang luar biasa.</p>
     <p>LuxeWash Auto Detail berdiri sejak tahun 2014, dengan visi untuk menjadi penyedia layanan cuci mobil terbaik di kota ini. Dimulai dari sebuah lokasi kecil, kami telah berkembang pesat berkat dedikasi kami terhadap kualitas dan kepuasan pelanggan.</p>
     <!-- Tombol Baca Selengkapnya -->
-    <a href="#" class="read-more-btn">Baca Selengkapnya</a>
-  </div>
+    <a href="tentang" class="read-more-btn">Baca Selengkapnya</a>
+    </div>
 
 
   <!-- Gambar di sebelah teks -->
@@ -631,7 +778,40 @@ Kilau Sempurna, Perjalanan Luar Biasa
     <div class="description2">
         <h2>Aktivitas</h2>
         <p>Aktivitas Kami merujuk pada berbagai kegiatan dan layanan yang kami lakukan secara rutin untuk memastikan mobil pelanggan selalu dalam kondisi terbaik. Ini mencakup pembersihan harian, perawatan berkala, pelatihan tim, kampanye kesadaran lingkungan, dan promosi khusus, semuanya dirancang untuk memberikan hasil yang optimal dan kepuasan maksimal bagi pelanggan.</p>
-        <button class="read-more-btn">Baca Selengkapnya</button>
+        <a href="aktivitas" class="read-more-btn">Baca Selengkapnya</a>
+    </div>
+</div>
+
+
+
+<div class="box">
+    <div class="description2">
+        <h2>Produk</h2>
+        <p>Aktivitas Kami merujuk pada berbagai kegiatan dan layanan yang kami lakukan secara rutin untuk memastikan mobil pelanggan selalu dalam kondisi  terbaik. Ini mencakup  pembersihan harian, perawatan berkala, pelatihan tim, kampanye kesadaran lingkungan,dan promosi khusus, semuanya dirancang untuk  memberikan hasil yang optimal dan kepuasan maksimal bagi pelanggan.</p>
+        <a href="produk" class="read-more-btn">Baca Selengkapnya</a>
+        </div>
+
+    <div class="photo-grid">
+        <div class="photo-container">
+            <div class="photo-info-bg"></div>
+            <div class="photo-info">Cuci Eksterior</div>
+            <img src="/upload/faktivitas1.jpg" alt="Foto 1">
+        </div>
+        <div class="photo-container">
+            <div class="photo-info-bg"></div>
+            <div class="photo-info">Cuci Interior</div>
+            <img src="/upload/faktivitas2.jpg" alt="Foto 2">
+        </div>
+        <div class="photo-container">
+            <div class="photo-info-bg"></div>
+            <div class="photo-info">Detailing</div>
+            <img src="/upload/faktivitas3.jpg" alt="Foto 3">
+        </div>
+        <div class="photo-container">
+            <div class="photo-info-bg"></div>
+            <div class="photo-info">Premium</div>
+            <img src="/upload/faktivitas4.jpg" alt="Foto 4">
+        </div>
     </div>
 </div>
 
