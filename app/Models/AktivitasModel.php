@@ -7,7 +7,7 @@ use CodeIgniter\Model;
 class AktivitasModel extends Model
 {
     protected $table            = 'tb_aktivitas';
-    protected $primaryKey       = 'id';
+    protected $primaryKey       = 'id_aktivitas';
     protected $useAutoIncrement = true;
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;

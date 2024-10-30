@@ -481,7 +481,7 @@ body, html {
     height: 35px;
     border-radius: 10px;
     z-index: 1;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
 }
 .description {
     text-align: right; /* Teks di dalam deskripsi akan rata ke kanan */
@@ -708,17 +708,17 @@ body, html {
         <a href="http://localhost:8080/aktivitas" class="nav-item">Aktivitas</a>
         <a href="http://localhost:8080/kontak" class="nav-item">Kontak</a>
       </div>
-      <img class="logo" src="/upload/logo.png" alt="LuxeWash Auto Detail Logo">
+      <img class="logo" src="/upload/<?=$beranda->img_logo?>" alt="LuxeWash Auto Detail Logo">
     </div>
 
 <div class="overlay">
   <div class="content-wrapper">
-    <img class="car-img" src="/upload/fotoberanda.png" alt="Gambar Mobil" />
+    <img class="car-img" src="/upload/<?= $beranda->img_banner?>" alt="Gambar Mobil" />
     <div class="text-overlay">
-      <p class="title-highlight">Highlight of</p>
-      <p class="title-carwash">Car Wash</p>
-      <p class="description">Menjadikan setiap mobil tampil memukau,</p>
-      <p class="description">membuat setiap perjalanan lebih istimewa.</p>
+      <p class="title-highlight"><?= $beranda->title_banner;?></p>
+      <!-- <p class="title-carwash">Car Wash</p> -->
+      <p class="description"><?= $beranda->deskripsi_banner; ?> </p>
+      
     </div>
   </div>
 </div>
@@ -727,18 +727,17 @@ body, html {
 
  <!-- Teks "LuxeWash Auto Detail" -->
 <div class="centered-text">
-Kilau Sempurna, Perjalanan Luar Biasa
+<?= $beranda->title_2?>
 </div>
 <div class="about-section">
     <h3 class="sub-heading">TENTANG KAMI</h3>
-    <h1 class="main-heading">LuxeWash Auto Detail</h1>
+    <h1 class="main-heading"><?= $tentang->title_tentang?></h1>
 </div>
 
 <!-- Latar Belakang Biru di Bawah Konten dengan Teks dan Gambar -->
 <div class="about-background">
   <div class="about-text">
-    <p>Selamat datang di LuxeWash Auto Detail, tempat di mana mobil Anda mendapatkan perawatan terbaik dengan layanan cuci mobil profesional yang berkomitmen untuk memberikan hasil sempurna menggunakan teknologi terkini dan produk ramah lingkungan. Kami memahami bahwa mobil Anda adalah cerminan gaya hidup dan kebanggaan Anda, sehingga kami menawarkan berbagai paket layanan, mulai dari cuci eksterior yang cepat hingga detailing menyeluruh, dengan fokus pada detail dan kepuasan pelanggan, memastikan setiap kendaraan meninggalkan kilauan yang luar biasa.</p>
-    <p>LuxeWash Auto Detail berdiri sejak tahun 2014, dengan visi untuk menjadi penyedia layanan cuci mobil terbaik di kota ini. Dimulai dari sebuah lokasi kecil, kami telah berkembang pesat berkat dedikasi kami terhadap kualitas dan kepuasan pelanggan.</p>
+    <p><?= $tentang->deskripsi_tentang?></p>
     <!-- Tombol Baca Selengkapnya -->
     <a href="tentang" class="read-more-btn">Baca Selengkapnya</a>
     </div>
@@ -746,7 +745,7 @@ Kilau Sempurna, Perjalanan Luar Biasa
 
   <!-- Gambar di sebelah teks -->
   <div class="about-image">
-    <img src="/upload/fotocar.jpg" alt="Gambar tentang LuxeWash">
+    <img src="/upload/<?=$tentang->img_tentang?>" alt="Gambar tentang LuxeWash">
   </div>
 </div>
 
@@ -755,29 +754,29 @@ Kilau Sempurna, Perjalanan Luar Biasa
     <div class="photo-grid">
         <div class="photo-container">
             <div class="photo-info-bg"></div>
-            <div class="photo-info">Cuci Eksterior</div>
-            <img src="/upload/faktivitas1.jpg" alt="Foto 1">
+            <div class="photo-info"><?=$aktivitas->title_img1?></div>
+            <img src="/upload/<?=$aktivitas->img_aktv1?>" alt="Foto 1">
         </div>
         <div class="photo-container">
             <div class="photo-info-bg"></div>
-            <div class="photo-info">Cuci Interior</div>
-            <img src="/upload/faktivitas2.jpg" alt="Foto 2">
+            <div class="photo-info"><?=$aktivitas->title_img2?></div>
+            <img src="/upload/<?=$aktivitas->img_aktv2?>" alt="Foto 2">
         </div>
         <div class="photo-container">
             <div class="photo-info-bg"></div>
-            <div class="photo-info">Detailing</div>
-            <img src="/upload/faktivitas3.jpg" alt="Foto 3">
+            <div class="photo-info"><?=$aktivitas->title_img3?></div>
+            <img src="/upload/<?=$aktivitas->img_aktv3?>" alt="Foto 3">
         </div>
         <div class="photo-container">
             <div class="photo-info-bg"></div>
-            <div class="photo-info">Premium</div>
-            <img src="/upload/faktivitas4.jpg" alt="Foto 4">
+            <div class="photo-info"><?=$aktivitas->title_img4?></div>
+            <img src="/upload/<?=$aktivitas->img_aktv4?>" alt="Foto 4">
         </div>
     </div>
 
     <div class="description2">
-        <h2>Aktivitas</h2>
-        <p>Aktivitas Kami merujuk pada berbagai kegiatan dan layanan yang kami lakukan secara rutin untuk memastikan mobil pelanggan selalu dalam kondisi terbaik. Ini mencakup pembersihan harian, perawatan berkala, pelatihan tim, kampanye kesadaran lingkungan, dan promosi khusus, semuanya dirancang untuk memberikan hasil yang optimal dan kepuasan maksimal bagi pelanggan.</p>
+        <h2><?=$aktivitas->title_aktivitas?></h2>
+        <p><?=$aktivitas->deskripsi_aktivitas?></p>
         <a href="aktivitas" class="read-more-btn">Baca Selengkapnya</a>
     </div>
 </div>
@@ -786,31 +785,31 @@ Kilau Sempurna, Perjalanan Luar Biasa
 
 <div class="box">
     <div class="description2">
-        <h2>Produk</h2>
-        <p>Aktivitas Kami merujuk pada berbagai kegiatan dan layanan yang kami lakukan secara rutin untuk memastikan mobil pelanggan selalu dalam kondisi  terbaik. Ini mencakup  pembersihan harian, perawatan berkala, pelatihan tim, kampanye kesadaran lingkungan,dan promosi khusus, semuanya dirancang untuk  memberikan hasil yang optimal dan kepuasan maksimal bagi pelanggan.</p>
-        <a href="produk" class="read-more-btn">Baca Selengkapnya</a>
+    <h2><?=$produk->title_produk?></h2>
+    <p><?=$produk->deskripsi_produk?></p>
+    <a href="produk" class="read-more-btn">Baca Selengkapnya</a>
         </div>
 
     <div class="photo-grid">
         <div class="photo-container">
             <div class="photo-info-bg"></div>
-            <div class="photo-info">Cuci Eksterior</div>
-            <img src="/upload/faktivitas1.jpg" alt="Foto 1">
+            <div class="photo-info"><?=$produk->title_img1?></div>
+            <img src="/upload/<?=$produk->img_produk1?>" alt="Foto 1">
         </div>
         <div class="photo-container">
             <div class="photo-info-bg"></div>
-            <div class="photo-info">Cuci Interior</div>
-            <img src="/upload/faktivitas2.jpg" alt="Foto 2">
+            <div class="photo-info"><?=$produk->title_img2?></div>
+            <img src="/upload/<?=$produk->img_produk2?>" alt="Foto 2">
         </div>
         <div class="photo-container">
             <div class="photo-info-bg"></div>
-            <div class="photo-info">Detailing</div>
-            <img src="/upload/faktivitas3.jpg" alt="Foto 3">
+            <div class="photo-info"><?=$produk->title_img3?></div>
+            <img src="/upload/<?=$produk->img_produk3?>" alt="Foto 3">
         </div>
         <div class="photo-container">
             <div class="photo-info-bg"></div>
-            <div class="photo-info">Premium</div>
-            <img src="/upload/faktivitas4.jpg" alt="Foto 4">
+            <div class="photo-info"><?=$produk->title_img4?></div>
+            <img src="/upload/<?=$produk->img_produk4?>" alt="Foto 4">
         </div>
     </div>
 </div>

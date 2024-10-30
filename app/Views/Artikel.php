@@ -313,20 +313,20 @@
       <div class="background-box">
         <!-- Konten 1 -->
         <div class="article-box">
-          <img src="/upload/fartikel1.png" alt="Memilih Layanan Car Wash" class="article-img profile-img">
+          <img src="/upload/<?= $artikel->img_art1?>" alt="Memilih Layanan Car Wash" class="article-img profile-img">
           <div class="article-text">
-            <h3>Memilih Layanan Car Wash</h3>
-            <p class="custom-color">Memilih layanan cuci mobil yang tepat adalah langkah krusial untuk menjaga tampilan dan keawetan kendaraan Anda. Artikel ini menguraikan berbagai faktor yang harus dipertimbangkan, termasuk jenis layanan yang ditawarkan, seperti cuci eksterior, interior, atau detailing...</p>
+            <h3><?= $artikel->title_art1?></h3>
+            <p class="custom-color"><?= $artikel->deskripsi_art1?></p>
             <a href="http://localhost:8080/artikel1" class="read-more-btn">Baca Selengkapnya</a>
           </div>
         </div>
 
         <!-- Konten 2 -->
         <div class="article-box">
-          <img src="/upload/fartikel2.png" alt="Detailing Mobil" class="article-img profile-img">
+          <img src="/upload/<?= $artikel->img_art2?>" alt="Detailing Mobil" class="article-img profile-img">
           <div class="article-text">
-            <h3>Detailing Mobil</h3>
-            <p class="custom-color"> Detailing mobil adalah lebih dari sekadar pembersihan biasa. Artikel ini membahas apa yang dimaksud dengan detailing mobil, yang meliputi pembersihan mendalam pada bagian eksterior dan interior, seperti membersihkan, memoles, dan melindungi setiap...</p>
+            <h3><?= $artikel->title_art2?></h3>
+            <p class="custom-color"> <?= $artikel->deskripsi_art2?></p>
             <a href="http://localhost:8080/artikel2" class="read-more-btn">Baca Selengkapnya</a>
           </div>
         </div>
@@ -337,20 +337,20 @@
       <div class="background-box">
         <!-- Konten 3 -->
         <div class="article-box">
-          <img src="/upload/fartikel3.png" alt="Membersihkan Mesin Mobil" class="article-img profile-img">
+          <img src="/upload/<?= $artikel->img_art3?>" alt="Membersihkan Mesin Mobil" class="article-img profile-img">
           <div class="article-text">
-            <h3>Membersihkan Mesin Mobil</h3>
-            <p class="custom-color">Industri cuci mobil terus berinovasi untuk memberikan hasil yang lebih baik dengan cara yang lebih efisien dan ramah lingkungan. Artikel ini mengeksplorasi teknologi terbaru yang telah mengubah cara layanan car wash beroperasi. Mulai dari robotik yang dapat membersihkan kendaraan...</p>
+            <h3><?= $artikel->title_art3?></h3>
+            <p class="custom-color"><?= $artikel->deskripsi_art3?></p>
             <a href="http://localhost:8080/artikel3" class="read-more-btn">Baca Selengkapnya</a>
           </div>
         </div>
 
         <!-- Konten 4 -->
         <div class="article-box">
-          <img src="/upload/fartikel4.png" alt="Pembersihan Interior" class="article-img profile-img">
+          <img src="/upload/<?= $artikel->img_art4 ?>" alt="Pembersihan Interior" class="article-img profile-img">
           <div class="article-text">
-            <h3>Pembersihan Interior</h3>
-            <p class="custom-color">Banyak pemilik mobil tidak menyadari bahwa mencuci mobil secara rutin bukan hanya soal menjaga penampilan. Artikel ini menjelaskan bahwa perawatan rutin, termasuk pencucian mobil, memainkan peran penting dalam melindungi nilai investasi Anda. Pencucian teratur....</p>
+            <h3><?= $artikel->title_art4?></h3>
+            <p class="custom-color"><?= $artikel->deskripsi_art4?></p>
             <a href="http://localhost:8080/artikel4" class="read-more-btn">Baca Selengkapnya</a>
           </div>
         </div>

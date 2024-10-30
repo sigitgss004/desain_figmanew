@@ -224,8 +224,8 @@
     <div class="overlay">
       <img class="overlay-img" src="/upload/fotocar.jpg" alt="Gambar Overlay" />
       <div class="overlay-dark"></div>
-      <div class="breadcrumb">Beranda / Artikel</div>
-      <div class="article-label">Produk Kami</div>
+      <div class="breadcrumb">Kontak / Artikel</div>
+      <div class="article-label">Kontak Kami</div>
     </div>
 
     <div class="content">

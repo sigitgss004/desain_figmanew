@@ -260,11 +260,11 @@
     <div class="article-title">Kilau Sempurna, Perjalanan Luar Biasa</div>
     <div class="about-section">
       <div class="about-title-container">
-        <h2>LuxeWash Auto Detail</h2>
+        <h2><?= $tentang->title_tentang?></h2>
       </div>
       <div class="about-text">
         <p>
-          Selamat datang di LuxeWash Auto Detail, tempat di mana mobil Anda mendapatkan perawatan terbaik dengan layanan cuci mobil profesional yang berkomitmen untuk memberikan hasil sempurna menggunakan teknologi terkini dan produk ramah lingkungan. Kami memahami bahwa mobil Anda adalah cerminan gaya hidup dan kebanggaan Anda, sehingga kami menawarkan berbagai paket layanan, mulai dari cuci eksterior yang cepat hingga detailing menyeluruh, dengan fokus pada detail dan kepuasan pelanggan, memastikan setiap kendaraan meninggalkan kilauan yang luar biasa.
+          Selamat datang di LuxeWash Auto Detail, tempat di mana mobil Anda mendapatkan perawatan terbaik dengan layanan cuci mobil profesional yang berkomitmen untuk memberikan hasil sempurna menggunakan teknologi terkini dan produk ramah lingkungan. Kami memahami bahwa mobil Anda adalah cerminan gaya hidup dan kebanggaan Anda, sehingga kami menawarkan berbagai paket layanan, mulai dari cuci eksterior yang cepat hingga detailing menyeluruh, dengan fokus pada detail dan kepuasan pelanggan, memastikan setiap kendaraan meninggalkan kilauan yang luar bi
         </p>
         <p>
           LuxeWash Auto Detail juga menyediakan layanan home service untuk kenyamanan Anda, sehingga Anda dapat menikmati mobil yang bersih dan terawat tanpa meninggalkan rumah. Kami berkomitmen untuk memberikan layanan terbaik dengan tim profesional yang terlatih dan menggunakan produk berkualitas tinggi.
