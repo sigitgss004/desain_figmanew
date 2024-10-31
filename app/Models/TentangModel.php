@@ -12,7 +12,7 @@ class TentangModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['title_tentang', 'title_tentang_2', 'deskripsi_tentang',];
+    protected $allowedFields    = ['title_tentang', 'title_tentang_2', 'deskripsi_tentang','img_tentang',];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

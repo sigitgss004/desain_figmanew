@@ -260,7 +260,7 @@
     <div class="article-title">Kilau Sempurna, Perjalanan Luar Biasa</div>
     <div class="about-section">
       <div class="about-title-container">
-        <h2><?= $tentang->title_tentang?></h2>
+        <h2>Luxe Auto Detail </h2>
       </div>
       <div class="about-text">
         <p>

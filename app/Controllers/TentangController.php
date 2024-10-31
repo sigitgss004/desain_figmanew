@@ -8,7 +8,7 @@ use App\Models\TentangModel;
 
 class TentangController extends BaseController
 {
-    public function tentang()
+    public function index()
     {
          // Inisialisasi model
          $tentangModel = new TentangModel();
@@ -20,4 +20,17 @@ class TentangController extends BaseController
          return view('Tentang', $data);
     }
 
+}
+//<?php
+
+namespace App\Models;
+use CodeIgniter\Model;
+
+class TentangModel extends Model {
+    protected $table = 'tentang';
+    protected $primaryKey = 'id';
+    
+    public function getTentangData() {
+        return $this->findAll(); // Ambil semua data jika hanya ada satu baris
+    }
 }

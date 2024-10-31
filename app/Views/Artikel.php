@@ -105,64 +105,143 @@
     }
 
     .overlay {
-      width: 100%;
-      height: auto;
-      position: relative;
-      text-align: center;
-    }
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
 
-    .overlay-img {
-      width: 100%;
-      max-height: 400px;
-      height: auto;
-      object-fit: cover;
-    }
+.overlay-img {
+  width: 100%;
+  max-height: 400px;
+  height: auto;
+  object-fit: cover;
+}
 
-    .overlay-dark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
+.overlay-dark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
 
-    .breadcrumb {
-      position: absolute;
-      top: 90%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 20px;
-      font-weight: 300;
-      letter-spacing: 2px;
-      padding: 10px;
-      border-radius: 8px;
-      background-color: transparent;
-      z-index: 2;
-    }
+/* Tablet */
+@media (max-width: 768px) {
+  .overlay-img {
+    max-height: 300px; /* Mengurangi tinggi gambar */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .overlay-img {
+    max-height: 200px; /* Mengurangi tinggi gambar lebih lanjut */
+  }
+  
+  .overlay-dark {
+    background: rgba(0, 0, 0, 0.4); /* Mengurangi opacity agar teks lebih terbaca di layar kecil */
+  }
+}
+
+
+.breadcrumb {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: transparent;
+  z-index: 2;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .breadcrumb {
+    font-size: 18px; /* Mengurangi ukuran font */
+    padding: 8px; /* Mengurangi padding */
+    letter-spacing: 1.5px; /* Menyesuaikan spasi antar huruf */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .breadcrumb {
+    font-size: 16px; /* Mengurangi ukuran font lebih lanjut */
+    padding: 6px; /* Mengurangi padding lebih lanjut */
+    letter-spacing: 1px; /* Mengurangi spasi antar huruf */
+    top: 85%; /* Menyesuaikan posisi agar terlihat proporsional pada layar kecil */
+  }
+}
+
 
     .article-label {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      color: #fff;
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      z-index: 2;
-    }
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  z-index: 2;
+}
 
-    .article-title {
-      text-align: center;
-      color: #4D869C;
-      font-size: 35px;
-      font-weight: 600;
-      margin-top: 70px;  
-      margin-bottom: 70px; 
-      line-height: 1.2; 
-    }
+/* Tablet */
+@media (max-width: 768px) {
+  .article-label {
+    font-size: 24px; /* Mengurangi ukuran font */
+    top: 15px; /* Menurunkan jarak dari atas */
+    left: 15px; /* Menurunkan jarak dari kiri */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .article-label {
+    font-size: 18px; /* Mengurangi ukuran font lebih lanjut */
+    top: 10px; /* Menurunkan jarak dari atas */
+    left: 10px; /* Menurunkan jarak dari kiri */
+    letter-spacing: 0.5px; /* Mengurangi spasi antar huruf */
+  }
+}
+
+
+.article-title {
+  text-align: center;
+  color: #4D869C;
+  font-size: 35px;
+  font-weight: 600;
+  margin-top: 70px;  
+  margin-bottom: 70px; 
+  line-height: 1.2; 
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .article-title {
+    font-size: 28px; /* Mengurangi ukuran font */
+    margin-top: 50px; /* Mengurangi margin atas */
+    margin-bottom: 50px; /* Mengurangi margin bawah */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .article-title {
+    font-size: 22px; /* Mengurangi ukuran font lebih lanjut */
+    margin-top: 30px; /* Mengurangi margin atas */
+    margin-bottom: 30px; /* Mengurangi margin bawah */
+    line-height: 1.3; /* Menyesuaikan line-height untuk keterbacaan */
+  }
+}
+
 
     /* Profile Image Wrapper */
     .article-wrapper {
