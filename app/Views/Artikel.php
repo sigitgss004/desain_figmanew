@@ -49,13 +49,41 @@
 
 
 
+.footer-text {
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 1.6px;
+}
+
+/* Untuk layar kecil (ponsel) */
+@media (max-width: 576px) {
     .footer-text {
-      color: white;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 21px;
-      letter-spacing: 1.60px;
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 1.2px;
     }
+}
+
+/* Untuk layar sedang (tablet) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .footer-text {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 1.4px;
+    }
+}
+
+/* Untuk layar besar (desktop) */
+@media (min-width: 769px) {
+    .footer-text {
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: 1.6px;
+    }
+}
+
 
     .logo {
   width: 30vw; /* default pada layar kecil */
