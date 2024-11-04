@@ -85,7 +85,7 @@
 }
 
 
-    .logo {
+.logo {
   width: 30vw; /* default pada layar kecil */
   height: auto;
   max-width: 106px;
@@ -434,20 +434,9 @@
       height: 80px;
     }
 
-    .profile-img {
-  width: 150px; /* Ukuran default pada layar besar */
-  height: 150px;
-  object-fit: cover;
-  border-radius: 12px; 
-}
 
-/* Tablet */
-@media (max-width: 768px) {
-  .profile-img {
-    width: 120px; /* Ukuran lebih kecil pada tablet */
-    height: 120px; /* Sesuaikan tinggi untuk menjaga rasio */
-  }
-}
+
+
 
 .profile-img {
   width: 150px; /* Ukuran default pada layar besar */
@@ -456,13 +445,6 @@
   border-radius: 12px; 
 }
 
-/* Tablet */
-@media (max-width: 768px) {
-  .profile-img {
-    width: 120px; /* Ukuran lebih kecil pada tablet */
-    height: 120px; /* Sesuaikan tinggi untuk menjaga rasio */
-  }
-}
 
 /* Default Size */
 .profile-img {
