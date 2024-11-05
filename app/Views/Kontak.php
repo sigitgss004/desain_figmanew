@@ -33,17 +33,57 @@
       align-items: center;
     }
     .footer-text {
-      color: white;
-      font-size: 16px;
-      font-weight: 400;
-      line-height: 21px;
-      letter-spacing: 1.60px;
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 21px;
+    letter-spacing: 1.6px;
+}
+
+/* Untuk layar kecil (ponsel) */
+@media (max-width: 576px) {
+    .footer-text {
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 1.2px;
     }
-    .logo {
-   width: 106px;
-   height: 58px;
-   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0,); /* Bisa disesuaikan */
-   background: none; /* Pastikan tidak ada background */
+}
+
+/* Untuk layar sedang (tablet) */
+@media (min-width: 577px) and (max-width: 768px) {
+    .footer-text {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 1.4px;
+    }
+}
+
+/* Untuk layar besar (desktop) */
+@media (min-width: 769px) {
+    .footer-text {
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: 1.6px;
+    }
+}
+.logo {
+  width: 30vw; /* default pada layar kecil */
+  height: auto;
+  max-width: 106px;
+}
+
+/* Pada layar tablet */
+@media (min-width: 768px) {
+  .logo {
+    width: 20vw;
+  }
+}
+
+/* Pada layar desktop */
+@media (min-width: 1024px) {
+  .logo {
+    width: 10vw;
+  }
 }
     .nav-item {
       color: white;
@@ -111,39 +151,93 @@
     }
 
     .overlay-dark {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.5);
-      z-index: 1;
-    }
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1;
+}
 
-    .breadcrumb {
-      position: absolute;
-      top: 90%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      color: white;
-      font-size: 20px;
-      font-weight: 300;
-      letter-spacing: 2px;
-      padding: 10px;
-      border-radius: 8px;
-      background-color: transparent;
-      z-index: 2;
-    }
+/* Tablet */
+@media (max-width: 768px) {
+  .overlay-img {
+    max-height: 300px; /* Mengurangi tinggi gambar */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .overlay-img {
+    max-height: 200px; /* Mengurangi tinggi gambar lebih lanjut */
+  }
+  
+  .overlay-dark {
+    background: rgba(0, 0, 0, 0.4); /* Mengurangi opacity agar teks lebih terbaca di layar kecil */
+  }
+}
+
+.breadcrumb {
+  position: absolute;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 20px;
+  font-weight: 300;
+  letter-spacing: 2px;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: transparent;
+  z-index: 2;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .breadcrumb {
+    font-size: 18px; /* Mengurangi ukuran font */
+    padding: 8px; /* Mengurangi padding */
+    letter-spacing: 1.5px; /* Menyesuaikan spasi antar huruf */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .breadcrumb {
+    font-size: 16px; /* Mengurangi ukuran font lebih lanjut */
+    padding: 6px; /* Mengurangi padding lebih lanjut */
+    letter-spacing: 1px; /* Mengurangi spasi antar huruf */
+    top: 85%; /* Menyesuaikan posisi agar terlihat proporsional pada layar kecil */
+  }
+}
 
     .content {
             text-align: center;
             padding: 20px;
         }
-.content h1 {
+        .content h1 {
     color: #003d4d; /* Warna asli, bisa diganti sesuai keinginan */
-    font-size: 36px; /* Ubah ukuran sesuai keinginan, misalnya 36px */
+    font-size: 36px; /* Ukuran default */
     margin-bottom: 20px;
 }
+
+/* Untuk perangkat yang lebih kecil seperti tablet */
+@media (max-width: 768px) {
+    .content h1 {
+        font-size: 28px; /* Ukuran yang lebih kecil untuk tablet */
+        margin-bottom: 15px; /* Menyesuaikan margin */
+    }
+}
+
+/* Untuk perangkat yang sangat kecil seperti ponsel */
+@media (max-width: 480px) {
+    .content h1 {
+        font-size: 24px; /* Ukuran yang lebih kecil untuk ponsel */
+        margin-bottom: 10px; /* Menyesuaikan margin */
+    }
+}
+
         .contact-container {
             display: flex;
             justify-content: center;
@@ -158,22 +252,60 @@
             margin: 10px;
         }
         .contact-info {
-    width: 40%;
+    width: 40%; /* Ukuran default */
     background-color: #e0f7fa;
-    text-align: center; /* Menambahkan text-align: left */
+    text-align: center; /* Menyusun teks di tengah */
+    padding: 20px; /* Menambahkan padding untuk tampilan lebih baik */
+}
+
+/* Untuk perangkat yang lebih kecil seperti tablet */
+@media (max-width: 768px) {
+    .contact-info {
+        width: 60%; /* Menambah lebar agar elemen tidak terlalu kecil pada layar tablet */
+        text-align: left; /* Ubah alignment text jadi kiri untuk tablet */
+    }
+}
+
+/* Untuk perangkat yang sangat kecil seperti ponsel */
+@media (max-width: 480px) {
+    .contact-info {
+        width: 100%; /* Lebar penuh untuk ponsel */
+        text-align: left; /* Menjaga alignment tetap kiri pada layar kecil */
+    }
 }
 
 
+
 .article-label {
-      position: absolute;
-      top: 20px;
-      left: 20px;
-      color: #fff;
-      font-size: 32px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      z-index: 2;
-    }
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .article-label {
+    font-size: 24px; /* Mengurangi ukuran font */
+    top: 15px; /* Menurunkan jarak dari atas */
+    left: 15px; /* Menurunkan jarak dari kiri */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .article-label {
+    font-size: 18px; /* Mengurangi ukuran font lebih lanjut */
+    top: 10px; /* Menurunkan jarak dari atas */
+    left: 10px; /* Menurunkan jarak dari kiri */
+    letter-spacing: 0.5px; /* Mengurangi spasi antar huruf */
+  }
+}
+
 .contact-info ul {
     list-style-type: none;
     padding: 0;
@@ -184,12 +316,29 @@
     text-align: center; /* Menambahkan text-align: left */
 }
 
-        .map {
-            width: 50%;
-            height: 530px;
-            display: flex;
-            flex-direction: column;
-        }
+.map {
+    width: 50%; /* Lebar default */
+    height: 530px; /* Tinggi default */
+    display: flex;
+    flex-direction: column;
+}
+
+/* Untuk perangkat yang lebih kecil seperti tablet */
+@media (max-width: 768px) {
+    .map {
+        width: 80%; /* Lebar lebih besar agar terlihat jelas di tablet */
+        height: 400px; /* Tinggi lebih kecil untuk tablet */
+    }
+}
+
+/* Untuk perangkat yang sangat kecil seperti ponsel */
+@media (max-width: 480px) {
+    .map {
+        width: 100%; /* Lebar penuh untuk ponsel */
+        height: 300px; /* Tinggi lebih kecil untuk ponsel */
+    }
+}
+
         .map iframe {
             width: 100%;
             height: 100%;

@@ -103,20 +103,6 @@
   }
 }
 
-/* Pada layar tablet */
-@media (min-width: 768px) {
-  .logo {
-    width: 20vw;
-  }
-}
-
-/* Pada layar desktop */
-@media (min-width: 1024px) {
-  .logo {
-    width: 10vw;
-  }
-}
-
     .nav-item {
       color: white;
       font-size: 16px;
