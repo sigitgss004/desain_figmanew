@@ -21,16 +21,4 @@ class TentangController extends BaseController
     }
 
 }
-//<?php
 
-namespace App\Models;
-use CodeIgniter\Model;
-
-class TentangModel extends Model {
-    protected $table = 'tentang';
-    protected $primaryKey = 'id';
-    
-    public function getTentangData() {
-        return $this->findAll(); // Ambil semua data jika hanya ada satu baris
-    }
-}

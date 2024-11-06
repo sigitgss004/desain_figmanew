@@ -1,11 +1,12 @@
 <?php
 
 namespace App\Controllers;
+
 use App\Models\BerandaModel;
 use App\Models\TentangModel;
-use App\Models\AktivitasModel; 
+use App\Models\AktivitasModel;
 use App\Models\ProdukModel;
-use App\Models\ArtikelModel;  
+use App\Models\ArtikelModel;
 
 
 class Home extends BaseController
@@ -19,34 +20,28 @@ class Home extends BaseController
         $tentangModel = new TentangModel();
         $data['tentang'] = $tentangModel->first();
 
-        
+
         $aktivitasModel = new AktivitasModel();
         $data['aktivitas'] = $aktivitasModel->first();
 
         $produkModel = new ProdukModel();
         $data['produk'] = $produkModel->first();
-        
+
 
         // var_dump($data);
         // die();
-        
+
         // Kirim data ke view
         return view('Beranda', $data);
-
-    
     }
     public function Tentang(): string
     {
         return view('Tentang');
     }
-     
+
     public function artikel(): string
     {
-        $artikelModel = new ArtikelModel();
-        // Ambil semua data, data akan dikembalikan sebagai object
-        $data['artikel'] = $artikelModel->first();
-
-        return view('Artikel', $data);
+        return view('Artikel');
     }
     public function Artikel1(): string
     {

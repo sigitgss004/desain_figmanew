@@ -1,17 +1,29 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
       font-family: Inter, sans-serif;
+
+      body {
+        overflow-x: hidden;
+      }
+
     }
 
-    .header, .footer {
+    .header,
+    .footer {
       width: 100%;
       height: 80px;
       position: relative;
@@ -22,37 +34,100 @@
       padding: 0 20px;
       box-sizing: border-box;
     }
+
     .footer {
+      width: 100%;
+      text-align: center;
+      /* Pastikan ini mengatur teks agar berada di tengah */
+      padding: 50px 0;
+      /* Tambahkan jarak di atas dan bawah footer */
+      background-color: #4D869C;
+      color: white;
+      margin-top: 100px;
+      /* Tambahkan jarak di atas footer */
+      display: flex;
+      /* Gunakan flexbox */
       justify-content: center;
+      /* Pastikan isi footer berada di tengah */
       align-items: center;
+      /* Vertikal tengah */
     }
+
     .footer-text {
       color: white;
       font-size: 16px;
       font-weight: 400;
       line-height: 21px;
-      letter-spacing: 1.60px;
+      letter-spacing: 1.6px;
     }
+
+    /* Untuk layar kecil (ponsel) */
+    @media (max-width: 576px) {
+      .footer-text {
+        font-size: 12px;
+        line-height: 18px;
+        letter-spacing: 1.2px;
+      }
+    }
+
+    /* Untuk layar sedang (tablet) */
+    @media (min-width: 577px) and (max-width: 768px) {
+      .footer-text {
+        font-size: 14px;
+        line-height: 20px;
+        letter-spacing: 1.4px;
+      }
+    }
+
+    /* Untuk layar besar (desktop) */
+    @media (min-width: 769px) {
+      .footer-text {
+        font-size: 16px;
+        line-height: 21px;
+        letter-spacing: 1.6px;
+      }
+    }
+
     .logo {
-      width: 106px;
-      height: 58px;
-      box-shadow: 0px 4px 4px rgba(0, 0, 0, 0,); /* Bisa disesuaikan */
-      background: none; /* Pastikan tidak ada background */
+      width: 30vw;
+      /* default pada layar kecil */
+      height: auto;
+      max-width: 106px;
     }
+
+    /* Pada layar tablet */
+    @media (min-width: 768px) {
+      .logo {
+        width: 20vw;
+      }
+    }
+
+    /* Pada layar desktop */
+    @media (min-width: 1024px) {
+      .logo {
+        width: 10vw;
+      }
+    }
+
     .nav-item {
       color: white;
       font-size: 16px;
       font-weight: 800;
       margin-left: 20px;
       cursor: pointer;
-      position: relative; /* Perlu untuk efek garis bawah animatif */
-      transition: color 0.3s ease; /* Transisi halus pada perubahan warna */
-      text-decoration: none; /* Menghilangkan garis bawah */
+      position: relative;
+      /* Perlu untuk efek garis bawah animatif */
+      transition: color 0.3s ease;
+      /* Transisi halus pada perubahan warna */
+      text-decoration: none;
+      /* Menghilangkan garis bawah */
 
     }
+
     .nav-item:first-child {
       margin-left: 0;
     }
+
     .nav-item::after {
       content: '';
       position: absolute;
@@ -63,15 +138,20 @@
       left: 0;
       transition: width 0.3s ease;
     }
+
     .nav-item:hover {
-      color: #000000; /* Mengubah warna teks saat hover */
+      color: #000000;
+      /* Mengubah warna teks saat hover */
     }
+
     .nav-item:hover::after {
       width: 100%;
     }
+
     .nav {
       display: flex;
     }
+
     .nav-left {
       margin-left: auto;
     }
@@ -100,6 +180,27 @@
       z-index: 1;
     }
 
+    /* Tablet */
+    @media (max-width: 768px) {
+      .overlay-img {
+        max-height: 300px;
+        /* Mengurangi tinggi gambar */
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .overlay-img {
+        max-height: 200px;
+        /* Mengurangi tinggi gambar lebih lanjut */
+      }
+
+      .overlay-dark {
+        background: rgba(0, 0, 0, 0.4);
+        /* Mengurangi opacity agar teks lebih terbaca di layar kecil */
+      }
+    }
+
     .breadcrumb {
       position: absolute;
       top: 90%;
@@ -115,6 +216,32 @@
       z-index: 2;
     }
 
+    /* Tablet */
+    @media (max-width: 768px) {
+      .breadcrumb {
+        font-size: 18px;
+        /* Mengurangi ukuran font */
+        padding: 8px;
+        /* Mengurangi padding */
+        letter-spacing: 1.5px;
+        /* Menyesuaikan spasi antar huruf */
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .breadcrumb {
+        font-size: 16px;
+        /* Mengurangi ukuran font lebih lanjut */
+        padding: 6px;
+        /* Mengurangi padding lebih lanjut */
+        letter-spacing: 1px;
+        /* Mengurangi spasi antar huruf */
+        top: 85%;
+        /* Menyesuaikan posisi agar terlihat proporsional pada layar kecil */
+      }
+    }
+
     .article-label {
       position: absolute;
       top: 20px;
@@ -126,43 +253,142 @@
       z-index: 2;
     }
 
-    .article-title {
-      text-align: center;
-      color: black;
-      font-size: 30px; /* Ukuran font lebih kecil */
-      font-weight: 600; /* Sedikit kurang tebal */
-      margin-top: 70px;  
-      margin-bottom: 70px; 
-      line-height: 1.2; 
+    /* Tablet */
+    @media (max-width: 768px) {
+      .article-label {
+        font-size: 24px;
+        /* Mengurangi ukuran font */
+        top: 15px;
+        /* Menurunkan jarak dari atas */
+        left: 15px;
+        /* Menurunkan jarak dari kiri */
+      }
     }
 
-  
+    /* Mobile */
+    @media (max-width: 480px) {
+      .article-label {
+        font-size: 18px;
+        /* Mengurangi ukuran font lebih lanjut */
+        top: 10px;
+        /* Menurunkan jarak dari atas */
+        left: 10px;
+        /* Menurunkan jarak dari kiri */
+        letter-spacing: 0.5px;
+        /* Mengurangi spasi antar huruf */
+      }
+    }
+
+    .article-title {
+      text-align: center;
+      color: #4D869C;
+      font-size: 35px;
+      /* Ukuran default */
+      font-weight: 600;
+      margin-top: 70px;
+      margin-bottom: 70px;
+      line-height: 1.2;
+    }
+
+    /* Untuk perangkat yang lebih kecil seperti tablet */
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 28px;
+        /* Ukuran lebih kecil untuk tablet */
+        margin-top: 50px;
+        /* Margin lebih kecil untuk tablet */
+        margin-bottom: 50px;
+      }
+    }
+
+    /* Untuk perangkat yang sangat kecil seperti ponsel */
+    @media (max-width: 480px) {
+      .article-title {
+        font-size: 24px;
+        /* Ukuran lebih kecil untuk ponsel */
+        margin-top: 40px;
+        /* Margin lebih kecil untuk ponsel */
+        margin-bottom: 40px;
+      }
+    }
+
+
+    /* Tablet */
+    @media (max-width: 768px) {
+      .article-title {
+        font-size: 28px;
+        /* Mengurangi ukuran font */
+        margin-top: 50px;
+        /* Mengurangi margin atas */
+        margin-bottom: 50px;
+        /* Mengurangi margin bawah */
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 480px) {
+      .article-title {
+        font-size: 22px;
+        /* Mengurangi ukuran font lebih lanjut */
+        margin-top: 30px;
+        /* Mengurangi margin atas */
+        margin-bottom: 30px;
+        /* Mengurangi margin bawah */
+        line-height: 1.3;
+        /* Menyesuaikan line-height untuk keterbacaan */
+      }
+    }
+
+
     .about-section {
-  position: relative;
-  max-width: 1200px;
-  margin: 200px auto 200px; /* Berikan margin atas lebih besar (150px) */
-  display: flex;
-  padding: 40px 20px;
-  align-items: center;
-  background-color:#4D869C;
-  border-radius: 25px;
-}
+      position: relative;
+      max-width: 1200px;
+      margin: 200px auto 200px;
+      /* Berikan margin atas lebih besar (150px) */
+      display: flex;
+      padding: 40px 20px;
+      align-items: center;
+      background-color: #4D869C;
+      border-radius: 25px;
+    }
 
 
     .about-text {
-      width: 40 %;
+      width: 40%;
       padding-right: 20px;
       font-size: 19px;
-      color: #ffffff  ;
+      color: #ffffff;
       line-height: 1.8;
     }
 
     .profile-img {
-      width: 400px; /* Ukuran gambar sedikit lebih kecil */
+      width: 400px;
+      /* Ukuran default */
       height: 400px;
       object-fit: cover;
-      border-radius: 12px; 
+      border-radius: 12px;
     }
+
+    /* Untuk perangkat yang lebih kecil seperti tablet */
+    @media (max-width: 768px) {
+      .profile-img {
+        width: 300px;
+        /* Mengurangi lebar gambar pada tablet */
+        height: 300px;
+        /* Mengurangi tinggi gambar pada tablet */
+      }
+    }
+
+    /* Untuk perangkat yang sangat kecil seperti ponsel */
+    @media (max-width: 480px) {
+      .profile-img {
+        width: 200px;
+        /* Lebar lebih kecil untuk ponsel */
+        height: 200px;
+        /* Tinggi lebih kecil untuk ponsel */
+      }
+    }
+
 
     .profile-info {
       flex: 1;
@@ -197,23 +423,11 @@
       margin-top: 40px;
     }
 
-    .about-title-container {
-  background-color: #4D869C; 
-  color: white;
-  padding: 20px 40px; 
-  border-radius: 0px 50px 50px 0px; /* Ini akan tetap menjaga radius pada dua sudut */
-  width: 300px; 
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2); 
-  position: absolute; 
-  top: -150px; 
-  left: 900px; /* Tidak diubah, tetap absolut */
-  z-index: 3;
-  overflow: hidden; /* Tambahkan ini untuk memastikan elemen tidak keluar dari area melengkung */
-}
+
 
 
     .about-image {
-      position: relative; 
+      position: relative;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -234,20 +448,21 @@
     }
   </style>
 </head>
+
 <body>
   <div class="container">
     <div class="header">
-    <div class="nav">
-    <a href="http://localhost:8080" class="nav-item">Beranda</a>
-    <a href="http://localhost:8080/tentang" class="nav-item">Tentang</a>
-    <a href="http://localhost:8080/artikel" class="nav-item">Artikel</a>
-    <a href="http://localhost:8080/produk" class="nav-item">Produk</a>
-    <a href="http://localhost:8080/aktivitas" class="nav-item">Aktivitas</a>
-    <a href="http://localhost:8080/kontak" class="nav-item">Kontak</a>
-  </div>
+      <div class="nav">
+        <a href="http://localhost:8080" class="nav-item">Beranda</a>
+        <a href="http://localhost:8080/tentang" class="nav-item">Tentang</a>
+        <a href="http://localhost:8080/artikel" class="nav-item">Artikel</a>
+        <a href="http://localhost:8080/produk" class="nav-item">Produk</a>
+        <a href="http://localhost:8080/aktivitas" class="nav-item">Aktivitas</a>
+        <a href="http://localhost:8080/kontak" class="nav-item">Kontak</a>
+      </div>
       <img class="logo" src="/upload/logo.png" alt="Logo">
     </div>
-    
+
     <!-- Gambar Tepat di Bawah Navbar -->
     <div class="overlay">
       <img class="overlay-img" src="/upload/fotocar.jpg" alt="Gambar Overlay" />
@@ -260,18 +475,15 @@
     <div class="article-title">Kilau Sempurna, Perjalanan Luar Biasa</div>
     <div class="about-section">
       <div class="about-title-container">
-        <h2>Luxe Auto Detail </h2>
+
       </div>
       <div class="about-text">
         <p>
-          Selamat datang di LuxeWash Auto Detail, tempat di mana mobil Anda mendapatkan perawatan terbaik dengan layanan cuci mobil profesional yang berkomitmen untuk memberikan hasil sempurna menggunakan teknologi terkini dan produk ramah lingkungan. Kami memahami bahwa mobil Anda adalah cerminan gaya hidup dan kebanggaan Anda, sehingga kami menawarkan berbagai paket layanan, mulai dari cuci eksterior yang cepat hingga detailing menyeluruh, dengan fokus pada detail dan kepuasan pelanggan, memastikan setiap kendaraan meninggalkan kilauan yang luar bi
-        </p>
-        <p>
-          LuxeWash Auto Detail juga menyediakan layanan home service untuk kenyamanan Anda, sehingga Anda dapat menikmati mobil yang bersih dan terawat tanpa meninggalkan rumah. Kami berkomitmen untuk memberikan layanan terbaik dengan tim profesional yang terlatih dan menggunakan produk berkualitas tinggi.
+          <?= $tentang->deskripsi_tentang ?>
         </p>
       </div>
       <div class="profile-img-wrapper">
-        <img class="profile-img" src="/upload/profiltentang.jpg" alt="Profile Image" />
+        <img class="profile-img" src="/upload/<?= $tentang->img_tentang2; ?>" alt="Profile Image" />
       </div>
     </div>
 
@@ -281,4 +493,5 @@
     </div>
   </div>
 </body>
+
 </html>
