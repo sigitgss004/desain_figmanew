@@ -12,7 +12,10 @@ class ProdukModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['id_produk','title_produk','deskripsi',];
+    protected $allowedFields    = ['id_produk','title_produk','title_img1','img_produk1','deskripsi_produk1',
+'titile_img2','img_produk2','deskripsi_produk2',
+'titile_img3','img_produk3','deskripsi_produk3',
+'titile_img4','img_produk3','deskripsi_produk4',];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

@@ -521,20 +521,20 @@
       <div class="background-box">
         <!-- Konten 1 -->
         <div class="article-box">
-          <img src="/upload/faktivitas1.jpg" alt="Memilih Layanan Car Wash" class="article-img profile-img">
+          <img src="/upload//<?=$aktivitas->img_aktv1?>" alt="Memilih Layanan Car Wash" class="article-img profile-img">
           <div class="article-text">
-            <h3>Pembersihan Harian</h3>
-            <p class="custom-color">Setiap hari, tim profesional kami melakukan pembersihan menyeluruh pada eksterior dan interior kendaraan pelanggan. Aktivitas ini melibatkan pencucian eksterior untuk menghilangkan kotoran dan debu, vakum interior untuk kebersihan kabin, serta...</p>
+            <h3><?=$aktivitas->title_img1?></h3>
+            <p class="custom-color"><?=$aktivitas->deskripsi_1?></p>
             <a href="http://localhost:8080/aktivitas1" class="read-more-btn">Baca Selengkapnya</a>
           </div>
         </div>
 
         <!-- Konten 2 -->
         <div class="article-box">
-          <img src="/upload/faktivitas2.jpg" alt="Detailing Mobil" class="article-img profile-img">
+          <img src="/upload//<?=$aktivitas->img_aktv2?>" alt="Detailing Mobil" class="article-img profile-img">
           <div class="article-text">
-            <h3>Perawatan Berkala</h3>
-            <p class="custom-color"> Kami menawarkan layanan perawatan rutin bagi pelanggan yang ingin menjaga kondisi mobil mereka tetap prima. Aktivitas ini mencakup pencucian mendalam, pembersihan interior yang lebih teliti, dan aplikasi perlindungan seperti waxing atau coating untuk mempertahankan....</p>
+            <h3><?=$aktivitas->title_img2?></h3>
+            <p class="custom-color"><?=$aktivitas->deskripsi_2  ?></p>
             <a href="http://localhost:8080/aktivitas2" class="read-more-btn">Baca Selengkapnya</a>
             </div>
         </div>
@@ -545,20 +545,20 @@
       <div class="background-box">
         <!-- Konten 3 -->
         <div class="article-box">
-          <img src="/upload/faktivitas3.jpg" alt="Membersihkan Mesin Mobil" class="article-img profile-img">
+          <img src="/upload//<?=$aktivitas->img_aktv3?>" alt="Membersihkan Mesin Mobil" class="article-img profile-img">
           <div class="article-text">
-            <h3>Pelatihan Tim dan Pengembangan</h3>
-            <p class="custom-color"> Layanan berkualitas dimulai dari tim yang terampil dan berpengalaman. Kami secara berkala mengadakan pelatihan untuk seluruh staf kami, baik dalam teknik terbaru pencucian, detailing, maupun penggunaan produk yang aman dan ramah lingkungan...</p>
+            <h3><?=$aktivitas->title_img3?></h3>
+            <p class="custom-color"><?=$aktivitas->deskripsi_3?></p>
             <a href="http://localhost:8080/aktivitas3" class="read-more-btn">Baca Selengkapnya</a>
             </div>
         </div>
 
         <!-- Konten 4 -->
         <div class="article-box">
-          <img src="/upload/faktivitas4.jpg" alt="Pembersihan Interior" class="article-img profile-img">
+          <img src="/upload//<?=$aktivitas->img_aktv4?>" alt="Pembersihan Interior" class="article-img profile-img">
           <div class="article-text">
-            <h3>Evaluasi dan Peningkatan Layanan-</h3>
-            <p class="custom-color">Kami menjalankan evaluasi secara rutin untuk menilai kualitas layanan yang kami berikan. Dengan mendengarkan feedback pelanggan dan melakukan analisis internal, kami terus berusaha meningkatkan kualitas layanan kami agar selalu memenuhi  standar tertinggi dan...</p>
+            <h3><?=$aktivitas->title_img4?></h3>
+            <p class="custom-color"><?=$aktivitas->deskripsi_4?></p>
             <a href="http://localhost:8080/aktivitas4" class="read-more-btn">Baca Selengkapnya</a>
             </div>
         </div>

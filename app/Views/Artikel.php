@@ -517,54 +517,50 @@
     <!-- Judul Artikel -->
     <div class="article-title">Artikel Kami</div>
 
-    <!-- Kotak Artikel dengan 2 Konten -->
-    <div class="article-wrapper">
-      <div class="background-box">
-        <!-- Konten 1 -->
-        <div class="article-box">
-          <img src="/upload/<?= $artikel->img_art1?>" alt="Memilih Layanan Car Wash" class="article-img profile-img">
-          <div class="article-text">
-            <h3><?= $artikel->title_art1?></h3>
-            <p class="custom-color"><?= $artikel->deskripsi_art1?></p>
-            <a href="http://localhost:8080/artikel1" class="read-more-btn">Baca Selengkapnya</a>
-          </div>
-        </div>
+    <div class="main-wrapper">
+    <?php 
+    $counter = 0;
+    foreach ($artikeldata as $artikel): 
+        // Memulai wrapper baru setiap dua artikel
+        if ($counter % 2 === 0): ?>
+            <div class="article-wrapper">
+                <div class="background-box">
+        <?php endif; ?>
 
-        <!-- Konten 2 -->
-        <div class="article-box">
-          <img src="/upload/<?= $artikel->img_art2?>" alt="Detailing Mobil" class="article-img profile-img">
-          <div class="article-text">
-            <h3><?= $artikel->title_art2?></h3>
-            <p class="custom-color"> <?= $artikel->deskripsi_art2?></p>
-            <a href="http://localhost:8080/artikel2" class="read-more-btn">Baca Selengkapnya</a>
-          </div>
-        </div>
-      </div>
-    </div>
+                <!-- Kotak Artikel -->
+                <div class="article-box">
+                    <img src="/upload/<?= $artikel->img_artikel ?>" alt="<?= $artikel->title_artikel ?>" class="article-img profile-img">
+                    <div class="article-text">
+                        <h3><?= $artikel->title_artikel ?></h3>
+                        <p class="custom-color">
+                            <?php 
+                            $deskripsi_pendek = substr($artikel->deskripsi_artikel, 0, 200);
+                            echo strlen($artikel->deskripsi_artikel) > 200 ? $deskripsi_pendek . '...' : $deskripsi_pendek;
+                            ?>
+                        </p>
+                        <a href="" class="read-more-btn">Baca Selengkapnya</a>
+                    </div>
+                </div>
 
-    <div class="article-wrapper">
-      <div class="background-box">
-        <!-- Konten 3 -->
-        <div class="article-box">
-          <img src="/upload/<?= $artikel->img_art3?>" alt="Membersihkan Mesin Mobil" class="article-img profile-img">
-          <div class="article-text">
-            <h3><?= $artikel->title_art3?></h3>
-            <p class="custom-color"><?= $artikel->deskripsi_art3?></p>
-            <a href="http://localhost:8080/artikel3" class="read-more-btn">Baca Selengkapnya</a>
-          </div>
-        </div>
+        <?php 
+        $counter++;
+        // Menutup wrapper setelah dua artikel
+        if ($counter % 2 === 0): ?>
+                </div>
+            </div>
+        <?php endif; ?>
+    <?php endforeach; ?>
 
-        <!-- Konten 4 -->
-        <div class="article-box">
-          <img src="/upload/<?= $artikel->img_art4 ?>" alt="Pembersihan Interior" class="article-img profile-img">
-          <div class="article-text">
-            <h3><?= $artikel->title_art4?></h3>
-            <p class="custom-color"><?= $artikel->deskripsi_art4?></p>
-            <a href="http://localhost:8080/artikel4" class="read-more-btn">Baca Selengkapnya</a>
-          </div>
+    <!-- Menutup wrapper jika ada sisa satu artikel yang belum tertutup -->
+    <?php if ($counter % 2 !== 0): ?>
+            </div>
         </div>
-      </div>
-    </div>
+    <?php endif; ?>
+</div>
+
+
+
+   
 
     <!-- Footer -->
     <div class="footer">

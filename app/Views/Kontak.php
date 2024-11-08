@@ -382,31 +382,15 @@
         <div class="contact-container">
             <div class="contact-info">
                 <h2>Kontak Kami</h2>
-                <p>Kami selalu siap membantu Anda! Untuk informasi lebih lanjut mengenai layanan kami, jadwal, atau jika Anda memiliki pertanyaan, jangan ragu untuk menghubungi kami melalui berbagai saluran komunikasi di bawah ini.</p>
+                <p><?= $kontak->kontak_kami?></p>
                 <h3>Informasi Kontak:</h3>
                 <ul>
-                    <li>Alamat: Jl. Raya Bersih No. 123, Jakarta, Indonesia</li>
-                    <li>Telepon: (021) 1234-5678</li>
-                    <li>Email: info@LuxeWashAutoDetail.com</li>
-                    <li>Jam Operasional:
-                        <ul>
-                            <li>Senin - Jumat: 08.00 - 18.00</li>
-                            <li>Sabtu: 08.00 - 16.00</li>
-                            <li>Minggu: Tutup</li>
-                        </ul>
-                    </li>
-                </ul>
+                    <li><?=$kontak->info_kontak?></li>
                 <h3>Formulir Kontak:</h3>
-                <p>Jika Anda ingin mengirimkan pertanyaan atau permintaan secara online, silakan isi formulir di bawah ini, dan kami akan merespons secepatnya:</p>
-                <ul>
-                    <li>Nama: [input field]</li>
-                    <li>Email: [input field]</li>
-                    <li>Telepon: [input field]</li>
-                    <li>Pesan: [textarea for message]</li>
-                </ul>
+                <p><?=$kontak->form_kontak?></p>
             </div>
             <div class="map">
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d126915.5695500731!2d112.545083!3d-7.977778!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2dd629b1b1b1b1b1%3A0x1b1b1b1b1b1b1b1b!2sMalang%2C%20East%20Java%2C%20Indonesia!5e0!3m2!1sen!2sid!4v1633072800000!5m2!1sen!2sid" allowfullscreen="" loading="lazy"></iframe>
+                <iframe src=<?=$kontak->maps_kontak?> allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </div>

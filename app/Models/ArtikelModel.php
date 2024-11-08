@@ -12,7 +12,10 @@ class ArtikelModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['title_art1','deskripsi_art1','img_art1','title_art2','deskripsi_art2','img_art2','title_art13','deskripsi_art3','img_art3','title_art4','deskripsi_art4','img_art4',];
+    protected $allowedFields    = ['title_art1','deskripsi_art1','img_art1',
+    'title_art2','deskripsi_art2','img_art2',
+    'title_art13','deskripsi_art3','img_art3',
+    'title_art4','deskripsi_art4','img_art4',];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;
