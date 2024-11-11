@@ -12,7 +12,7 @@ class DataAktivitasModel extends Model
     protected $returnType       = 'object';
     protected $useSoftDeletes   = false;
     protected $protectFields    = true;
-    protected $allowedFields    = ['title_produk','deskripsi_produk','img_produk',];
+    protected $allowedFields    = ['title_produk','slug','deskripsi_produk','img_produk',];
 
     protected bool $allowEmptyInserts = false;
     protected bool $updateOnlyChanged = true;

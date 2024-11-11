@@ -19,11 +19,28 @@ class ProdukController extends BaseController
 
         $produkDataModel = new DataProdukModel();
 
+        $dataprodukmodel = new DataProdukModel();
+
         $data['produkdata'] = $produkDataModel->findAll();
 
         
          
          // Kirim data ke view
-         return view('Produk', $data);
+         return view('Produk/index', $data);
+    }
+
+    public function detail($slug)
+    {
+        // Menampilkan detail produk berdasarkan slug
+        $produkModel = new DataProdukModel();
+        $produk = $produkModel->where('slug', $slug)->first(); // Mengambil produk berdasarkan slug
+
+        if (!$produk) {
+            throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(); // Jika produk tidak ditemukan
+        }
+        $data['produk'] = $produk;
+        return view('produk/detail', ['produk' => $produk]);
     }
 }
+
+

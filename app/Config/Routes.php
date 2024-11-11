@@ -14,14 +14,16 @@ $routes->get('artikel1', 'Home::artikel1');
 $routes->get('artikel2', 'Home::artikel2');
 $routes->get('artikel3', 'Home::artikel3');
 $routes->get('artikel4', 'Home::artikel4');
-$routes->get('produk', 'ProdukController::index');
-$routes->get('produk1', 'Home::produk1');
-$routes->get('produk2', 'Home::produk2');
-$routes->get('produk3', 'Home::produk3');
-$routes->get('produk4', 'Home::produk4');
+$routes->get('produk', 'ProdukController::index'); // Untuk halaman daftar produk
+$routes->get('produk/(:segment)', 'ProdukController::detail/$1'); // Untuk halaman detail produk berdasarkan slug
+// $routes->get('produk1', 'Home::produk1');
+// $routes->get('produk2', 'Home::produk2');
+// $routes->get('produk3', 'Home::produk3');
+// $routes->get('produk4', 'Home::produk4');
 $routes->get('aktivitas', 'AktivitasController::index');
-$routes->get('aktivitas1', 'Home::aktivitas1');
-$routes->get('aktivitas2', 'Home::aktivitas2');
-$routes->get('aktivitas3', 'Home::aktivitas3');
-$routes->get('aktivitas4', 'Home::aktivitas4');
+$routes->get('aktivitas/(:segment)', 'AktivitasController::detail/$1');
+// $routes->get('aktivitas1', 'Home::aktivitas1');
+// $routes->get('aktivitas2', 'Home::aktivitas2');
+// $routes->get('aktivitas3', 'Home::aktivitas3');
+// $routes->get('aktivitas4', 'Home::aktivitas4');
 $routes->get('kontak', 'KontakController::index');
