@@ -10,10 +10,11 @@ use CodeIgniter\Router\RouteCollection;
 $routes->get('/', 'Home::index');
 $routes->get('tentang', 'TentangController::index');
 $routes->get('artikel', 'ArtikelController::index');
-$routes->get('artikel1', 'Home::artikel1');
-$routes->get('artikel2', 'Home::artikel2');
-$routes->get('artikel3', 'Home::artikel3');
-$routes->get('artikel4', 'Home::artikel4');
+$routes->get('artikel/(:segment)', 'ArtikelController::detail/$1');
+// $routes->get('artikel1', 'Home::artikel1');
+// $routes->get('artikel2', 'Home::artikel2');
+// $routes->get('artikel3', 'Home::artikel3');
+// $routes->get('artikel4', 'Home::artikel4');
 $routes->get('produk', 'ProdukController::index'); // Untuk halaman daftar produk
 $routes->get('produk/(:segment)', 'ProdukController::detail/$1'); // Untuk halaman detail produk berdasarkan slug
 // $routes->get('produk1', 'Home::produk1');
