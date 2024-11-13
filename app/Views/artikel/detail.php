@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-     body {
+    body {
       margin: 0;
       padding: 0;
       font-family: Inter, sans-serif;
@@ -361,7 +361,7 @@
     <div class="overlay">
       <img class="overlay-img" src="/upload/fotocar.jpg" alt="Gambar Overlay" />
       <div class="overlay-dark"></div>
-      <div class="breadcrumb">Beranda / Produk</div>
+      <div class="breadcrumb">Beranda / Artikel</div>
       <div class="article-label">Produk Kami</div>
     </div>
 
@@ -369,13 +369,11 @@
     <div class="article-title">LuxeWash Auto Detail</div>
     <div class="article-section">
       <div class="profile-img-wrapper">
-        <img class="profile-img" src="/upload/<?=$produk->img_produk?>" alt="Profile Image" />
+        <img class="profile-img" src="/upload/<?=$artikel->img_artikel?>" alt="Profile Image" />
       </div>
       <div class="profile-info">
-      <h2 style="font-size: 30px; font-weight: 700; margin-left: 50px; margin-top: -10px;"><?=$produk->title_produk?></h2>
-    <p class="article-content">
-    <?=$produk->deskripsi_produk?></div>
-        </p>
+      <h2 style="font-size: 30px; font-weight: 700; margin-left: 50px; margin-top: -10px;"><?=$artikel->title_artikel?></h2>
+    <p class="article-content"><?=$artikel->deskripsi_artikel?></p>
       </div>
     </div>
   <div class="footer">
