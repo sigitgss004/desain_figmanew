@@ -37,15 +37,42 @@
     }
 
     .footer {
-      text-align: center;
-      padding: 50px 0;
-      background-color: #4D869C;
-      color: white;
-      margin-top: 100px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
+  text-align: center;
+  padding: 50px 0;
+  background-color: #4D869C;
+  color: white;
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .footer {
+    padding: 40px 10px; /* Kurangi padding di tablet */
+    margin-top: 80px; /* Kurangi margin di tablet */
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 576px) {
+  .footer {
+    padding: 30px 5px; /* Kurangi padding lebih jauh untuk mobile landscape */
+    margin-top: 60px; /* Kurangi margin di mobile landscape */
+    flex-direction: column; /* Stack content vertically pada layar kecil */
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 320px) {
+  .footer {
+    padding: 20px 5px; /* Padding minimum untuk mobile portrait */
+    margin-top: 40px; /* Margin lebih kecil untuk mobile portrait */
+    font-size: 14px; /* Sesuaikan font agar tidak terlalu besar */
+  }
+}
+
 
     .footer-text {
     color: white;
@@ -102,32 +129,64 @@
   }
 }
 
-    .nav-item {
-      color: white;
-      font-size: 16px;
-      font-weight: 800;
-      margin-left: 20px;
-      cursor: pointer;
-      position: relative;
-      transition: color 0.3s ease;
-      text-decoration: none;
-    }
+.nav-item {
+  color: white;
+  font-size: 16px;
+  font-weight: 800;
+  margin-left: 20px;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
 
-    .nav-item:first-child {
-      margin-left: 0;
-    }
+.nav-item:first-child {
+  margin-left: 0;
+}
 
-    .nav-item:hover {
-      color: #000000;
-    }
+.nav-item:hover {
+  color: #000000;
+}
 
-    .nav {
-      display: flex;
-    }
+.nav {
+  display: flex;
+  align-items: center;
+}
 
-    .nav-left {
-      margin-left: auto;
-    }
+/* Atur navigasi kiri untuk tetap di kanan */
+.nav-left {
+  margin-left: auto;
+}
+
+/* Responsif untuk tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .nav-item {
+    font-size: 14px; /* Sesuaikan ukuran font untuk layar tablet */
+    margin-left: 15px; /* Kurangi jarak antar-item */
+  }
+}
+
+/* Responsif untuk layar ponsel besar (max-width: 576px) */
+@media (max-width: 576px) {
+  .nav-item {
+    font-size: 12px; /* Ukuran font lebih kecil untuk ponsel */
+    margin-left: 10px; /* Jarak antar-item lebih kecil */
+  }
+  .nav {
+    flex-direction: column; /* Susun item navigasi secara vertikal pada layar kecil */
+    align-items: flex-start; /* Rata kiri untuk tampilan yang lebih alami */
+    padding: 10px; /* Tambahkan padding untuk spasi */
+  }
+}
+
+/* Responsif untuk layar ponsel kecil (max-width: 320px) */
+@media (max-width: 320px) {
+  .nav-item {
+    font-size: 10px; /* Ukuran font minimum agar tetap terbaca */
+    margin-left: 5px; /* Minimal jarak antar-item */
+  }
+}
+
 
     .overlay {
   width: 100vw; /* Tetap full width */
@@ -189,14 +248,52 @@
   }
 }
 
+/* Tambahkan untuk layar ponsel kecil, maksimal 320px */
+@media (max-width: 320px) {
+  .car-img {
+    max-width: 100%; /* Tetap full width untuk layar ponsel yang sangat kecil */
+    padding: 0 10px; /* Opsional: tambahkan padding untuk mencegah gambar menempel ke tepi */
+  }
+}
 
 
-    .text-box {
-      color: #000;
-      padding-left: 20px;
-      background-color: rgba(255, 255, 255, 0.8); /* Semi-transparent background for readability */
-      border-radius: 10px; /* Rounded corners for aesthetics */
-    }
+
+
+.text-box {
+  color: #000;
+  padding: 20px; /* Padding default untuk layar besar */
+  background-color: rgba(255, 255, 255, 0.8); /* Latar semi-transparan untuk keterbacaan */
+  border-radius: 10px; /* Sudut membulat untuk estetika */
+  font-size: 16px; /* Ukuran font default */
+}
+
+/* Responsif untuk layar tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .text-box {
+    padding: 15px; /* Kurangi padding untuk layar tablet */
+    font-size: 14px; /* Ukuran font sedikit lebih kecil untuk tablet */
+    border-radius: 8px; /* Kurangi border-radius agar proporsional di layar kecil */
+  }
+}
+
+/* Responsif untuk layar ponsel besar (max-width: 576px) */
+@media (max-width: 576px) {
+  .text-box {
+    padding: 10px; /* Kurangi padding lebih lanjut untuk ponsel besar */
+    font-size: 12px; /* Ukuran font lebih kecil agar mudah dibaca di layar kecil */
+    border-radius: 6px; /* Border-radius lebih kecil agar sesuai */
+  }
+}
+
+/* Responsif untuk layar ponsel kecil (max-width: 320px) */
+@media (max-width: 320px) {
+  .text-box {
+    padding: 8px; /* Padding minimum untuk layar kecil */
+    font-size: 10px; /* Ukuran font minimum agar tetap terbaca */
+    border-radius: 4px; /* Border-radius minimal untuk tampilan yang rapi */
+  }
+}
+
 
     .centered-text {
   width: 100%;
@@ -244,15 +341,47 @@
 
 
 
-    .text-overlay {
+.text-overlay {
   position: absolute;
   top: 60%;
-  right: 150px; /* Lebih mendekatkan teks ke tepi */
+  right: 150px; /* Default jarak dari tepi kanan */
   transform: translateY(-50%);
   text-align: right;
   color: #000;
   z-index: 2;
 }
+
+/* Responsif untuk tablet (max-width: 768px) */
+@media (max-width: 768px) {
+  .text-overlay {
+    right: 50px; /* Dekatkan teks ke tengah untuk tablet */
+    font-size: 14px; /* Ukuran font lebih kecil untuk layar tablet */
+    top: 50%; /* Sesuaikan posisi vertikal */
+  }
+}
+
+/* Responsif untuk layar ponsel besar (max-width: 576px) */
+@media (max-width: 576px) {
+  .text-overlay {
+    right: 20px; /* Lebih dekat ke tepi pada layar kecil */
+    font-size: 12px; /* Ukuran font lebih kecil untuk ponsel besar */
+    text-align: center; /* Center text alignment for better readability */
+    top: 55%; /* Adjust vertical position */
+    width: 80%; /* Control width to avoid overflow */
+  }
+}
+
+/* Responsif untuk layar ponsel kecil (max-width: 320px) */
+@media (max-width: 320px) {
+  .text-overlay {
+    right: 10px; /* Paling dekat ke tepi untuk layar sangat kecil */
+    font-size: 10px; /* Ukuran font minimum untuk keterbacaan */
+    top: 50%; /* Pusatkan posisi vertikal */
+    text-align: center; /* Teks rata tengah untuk tampilan lebih rapi */
+    width: 90%; /* Lebar hampir penuh untuk keterbacaan */
+  }
+}
+
 
 
 .title-highlight {
@@ -295,53 +424,229 @@
 
 
 .title-carwash {
-  font-size: 100px;
+  font-size: 100px; /* Ukuran default untuk layar besar */
   font-weight: bold;
   margin: 10px;
   color: #000;
   word-spacing: 0px;
   position: relative;
-  top: 30px; /* Geser teks ke bawah */
+  top: 30px; /* Geser teks sedikit ke bawah */
+}
+
+/* Responsif untuk layar desktop kecil (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .title-carwash {
+    font-size: 80px; /* Ukuran font lebih kecil untuk layar desktop kecil */
+    top: 25px; /* Sesuaikan top agar tetap proporsional */
+  }
+}
+
+/* Responsif untuk layar tablet (max-width: 992px) */
+@media (max-width: 992px) {
+  .title-carwash {
+    font-size: 60px; /* Ukuran font lebih kecil untuk tablet */
+    top: 20px; /* Kurangi top agar teks tetap di tengah */
+    margin: 5px; /* Kurangi margin untuk menambah ruang */
+  }
+}
+
+/* Responsif untuk layar tablet kecil dan ponsel besar (max-width: 768px) */
+@media (max-width: 768px) {
+  .title-carwash {
+    font-size: 40px; /* Ukuran font lebih kecil untuk ponsel besar dan tablet kecil */
+    top: 15px; /* Kurangi top agar tetap proporsional */
+    margin: 5px; /* Sesuaikan margin untuk layar kecil */
+  }
+}
+
+/* Responsif untuk layar ponsel (max-width: 576px) */
+@media (max-width: 576px) {
+  .title-carwash {
+    font-size: 30px; /* Ukuran font lebih kecil untuk ponsel */
+    top: 10px; /* Sesuaikan top untuk layar kecil */
+    margin: 3px; /* Margin minimal */
+  }
+}
+
+/* Responsif untuk layar ponsel kecil (max-width: 320px) */
+@media (max-width: 320px) {
+  .title-carwash {
+    font-size: 24px; /* Ukuran font paling kecil untuk keterbacaan di layar kecil */
+    top: 5px; /* Top minimum agar tetap terlihat rapi */
+    margin: 2px; /* Margin minimal untuk layar kecil */
+  }
 }
 
 
+
 .description {
-  font-size: 20px;
+  font-size: 20px; /* Ukuran font default untuk layar besar */
   font-weight: normal;
   margin: 10px 0;
   color: #000;
-  word-spacing: 30px;
+  word-spacing: 30px; /* Spasi kata default */
   position: relative;
   top: 40px; /* Geser teks ke bawah */
   left: 0px; /* Geser teks ke kiri */
 }
 
+/* Responsif untuk layar desktop kecil (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .description {
+    font-size: 18px; /* Ukuran font sedikit lebih kecil */
+    word-spacing: 25px; /* Kurangi jarak antar kata */
+    top: 35px; /* Sesuaikan posisi vertikal */
+  }
+}
 
-    .text-box-about {
-      width: 50%;
-      padding: 30px;
-      background-color: #BFE1F2; /* Ubah warna menjadi putih agar kontras dengan latar belakang biru */
-      border-radius: 20px 0 0 20px;
-    }
+/* Responsif untuk layar tablet (max-width: 992px) */
+@media (max-width: 992px) {
+  .description {
+    font-size: 16px; /* Ukuran font lebih kecil untuk tablet */
+    word-spacing: 20px; /* Kurangi spasi kata */
+    top: 30px; /* Sesuaikan posisi vertikal */
+  }
+}
 
-    .text-box-about h2 {
-      font-size: 1.5rem;
-      color: #2a4d69;
-      margin-bottom: 10px;
-    }
+/* Responsif untuk layar tablet kecil dan ponsel besar (max-width: 768px) */
+@media (max-width: 768px) {
+  .description {
+    font-size: 14px; /* Ukuran font lebih kecil untuk ponsel besar dan tablet kecil */
+    word-spacing: 15px; /* Kurangi spasi kata */
+    top: 20px; /* Sesuaikan posisi vertikal */
+    margin: 8px 0; /* Kurangi margin */
+  }
+}
 
-    .text-box-about h1 {
-      font-size: 2rem;
-      color: #333;
-      margin-bottom: 20px;
-    }
+/* Responsif untuk layar ponsel (max-width: 576px) */
+@media (max-width: 576px) {
+  .description {
+    font-size: 12px; /* Ukuran font lebih kecil untuk ponsel */
+    word-spacing: 10px; /* Lebih rapat antar kata */
+    top: 15px; /* Kurangi top */
+    margin: 5px 0; /* Kurangi margin lebih lanjut */
+  }
+}
 
-    .text-box-about p {
-      font-size: 1rem;
-      line-height: 1.8;
-      color: #555;
-      margin-bottom: 20px;
-    }
+/* Responsif untuk layar ponsel kecil (max-width: 320px) */
+@media (max-width: 320px) {
+  .description {
+    font-size: 10px; /* Ukuran font lebih kecil agar tetap terbaca */
+    word-spacing: 5px; /* Spasi kata minimal */
+    top: 10px; /* Sesuaikan posisi vertikal */
+    margin: 3px 0; /* Margin minimal */
+  }
+}
+
+
+
+.text-box-about {
+  width: 50%; /* Lebar 50% untuk layar besar */
+  padding: 30px;
+  background-color: #BFE1F2; /* Warna latar belakang */
+  border-radius: 20px 0 0 20px;
+}
+
+/* Responsif untuk layar desktop kecil (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .text-box-about {
+    width: 60%; /* Lebar sedikit lebih besar di layar desktop kecil */
+    padding: 25px; /* Sesuaikan padding */
+  }
+
+  .text-box-about h2 {
+    font-size: 1.4rem; /* Ukuran font h2 sedikit lebih kecil */
+  }
+
+  .text-box-about h1 {
+    font-size: 1.8rem; /* Ukuran font h1 sedikit lebih kecil */
+  }
+
+  .text-box-about p {
+    font-size: 0.95rem; /* Ukuran font paragraf sedikit lebih kecil */
+  }
+}
+
+/* Responsif untuk tablet (max-width: 992px) */
+@media (max-width: 992px) {
+  .text-box-about {
+    width: 70%; /* Lebar lebih besar untuk tablet */
+    padding: 20px; /* Padding lebih kecil */
+  }
+
+  .text-box-about h2 {
+    font-size: 1.3rem; /* Ukuran font h2 lebih kecil untuk tablet */
+  }
+
+  .text-box-about h1 {
+    font-size: 1.6rem; /* Ukuran font h1 lebih kecil */
+  }
+
+  .text-box-about p {
+    font-size: 0.9rem; /* Ukuran font lebih kecil */
+  }
+}
+
+/* Responsif untuk layar tablet kecil dan ponsel besar (max-width: 768px) */
+@media (max-width: 768px) {
+  .text-box-about {
+    width: 80%; /* Lebar lebih besar untuk tablet kecil dan ponsel besar */
+    padding: 15px; /* Padding lebih kecil */
+  }
+
+  .text-box-about h2 {
+    font-size: 1.2rem; /* Ukuran font h2 lebih kecil */
+  }
+
+  .text-box-about h1 {
+    font-size: 1.4rem; /* Ukuran font h1 lebih kecil */
+  }
+
+  .text-box-about p {
+    font-size: 0.85rem; /* Ukuran font lebih kecil */
+  }
+}
+
+/* Responsif untuk layar ponsel (max-width: 576px) */
+@media (max-width: 576px) {
+  .text-box-about {
+    width: 90%; /* Lebar hampir penuh untuk ponsel */
+    padding: 10px; /* Padding lebih kecil */
+  }
+
+  .text-box-about h2 {
+    font-size: 1.1rem; /* Ukuran font h2 lebih kecil */
+  }
+
+  .text-box-about h1 {
+    font-size: 1.2rem; /* Ukuran font h1 lebih kecil */
+  }
+
+  .text-box-about p {
+    font-size: 0.8rem; /* Ukuran font lebih kecil untuk ponsel */
+  }
+}
+
+/* Responsif untuk layar ponsel kecil (max-width: 320px) */
+@media (max-width: 320px) {
+  .text-box-about {
+    width: 95%; /* Lebar penuh untuk ponsel kecil */
+    padding: 8px; /* Padding minimal */
+  }
+
+  .text-box-about h2 {
+    font-size: 1rem; /* Ukuran font h2 lebih kecil */
+  }
+
+  .text-box-about h1 {
+    font-size: 1.1rem; /* Ukuran font h1 lebih kecil */
+  }
+
+  .text-box-about p {
+    font-size: 0.75rem; /* Ukuran font lebih kecil untuk ponsel kecil */
+  }
+}
+
 
     .read-more-btn {
       display: inline-block;
@@ -476,6 +781,19 @@
     width: 100%; /* Tetap 100% untuk layar ponsel */
   }
 }
+
+/* Tambahkan untuk layar ponsel kecil, maksimal 320px */
+@media (max-width: 320px) {
+  .about-image {
+    width: 100%; /* Memastikan kontainer gambar penuh untuk layar kecil */
+  }
+
+  .about-image img {
+    width: 100%; /* Penuhi lebar kontainer untuk layar yang sangat kecil */
+    border-radius: 5px; /* Sudut sedikit lebih kecil agar lebih rapi */
+  }
+}
+
   
 
     @media (max-width: 768px) {
@@ -494,9 +812,32 @@
         padding: 20px; /* Added padding for better mobile readability */
       }
 
-      .title-highlight {
-        font-size: 30px; /* Ukuran font "HighLight of" untuk mobile */
-      }
+/* Default untuk layar desktop besar */
+.title-highlight {
+  font-size: 36px; /* Ukuran font default untuk layar besar */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .title-highlight {
+    font-size: 28px; /* Ukuran font untuk tablet */
+  }
+}
+
+/* Mobile landscape */
+@media (max-width: 576px) {
+  .title-highlight {
+    font-size: 24px; /* Ukuran font untuk mobile landscape */
+  }
+}
+
+/* Mobile portrait */
+@media (max-width: 400px) {
+  .title-highlight {
+    font-size: 20px; /* Ukuran font untuk mobile portrait */
+  }
+}
+
 
       .title-carwash {
         font-size: 36px; /* Ukuran font "Car Wash" untuk mobile */
