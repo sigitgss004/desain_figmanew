@@ -66,10 +66,20 @@
         letter-spacing: 1.6px;
     }
 }
+.logo-container {
+  display: flex; /* Menggunakan flexbox */
+  justify-content: flex-end; /* Mengatur konten ke kanan */
+  align-items: center; /* Menyelaraskan secara vertikal */
+  width: 100%; /* Lebar penuh */
+  padding: 0 20px; /* Padding untuk jarak */
+  box-sizing: border-box; /* Memastikan padding dihitung dalam lebar */
+}
+
 .logo {
-  width: 30vw; /* default pada layar kecil */
+  width: 30vw; /* Default pada layar kecil */
   height: auto;
   max-width: 106px;
+  margin-left: auto; /* Mendorong logo ke kanan */
 }
 
 /* Pada layar tablet */
@@ -85,6 +95,7 @@
     width: 10vw;
   }
 }
+
     .nav-item {
       color: white;
       font-size: 16px;
@@ -129,12 +140,84 @@
   width: 100%;
 }
 
-    .nav {
-      display: flex;
+/* Default: Tampilan Desktop */
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.nav-left {
+    margin-left: auto;
+}
+
+.nav-toggler {
+    display: none; /* Tersembunyi di desktop */
+}
+
+/* Navigasi default untuk layar besar */
+.nav {
+    display: flex; /* Susunan horizontal */
+    justify-content: flex-start; /* Menu mulai dari kiri */
+    gap: 20px; /* Jarak antar item menu */
+}
+
+/* Navigasi saat toggler diaktifkan, hanya untuk layar kecil */
+@media (max-width: 768px) {
+    .nav.active {
+        display: flex;
+        flex-direction: column; /* Susunan vertikal */
+        align-items: flex-start; /* Posisi item menu ke kiri */
+        justify-content: flex-start;
+        position: absolute;
+        top: 0;
+        left: 0; /* Menu dimulai dari sisi kiri layar */
+        background-color: #4D869C; /* Warna latar belakang menu */
+        width: 250px; /* Lebar menu */
+        max-height: 300px; /* Membatasi tinggi menu */
+        overflow-y: auto; /* Scroll jika konten lebih tinggi */
+        z-index: 1000;
+        padding: 90px; /* Ruang dalam menu */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Efek bayangan */
+        border-radius: 0 10px 10px 0; /* Sudut melengkung di sisi kanan */
     }
-    .nav-left {
-      margin-left: auto;
+}
+
+
+    .nav-item {
+        margin: 10px 20px; /* Jarak antar item */
+        width: 100%; /* Lebar penuh */
+        text-align: left; /* Rata kiri */
+        padding: 10px 20px;
+        box-sizing: border-box;
     }
+
+.nav-toggler {
+    display: block; /* Tampilkan toggler */
+    background-color: transparent;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    left: 20px; /* Memindahkan ke kiri */
+    z-index: 1001; /* Tetap di atas elemen lain */
+}
+
+
+/* Tambahkan transisi halus untuk menu */
+.nav {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Hover efek */
+.nav-item:hover {
+    background-color: #3B6A85; /* Warna latar belakang saat hover */
+    color: #FFF;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
 
     .overlay {
       width: 100%;
@@ -373,11 +456,12 @@
     <div class="overlay">
       <img class="overlay-img" src="/upload/fotocar.jpg" alt="Gambar Overlay" />
       <div class="overlay-dark"></div>
-      <div class="breadcrumb">Kontak / Artikel</div>
+      <div class="breadcrumb">Beranda / Kontak</div>
       <div class="article-label">Kontak Kami</div>
     </div>
 
     <div class="content">
+    <button class="nav-toggler">☰</button>
         <h1>KONTAK KAMI</h1>
         <div class="contact-container">
             <div class="contact-info">
@@ -399,5 +483,32 @@
     </div>
   </div>
 </body>
+<script>// Tunggu DOM selesai dimuat
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.querySelector('.nav-toggler');
+    const navMenu = document.querySelector('.nav');
+
+    // Event klik pada toggler
+    toggleButton.addEventListener('click', function () {
+        navMenu.classList.toggle('active'); // Tampilkan atau sembunyikan menu
+
+        // Ubah ikon toggler (contoh dari ☰ ke ✕)
+        if (navMenu.classList.contains('active')) {
+            toggleButton.innerHTML = '✕';
+        } else {
+            toggleButton.innerHTML = '☰';
+        }
+    });
+
+    // Menutup menu saat item diklik (opsional)
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('click', function () {
+            navMenu.classList.remove('active'); // Sembunyikan menu
+            toggleButton.innerHTML = '☰'; // Reset ikon toggler
+        });
+    });
+});
+</script>
 </html>
           
