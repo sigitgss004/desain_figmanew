@@ -96,127 +96,94 @@
   }
 }
 
-    .nav-item {
-      color: white;
-      font-size: 16px;
-      font-weight: 800;
-      margin-left: 20px;
-      cursor: pointer;
-    }
-    .nav-item {
-  color: white;
-  font-size: 16px;
-  font-weight: 800;
-  margin-left: 20px;
-  cursor: pointer;
-  position: relative; /* Perlu untuk efek garis bawah animatif */
-  transition: color 0.3s ease; /* Transisi halus pada perubahan warna */
-  text-decoration: none; /* Menghilangkan garis bawah */
-
-}
-
-.nav-item:first-child {
-  margin-left: 0;
-}
-
-/* Efek hover: warna berubah dan garis bawah muncul */
-.nav-item::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 3px;
-  background-color: white;
-  bottom: -6px;
-  left: 0;
-  transition: width 0.3s ease;
-}
-
-.nav-item:hover {
-  color: #000000; /* Mengubah warna teks saat hover, misalnya menjadi emas */
-}
-
-/* Animasi garis bawah melebar saat hover */
-.nav-item:hover::after {
-  width: 100%;
-}
-
 /* Default: Tampilan Desktop */
 .nav {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-}
-
-.nav-left {
-    margin-left: auto;
-}
-
-.nav-toggler {
-    display: none; /* Tersembunyi di desktop */
-}
-
-/* Navigasi default untuk layar besar */
-.nav {
-    display: flex; /* Susunan horizontal */
-    justify-content: flex-start; /* Menu mulai dari kiri */
     gap: 20px; /* Jarak antar item menu */
 }
 
-/* Navigasi saat toggler diaktifkan, hanya untuk layar kecil */
-@media (max-width: 768px) {
-    .nav.active {
-        display: flex;
-        flex-direction: column; /* Susunan vertikal */
-        align-items: flex-start; /* Posisi item menu ke kiri */
-        justify-content: flex-start;
-        position: absolute;
-        top: 0;
-        left: 0; /* Menu dimulai dari sisi kiri layar */
-        background-color: #4D869C; /* Warna latar belakang menu */
-        width: 250px; /* Lebar menu */
-        max-height: 300px; /* Membatasi tinggi menu */
-        overflow-y: auto; /* Scroll jika konten lebih tinggi */
-        z-index: 1000;
-        padding: 90px; /* Ruang dalam menu */
-        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2); /* Efek bayangan */
-        border-radius: 0 10px 10px 0; /* Sudut melengkung di sisi kanan */
-    }
-}
-
-
-    .nav-item {
-        margin: 10px 20px; /* Jarak antar item */
-        width: 100%; /* Lebar penuh */
-        text-align: left; /* Rata kiri */
-        padding: 10px 20px;
-        box-sizing: border-box;
-    }
-
-.nav-toggler {
-    display: block; /* Tampilkan toggler */
-    background-color: transparent;
-    border: none;
-    font-size: 24px;
+.nav-item {
     color: white;
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0; /* Tidak ada jarak antar item menu */
+    padding: 10px 20px;
     cursor: pointer;
-    position: absolute;
-    top: 20px;
-    left: 20px; /* Memindahkan ke kiri */
-    z-index: 1001; /* Tetap di atas elemen lain */
+    position: relative; /* Untuk efek garis bawah animatif */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-decoration: none; /* Menghilangkan garis bawah */
 }
 
-
-/* Tambahkan transisi halus untuk menu */
-.nav {
-    transition: all 0.3s ease-in-out;
-}
-
-/* Hover efek */
+/* Efek hover */
 .nav-item:hover {
     background-color: #3B6A85; /* Warna latar belakang saat hover */
-    color: #FFF;
-    transition: background-color 0.3s ease, color 0.3s ease;
+    color: #FFF; /* Ubah warna teks */
 }
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: white;
+    bottom: -6px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+/* Efek hover: garis bawah */
+.nav-item:hover::after {
+    width: 100%;
+}
+
+/* Toggler: Desktop (disembunyikan) */
+.nav-toggler {
+    display: none;
+}
+
+/* Navigasi: Layar kecil */
+@media (max-width: 768px) {
+    .nav {
+        display: none; /* Sembunyikan menu utama */
+        flex-direction: column; /* Menu akan vertikal saat diaktifkan */
+        gap: 0;
+        background-color: #4D869C; /* Warna latar belakang */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 250px;
+        max-height: 300px;
+        overflow-y: auto;
+        z-index: 1000;
+        padding: 90px 10px; /* Padding dalam menu */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 0 10px 10px 0;
+        transition: transform 0.3s ease-in-out; /* Animasi buka/tutup */
+    }
+
+    .nav.active {
+    display: flex; /* Tampilkan menu saat aktif */
+    width: 30%; /* Kurangi lebar background */
+    height: 200px; /* Kurangi tinggi background */
+}
+
+
+    .nav-toggler {
+        display: block; /* Tampilkan toggler */
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        left: 20px; /* Posisi toggler */
+        z-index: 1001; /* Tetap di atas elemen lain */
+    }
+}
+
 
 
     .overlay {
@@ -389,6 +356,27 @@
   }
 }
 
+/* Ukuran layar 320px */
+@media (max-width: 320px) {
+  .article-label {
+    font-size: 14px; /* Ukuran font lebih kecil */
+    top: 5px; /* Menurunkan jarak dari atas */
+    left: 5px; /* Menurunkan jarak dari kiri */
+    letter-spacing: 0.2px; /* Mengurangi spasi antar huruf lebih jauh */
+  }
+}
+
+/* Ukuran layar 321px hingga 370px */
+@media (max-width: 370px) {
+  .article-label {
+    font-size: 16px; /* Ukuran font lebih kecil */
+    top: 8px; /* Menurunkan jarak dari atas */
+    left: 8px; /* Menurunkan jarak dari kiri */
+    letter-spacing: 0.3px; /* Mengurangi spasi antar huruf lebih jauh */
+  }
+}
+
+
 .contact-info ul {
     list-style-type: none;
     padding: 0;
@@ -421,6 +409,23 @@
         height: 300px; /* Tinggi lebih kecil untuk ponsel */
     }
 }
+
+/* Ukuran layar 375px */
+@media (max-width: 375px) {
+    .map {
+        width: 100%; /* Lebar penuh untuk ponsel dengan ukuran sedikit lebih besar */
+        height: 350px; /* Tinggi sedikit lebih besar */
+    }
+}
+
+/* Ukuran layar 320px */
+@media (max-width: 320px) {
+    .map {
+        width: 100%; /* Lebar penuh untuk ponsel sangat kecil */
+        height: 250px; /* Tinggi lebih kecil untuk ponsel yang lebih kecil */
+    }
+}
+
 
         .map iframe {
             width: 100%;
@@ -509,6 +514,11 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 });
+function toggleNav() {
+    const nav = document.querySelector('.nav');
+    nav.classList.toggle('active');
+}
+
 </script>
 </html>
           
