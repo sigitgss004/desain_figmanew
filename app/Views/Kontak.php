@@ -109,7 +109,7 @@
     font-size: 16px;
     font-weight: 800;
     margin: 0; /* Tidak ada jarak antar item menu */
-    padding: 10px 20px;
+    padding: 1px 1px;
     cursor: pointer;
     position: relative; /* Untuk efek garis bawah animatif */
     transition: color 0.3s ease, background-color 0.3s ease;
@@ -165,6 +165,7 @@
 
     .nav.active {
     display: flex; /* Tampilkan menu saat aktif */
+    gap: 15px; /* Tambahkan jarak antar item menu */
     width: 30%; /* Kurangi lebar background */
     height: 200px; /* Kurangi tinggi background */
 }
@@ -517,8 +518,6 @@ document.addEventListener('DOMContentLoaded', function () {
 function toggleNav() {
     const nav = document.querySelector('.nav');
     nav.classList.toggle('active');
-}
-
-</script>
+}</script>
 </html>
           

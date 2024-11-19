@@ -66,10 +66,20 @@
         letter-spacing: 1.6px;
     }
 }
+.logo-container {
+  display: flex; /* Menggunakan flexbox */
+  justify-content: flex-end; /* Mengatur konten ke kanan */
+  align-items: center; /* Menyelaraskan secara vertikal */
+  width: 100%; /* Lebar penuh */
+  padding: 0 20px; /* Padding untuk jarak */
+  box-sizing: border-box; /* Memastikan padding dihitung dalam lebar */
+}
+
 .logo {
-  width: 30vw; /* default pada layar kecil */
+  width: 30vw; /* Default pada layar kecil */
   height: auto;
   max-width: 106px;
+  margin-left: auto; /* Mendorong logo ke kanan */
 }
 
 /* Pada layar tablet */
@@ -85,57 +95,94 @@
     width: 10vw;
   }
 }
-
-    .nav-item {
-      color: white;
-      font-size: 16px;
-      font-weight: 800;
-      margin-left: 20px;
-      cursor: pointer;
-    }
-    .nav-item {
-  color: white;
-  font-size: 16px;
-  font-weight: 800;
-  margin-left: 20px;
-  cursor: pointer;
-  position: relative; /* Perlu untuk efek garis bawah animatif */
-  transition: color 0.3s ease; /* Transisi halus pada perubahan warna */
-  text-decoration: none; /* Menghilangkan garis bawah */
-
+/* Default: Tampilan Desktop */
+.nav {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 20px; /* Jarak antar item menu */
 }
 
-.nav-item:first-child {
-  margin-left: 0;
+.nav-item {
+    color: white;
+    font-size: 16px;
+    font-weight: 800;
+    margin: 0; /* Tidak ada jarak antar item menu */
+    padding: 1px 1px;
+    cursor: pointer;
+    position: relative; /* Untuk efek garis bawah animatif */
+    transition: color 0.3s ease, background-color 0.3s ease;
+    text-decoration: none; /* Menghilangkan garis bawah */
 }
 
-/* Efek hover: warna berubah dan garis bawah muncul */
-.nav-item::after {
-  content: '';
-  position: absolute;
-  width: 0;
-  height: 3px;
-  background-color: white;
-  bottom: -6px;
-  left: 0;
-  transition: width 0.3s ease;
-}
-
+/* Efek hover */
 .nav-item:hover {
-  color: #000000; /* Mengubah warna teks saat hover, misalnya menjadi emas */
+    background-color: #3B6A85; /* Warna latar belakang saat hover */
+    color: #FFF; /* Ubah warna teks */
 }
 
-/* Animasi garis bawah melebar saat hover */
+.nav-item::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background-color: white;
+    bottom: -6px;
+    left: 0;
+    transition: width 0.3s ease;
+}
+
+/* Efek hover: garis bawah */
 .nav-item:hover::after {
-  width: 100%;
+    width: 100%;
 }
 
+/* Toggler: Desktop (disembunyikan) */
+.nav-toggler {
+    display: none;
+}
+
+/* Navigasi: Layar kecil */
+@media (max-width: 768px) {
     .nav {
-      display: flex;
+        display: none; /* Sembunyikan menu utama */
+        flex-direction: column; /* Menu akan vertikal saat diaktifkan */
+        gap: 0;
+        background-color: #4D869C; /* Warna latar belakang */
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 250px;
+        max-height: 300px;
+        overflow-y: auto;
+        z-index: 1000;
+        padding: 90px 10px; /* Padding dalam menu */
+        box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
+        border-radius: 0 10px 10px 0;
+        transition: transform 0.3s ease-in-out; /* Animasi buka/tutup */
     }
-    .nav-left {
-      margin-left: auto;
+
+    .nav.active {
+    display: flex; /* Tampilkan menu saat aktif */
+    gap: 15px; /* Tambahkan jarak antar item menu */
+    width: 30%; /* Kurangi lebar background */
+    height: 200px; /* Kurangi tinggi background */
+}
+
+
+    .nav-toggler {
+        display: block; /* Tampilkan toggler */
+        background-color: transparent;
+        border: none;
+        font-size: 24px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        top: 20px;
+        left: 20px; /* Posisi toggler */
+        z-index: 1001; /* Tetap di atas elemen lain */
     }
+}
 
     .overlay {
       width: 100%;
@@ -346,6 +393,7 @@
 <body>
   <div class="container">
     <div class="header">
+    <button class="nav-toggler">☰</button>
     <div class="nav">
     <a href="http://localhost:8080" class="nav-item">Beranda</a>
     <a href="http://localhost:8080/tentang" class="nav-item">Tentang</a>
@@ -362,7 +410,7 @@
       <img class="overlay-img" src="/upload/fotocar.jpg" alt="Gambar Overlay" />
       <div class="overlay-dark"></div>
       <div class="breadcrumb">Beranda / Artikel</div>
-      <div class="article-label">Produk Kami</div>
+      <div class="article-label">Artikel Kami</div>
     </div>
 
     <!-- New Article Section Layout -->
@@ -383,5 +431,35 @@
     </div>
   </div>
 </body>
+<script>// Tunggu DOM selesai dimuat
+document.addEventListener('DOMContentLoaded', function () {
+    const toggleButton = document.querySelector('.nav-toggler');
+    const navMenu = document.querySelector('.nav');
+
+    // Event klik pada toggler
+    toggleButton.addEventListener('click', function () {
+        navMenu.classList.toggle('active'); // Tampilkan atau sembunyikan menu
+
+        // Ubah ikon toggler (contoh dari ☰ ke ✕)
+        if (navMenu.classList.contains('active')) {
+            toggleButton.innerHTML = '✕';
+        } else {
+            toggleButton.innerHTML = '☰';
+        }
+    });
+
+    // Menutup menu saat item diklik (opsional)
+    const navItems = document.querySelectorAll('.nav-item');
+    navItems.forEach(item => {
+        item.addEventListener('click', function () {
+            navMenu.classList.remove('active'); // Sembunyikan menu
+            toggleButton.innerHTML = '☰'; // Reset ikon toggler
+        });
+    });
+});
+function toggleNav() {
+    const nav = document.querySelector('.nav');
+    nav.classList.toggle('active');
+}</script>
 </html>
           
