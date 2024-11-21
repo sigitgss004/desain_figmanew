@@ -289,12 +289,73 @@
     }
 }
 
-        .contact-container {
-            display: flex;
-            justify-content: center;
-            align-items: flex-start;
-            padding: 20px;
-        }
+.contact-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+    flex-wrap: wrap; /* Agar elemen dapat berpindah baris pada perangkat kecil */
+}
+
+/* Untuk layar dengan lebar maksimal 768px (tablet dan ponsel) */
+@media screen and (max-width: 768px) {
+    .contact-container {
+        flex-direction: column; /* Mengubah layout menjadi vertikal */
+        align-items: center; /* Elemen rata tengah */
+    }
+}
+
+/* Untuk layar dengan lebar maksimal 480px (ponsel kecil) */
+@media screen and (max-width: 480px) {
+    .contact-container {
+        padding: 10px; /* Mengurangi padding untuk layar kecil */
+        flex-direction: column; /* Tetap vertikal */
+        justify-content: center; /* Elemen di tengah secara horizontal */
+        align-items: center; /* Elemen di tengah secara vertikal */
+    }
+}
+
+/* Untuk layar dengan lebar maksimal 425px (ponsel besar) */
+@media screen and (max-width: 425px) {
+    .contact-container {
+        padding: 10px; /* Padding lebih kecil */
+        flex-direction: column; /* Vertikal untuk ponsel besar */
+        justify-content: center; /* Elemen rata tengah horizontal */
+        align-items: center; /* Elemen rata tengah vertikal */
+        text-align: center; /* Teks rata tengah */
+    }
+}
+
+/* Untuk layar dengan lebar maksimal 375px (ponsel sedang) */
+@media screen and (max-width: 375px) {
+    .contact-container {
+        padding: 8px; /* Sedikit lebih kecil untuk perangkat 375px */
+        flex-direction: column; /* Tetap vertikal */
+        justify-content: center; /* Elemen rata tengah horizontal */
+        align-items: center; /* Elemen rata tengah vertikal */
+        text-align: center; /* Memastikan teks juga di tengah */
+    }
+}
+
+@media screen and (max-width: 320px) {
+    .contact-container {
+        padding: 5px; /* Kurangi padding untuk layar kecil */
+    }
+
+    .contact-info, .maps {
+        width: calc(100% - 20px); /* Kurangi lebar untuk memberi ruang */
+        margin: 10px auto; /* Ruang atas, bawah, kiri, dan kanan */
+        text-align: center; /* Teks tetap rata tengah */
+    }
+
+    .maps iframe {
+        width: 100%; /* Lebar penuh container */
+        max-width: 300px; /* Maksimal iframe */
+        margin: 0 auto; /* Pusatkan */
+    }
+}
+
+
         .contact-info, .map {
             background-color: #ffffff;
             border-radius: 10px;

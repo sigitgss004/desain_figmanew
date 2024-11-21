@@ -504,54 +504,71 @@
     }
 
     .read-more-btn {
-      margin-top: 10px;
-      display: inline-block;
-      background-color: transparent;
-      /* Atur warna latar belakang menjadi transparan jika diinginkan */
-      color: white;
-      padding: 0.5rem 1rem;
-      /* Menggunakan rem untuk ukuran yang lebih responsif */
-      border: 2px solid white;
-      /* Menambahkan border putih */
-      border-radius: 5px;
-      /* Menjaga radius sudut */
-      text-decoration: none;
-      font-size: 1rem;
-      /* Menggunakan rem untuk font size */
-      transition: background-color 0.3s ease;
-      /* Transisi halus saat hover */
-    }
+    margin-top: 10px;
+    display: inline-block;
+    background-color: transparent; /* Atur warna latar belakang menjadi transparan jika diinginkan */
+    color: white;
+    padding: 0.5rem 1rem; /* Menggunakan rem untuk ukuran yang lebih responsif */
+    border: 2px solid white; /* Menambahkan border putih */
+    border-radius: 5px; /* Menjaga radius sudut */
+    text-decoration: none;
+    font-size: 1rem; /* Menggunakan rem untuk font size */
+    transition: background-color 0.3s ease; /* Transisi halus saat hover */
+}
 
-    .read-more-btn:hover {
-      background-color: rgba(255, 255, 255, 0.1);
-      /* Efek hover untuk memberi warna latar belakang saat di-hover */
-    }
+.read-more-btn:hover {
+    background-color: rgba(255, 255, 255, 0.1); /* Efek hover untuk memberi warna latar belakang saat di-hover */
+}
 
-    /* Media Queries untuk perangkat yang lebih kecil */
-    @media (max-width: 768px) {
-      .read-more-btn {
-        padding: 0.75rem 1.5rem;
-        /* Tambahkan padding untuk layar lebih kecil */
-        font-size: 1.1rem;
-        /* Sedikit menambah ukuran font */
-      }
+/* Media Queries untuk layar besar (1024px) */
+@media (max-width: 1024px) {
+    .read-more-btn {
+        padding: 0.6rem 1.2rem; /* Sedikit menambah padding */
+        font-size: 1.1rem; /* Ukuran font lebih besar */
     }
+}
 
-    /* Media Queries khusus untuk layar 320px */
-    @media (max-width: 320px) {
-      .read-more-btn {
-        width: 50%;
-        /* Tombol memenuhi lebar kontainer pada layar 320px */
-        padding: 0.4rem;
-        /* Menyesuaikan padding untuk ukuran lebih kecil */
-        font-size: 0.7rem;
-        /* Mengurangi ukuran font sedikit */
-        margin-left: 5.0rem;
-        /* Menggeser ke kanan dengan margin otomatis */
-        margin-right: 0;
-        /* Pastikan tidak ada margin di sisi kanan */
-      }
+/* Media Queries untuk layar tablet (768px) */
+@media (max-width: 768px) {
+    .read-more-btn {
+        padding: 0.75rem 1.5rem; /* Tambahkan padding untuk layar lebih kecil */
+        font-size: 1rem; /* Ukuran font tetap proporsional */
+        margin: 10px auto; /* Memastikan tombol tetap rata tengah */
     }
+}
+
+/* Media Queries untuk layar 425px */
+@media (max-width: 425px) {
+    .read-more-btn {
+        width: 60%; /* Tombol memenuhi sebagian lebar kontainer */
+        padding: 0.6rem 1.2rem; /* Kurangi padding sedikit */
+        font-size: 0.9rem; /* Mengurangi ukuran font */
+        margin: 0 auto; /* Rata tengah dengan margin auto */
+        display: block; /* Agar tombol tampil sebagai elemen blok */
+    }
+}
+
+/* Media Queries untuk layar 375px */
+@media (max-width: 375px) {
+    .read-more-btn {
+        width: 70%; /* Tombol lebih besar untuk layar lebih kecil */
+        padding: 0.5rem 1rem; /* Kurangi padding sedikit */
+        font-size: 0.85rem; /* Ukuran font lebih kecil */
+        margin: 0 auto; /* Rata tengah */
+    }
+}
+
+/* Media Queries untuk layar 320px */
+@media (max-width: 320px) {
+    .read-more-btn {
+        width: 80%; /* Tombol memenuhi sebagian besar lebar kontainer */
+        padding: 0.4rem; /* Menyesuaikan padding untuk ukuran lebih kecil */
+        font-size: 0.75rem; /* Ukuran font lebih kecil */
+        margin: 0 auto; /* Rata tengah */
+        display: block; /* Pastikan tombol tampil sebagai elemen blok */
+    }
+}
+
 
     /* Gambar artikel */
     .article-img {
@@ -559,79 +576,56 @@
       height: 80px;
     }
 
+    .profile-container {
+    display: flex; /* Aktifkan Flexbox */
+    justify-content: center; /* Pusatkan secara horizontal */
+    align-items: center; /* Pusatkan secara vertikal */
+    flex-direction: column; /* Pastikan gambar dan konten di bawahnya vertikal */
+    padding: 10px; /* Tambahkan ruang di sekitar */
+    text-align: center; /* Teks di dalam rata tengah */
+}
+
+/* Gaya untuk gambar */
+.profile-img {
+    width: 150px; /* Ukuran default untuk desktop */
+    height: 150px; 
+    object-fit: cover; /* Pastikan gambar sesuai rasio */
+    border-radius: 12px; 
+    margin: 0 auto; /* Pusatkan gambar dalam container */
+}
+
+/* Tablet */
+@media (max-width: 768px) {
     .profile-img {
-      width: 150px;
-      /* Ukuran default pada layar besar */
-      height: 150px;
-      object-fit: cover;
-      border-radius: 12px;
+        width: 120px; 
+        height: 120px; 
     }
+}
 
-    /* Tablet */
-    @media (max-width: 768px) {
-      .profile-img {
-        width: 120px;
-        /* Ukuran lebih kecil pada tablet */
-        height: 120px;
-        /* Sesuaikan tinggi untuk menjaga rasio */
-      }
+/* Mobile (425px) */
+@media (max-width: 425px) {
+    .profile-container {
+        padding: 5px; /* Kurangi padding untuk layar kecil */
     }
-
     .profile-img {
-      width: 150px;
-      /* Ukuran default pada layar besar */
-      height: 150px;
-      object-fit: cover;
-      border-radius: 12px;
+        width: 100px; /* Ukuran lebih kecil */
+        height: 100px; 
+        margin: 0 auto; /* Pusatkan gambar */
     }
+}
 
-    /* Tablet */
-    @media (max-width: 768px) {
-      .profile-img {
-        width: 120px;
-        /* Ukuran lebih kecil pada tablet */
-        height: 120px;
-        /* Sesuaikan tinggi untuk menjaga rasio */
-      }
+/* Very Small Mobile (320px) */
+@media (max-width: 320px) {
+    .profile-container {
+        padding: 5px; /* Pastikan ada ruang di sekitar */
     }
-
-    /* Default Size */
     .profile-img {
-      width: 150px;
-      /* Ukuran default untuk desktop */
-      height: 150px;
-      /* Sesuaikan tinggi untuk menjaga rasio */
-    }
-
-    /* Tablet */
-    @media (max-width: 768px) {
-      .profile-img {
-        width: 120px;
-        /* Ukuran lebih kecil pada tablet */
-        height: 120px;
-        /* Sesuaikan tinggi untuk menjaga rasio */
-      }
-    }
-
-    /* Mobile */
-    @media (max-width: 480px) {
-      .profile-img {
-        width: 100px;
-        /* Ukuran lebih kecil pada perangkat mobile */
-        height: 100px;
-        /* Sesuaikan tinggi untuk menjaga rasio */
-      }
-    }
-
-    /* Very Small Mobile (320px) */
-    @media (max-width: 320px) {
-      .profile-img {
-        width: 80px;
-        /* Ukuran lebih kecil untuk perangkat 320px */
+        width: 80px; /* Ukuran lebih kecil */
         height: 80px;
-        /* Sesuaikan tinggi untuk menjaga rasio */
-      }
+        margin: 0 auto; /* Tetap rata tengah */
     }
+}
+
 
     /* Responsive adjustments */
     @media (max-width: 768px) {
