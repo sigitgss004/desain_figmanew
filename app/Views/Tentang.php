@@ -390,111 +390,163 @@
 
 
     .about-section {
-      position: relative;
-      max-width: 1200px;
-      margin: 200px auto 200px;
-      /* Berikan margin atas lebih besar (150px) */
-      display: flex;
-      padding: 40px 20px;
-      align-items: center;
-      background-color: #4D869C;
-      border-radius: 25px;
-    }
+  position: relative;
+  max-width: 1200px;
+  margin: 150px auto; /* Margin atas lebih besar */
+  display: flex;
+  flex-wrap: wrap; /* Konten bisa menumpuk jika ruang tidak cukup */
+  padding: 40px 20px;
+  align-items: center;
+  justify-content: space-between; /* Pastikan elemen terdistribusi */
+  background-color: #4D869C;
+  border-radius: 25px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  color: #ffffff;
+}
+
+.about-text {
+  width: 40%; /* Lebar awal untuk layar besar */
+  padding-right: 20px;
+  font-size: 19px; /* Ukuran font default */
+  color: #ffffff; /* Warna teks */
+  line-height: 1.8; /* Jarak antar baris */
+}
+
+/* Responsif untuk layar sedang (1024px atau kurang) */
+@media (max-width: 1024px) {
+  .about-text {
+    width: 50%; /* Sesuaikan proporsi untuk layar sedang */
+    font-size: 18px; /* Ukuran font sedikit lebih kecil */
+    padding-right: 15px; /* Kurangi jarak kanan */
+    line-height: 1.7; /* Sedikit kurangi jarak antar baris */
+  }
+}
+
+/* Responsif untuk layar sekitar 800px */
+@media (max-width: 800px) {
+  .about-text {
+    width: 70%; /* Lebar lebih besar agar teks lebih panjang */
+    text-align: center; /* Teks rata tengah */
+    font-size: 17px; /* Ukuran font lebih kecil */
+  }
+}
+
+/* Responsif untuk layar kecil (768px atau kurang) */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column; /* Susun vertikal (gambar di atas, teks di bawah) */
+    text-align: center; /* Pusatkan teks */
+  }
+
+  .about-text {
+    width: 100%; /* Teks memenuhi lebar */
+    padding-right: 0;
+  }
+
+  .about-image {
+    width: 100%; /* Gambar memenuhi lebar */
+    justify-content: center; /* Pusatkan gambar */
+  }
+
+  .profile-img {
+    max-width: 300px; /* Ukuran gambar lebih kecil */
+    height: auto; /* Jaga proporsi */
+  }
+}
+
+/* Responsif untuk layar sangat kecil (320px atau kurang) */
+@media (max-width: 320px) {
+  .about-text {
+    width: 100%; /* Lebar teks 100% pada layar kecil */
+    text-align: center; /* Teks tetap rata tengah */
+    font-size: 14px; /* Ukuran font lebih kecil lagi */
+    padding: 0 10px; /* Tambahkan sedikit padding kiri dan kanan */
+    line-height: 1.5; /* Kurangi jarak antar baris */
+  }
+}
+
+.about-image {
+  width: 40%; /* Proporsi gambar */
+  display: flex;
+  justify-content: flex-end; /* Gambar digeser ke kanan */
+  align-items: center;
+}
+
+.profile-img {
+  width: 500px; /* Ukuran default */
+  height: 500px;
+  object-fit: cover; /* Agar gambar tetap proporsional */
+  border-radius: 12px;
+  margin-left: auto; /* Geser gambar ke kanan */
+  margin-right: 50px;
+  display: block; /* Pastikan gambar mengikuti pengaturan margin */
+}
+
+.profile-info {
+  flex: 1;
+  color: black;
+  font-size: 22px;
+  font-weight: 500;
+  line-height: 30px;
+  text-align: justify;
+  margin-left: 10px;
+  margin-right: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+.article-content {
+  width: 100%;
+  max-width: 700px;
+  margin: 50px;
+  color: black;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 25px;
+  letter-spacing: 1.5px;
+  text-align: justify;
+}
+
+.sub-title {
+  text-align: center;
+  color: black;
+  font-size: 28px;
+  font-weight: 500;
+  margin-top: 40px;
+}
+
+/* Responsif untuk perangkat kecil */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column; /* Susun vertikal */
+    text-align: center; /* Pusatkan teks */
+  }
+
+  .about-text {
+    width: 100%; /* Teks memenuhi lebar */
+    padding-right: 0;
+  }
+
+  .about-image {
+    width: 100%; /* Gambar memenuhi lebar */
+    justify-content: center; /* Pusatkan gambar */
+  }
+
+  .profile-img {
+    max-width: 300px; /* Ukuran gambar lebih kecil */
+    height: auto; /* Jaga proporsi */
+  }
+}
+
+/* Responsif untuk perangkat yang sangat kecil */
+@media (max-width: 480px) {
+  .profile-img {
+    max-width: 200px; /* Ukuran gambar lebih kecil lagi */
+    height: auto;
+  }
+}
 
 
-    .about-text {
-      width: 40%;
-      padding-right: 20px;
-      font-size: 19px;
-      color: #ffffff;
-      line-height: 1.8;
-    }
-
-    .profile-img {
-      width: 400px;
-      /* Ukuran default */
-      height: 400px;
-      object-fit: cover;
-      border-radius: 12px;
-    }
-
-    /* Untuk perangkat yang lebih kecil seperti tablet */
-    @media (max-width: 768px) {
-      .profile-img {
-        width: 300px;
-        /* Mengurangi lebar gambar pada tablet */
-        height: 300px;
-        /* Mengurangi tinggi gambar pada tablet */
-      }
-    }
-
-    /* Untuk perangkat yang sangat kecil seperti ponsel */
-    @media (max-width: 480px) {
-      .profile-img {
-        width: 200px;
-        /* Lebar lebih kecil untuk ponsel */
-        height: 200px;
-        /* Tinggi lebih kecil untuk ponsel */
-      }
-    }
-
-
-    .profile-info {
-      flex: 1;
-      color: black;
-      font-size: 22px;
-      font-weight: 500;
-      line-height: 30px;
-      text-align: justify;
-      margin-left: 10px;
-      margin-right: 100px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
-
-    .article-content {
-      width: 100%;
-      max-width: 700px;
-      margin: 50px;
-      color: black;
-      font-size: 20px;
-      font-weight: 400;
-      line-height: 25px;
-      letter-spacing: 1.5px;
-      text-align: justify;
-    }
-
-    .sub-title {
-      text-align: center;
-      color: black;
-      font-size: 28px;
-      font-weight: 500;
-      margin-top: 40px;
-    }
-
-
-
-
-    .about-image {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-
-    .about-title-container h2 {
-      font-size: 28px;
-      font-weight: 600;
-      margin: 0;
-    }
-
-    .about-image img {
-      width: 400px;
-      height: 400px;
-      object-fit: cover;
-      border-radius: 12px;
-      box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    }
   </style>
 </head>
 
