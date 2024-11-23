@@ -716,15 +716,60 @@
     }
 
     .about-background {
-  display: flex; /* Flexbox untuk menampilkan gambar dan teks berdampingan */
-  align-items: center; /* Menjaga gambar dan teks sejajar secara vertikal */
-  justify-content: space-between;
-  background-color: transparent; /* Membuat latar belakang transparan */
+  position: relative; /* Membuat elemen sebagai parent untuk positioning */
+  width: 80%;
   margin: 20px auto;
   padding: 0;
-  width: 80%;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0, ); /* Bayangan di sekitar elemen */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Bayangan di sekitar elemen */
+  text-align: center; /* Teks diatur agar berada di tengah */
 }
+
+.about-background img {
+  position: absolute; /* Gambar diatur agar menempel di atas */
+  top: 0; /* Posisi gambar di atas */
+  left: 50%; /* Menempatkan gambar di tengah horizontal */
+  transform: translateX(-50%); /* Menyesuaikan posisi tengah */
+  width: 100%; /* Gambar responsif */
+  max-width: 500px; /* Maksimal lebar gambar */
+  height: auto; /* Rasio gambar tetap */
+  z-index: 1; /* Menempatkan gambar di atas */
+}
+
+.about-background p {
+  position: relative; /* Membuat teks berada di bawah gambar */
+  margin-top: 300px; /* Memberikan jarak agar tidak bertabrakan dengan gambar */
+  font-size: 1.2em; /* Ukuran font nyaman */
+  z-index: 0; /* Teks berada di bawah gambar */
+}
+
+/* Responsif untuk perangkat kecil */
+@media screen and (max-width: 600px) {
+  .about-background {
+    width: 95%;
+  }
+  .about-background img {
+    max-width: 300px; /* Sesuaikan ukuran gambar untuk layar kecil */
+  }
+  .about-background p {
+    font-size: 1em;
+    margin-top: 200px;
+  }
+}
+
+/* Responsif untuk tablet */
+@media screen and (max-width: 768px) and (min-width: 601px) {
+  .about-background {
+    width: 90%;
+  }
+  .about-background img {
+    max-width: 400px;
+  }
+  .about-background p {
+    font-size: 1.1em;
+    margin-top: 250px;
+  }
+}
+
 
 
 .about-text {
