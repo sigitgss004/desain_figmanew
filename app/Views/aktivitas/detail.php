@@ -290,8 +290,8 @@
   }
 }
 
-    /* Style for the new layout */
-    .article-section {
+/* Default layout for desktop */
+.article-section {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -300,9 +300,64 @@
   background-color: #FFFFFF;
   border-radius: 12px;
   margin-top: 20px;
-  margin-bottom: 100px; /* Ubah margin-bottom untuk memberi jarak dengan footer */
+  margin-bottom: 100px;
   padding-right: 20px;
+  flex-direction: row; /* Default layout: horizontal */
 }
+
+/* Responsive design for tablets (768px and below) */
+@media (max-width: 768px) {
+  .article-section {
+    flex-direction: column; /* Change layout to vertical */
+    align-items: center;
+    margin: 50px 0; /* Adjust margins */
+    padding: 15px;
+  }
+
+  .article-description {
+    text-align: center; /* Center-align text horizontally */
+    margin: 20px 0; /* Add spacing above and below text */
+    font-size: 16px; /* Adjust font size */
+    line-height: 24px; /* Adjust line height for readability */
+  }
+}
+
+/* Responsive design for mobile devices (480px and below) */
+@media (max-width: 480px) {
+  .article-section {
+    margin: 30px 10px; /* Reduce margins */
+    padding: 10px;
+    border-radius: 8px; /* Reduce border radius */
+  }
+
+  .article-description {
+    text-align: center; /* Ensure text remains centered */
+    font-size: 14px; /* Smaller font for small screens */
+    line-height: 20px; /* Adjust line height */
+    margin: 15px 0; /* Reduce margins for tighter spacing */
+  }
+}
+
+/* Responsive design for very small smartphones (320px and below) */
+@media (max-width: 320px) {
+  .article-section {
+    margin: 20px 5px;
+    padding: 5px;
+    border-radius: 5px;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .article-description {
+    text-align: center; /* Center-align text */
+    font-size: 12px; /* Even smaller font for readability */
+    line-height: 18px;
+    margin: 10px 0; /* Minimal spacing */
+  }
+}
+
+
 
 .article-title {
   text-align: center;
@@ -333,8 +388,8 @@
   }
 }
 
-    /* Wrapper for product image background */
-    .profile-img-wrapper {
+/* Default untuk Desktop/Laptop */
+.profile-img-wrapper {
   width: 500px;
   height: 500px;
   background-color: #4D869C; 
@@ -347,39 +402,229 @@
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
 }
 
+/* Tablet Landscape (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .profile-img-wrapper {
+    width: 400px; /* Kurangi ukuran untuk tablet */
+    height: 400px;
+    margin-left: 50px; /* Kurangi margin kiri */
+    margin-right: 15px; /* Kurangi margin kanan */
+  }
+}
 
-    .profile-img {
-      width: 400px; /* Ukuran gambar sedikit lebih kecil */
-      height: 400px;
-      object-fit: cover;
-      border-radius: 12px; 
-    }
+/* Tablet Portrait (max-width: 992px) */
+@media (max-width: 992px) {
+  .profile-img-wrapper {
+    width: 300px; /* Lebih kecil untuk layar tablet portrait */
+    height: 300px;
+    margin-left: 30px;
+    margin-right: 10px;
+  }
+}
 
-    .profile-info {
-      flex: 1;
-      color: black;
-      font-size: 22px; /* Ukuran font lebih kecil */
-      font-weight: 500;
-      line-height: 30px; /* Ukuran lebih kecil */
-      text-align: justify;
-      margin-left: 10px;
-      margin-right: 100px;
-      padding-top: 10px;
-      padding-bottom: 10px;
-    }
+/* Smartphone (max-width: 768px) */
+@media (max-width: 768px) {
+  .profile-img-wrapper {
+    width: 250px; /* Ukuran lebih kecil untuk smartphone */
+    height: 250px;
+    margin-left: 20px; /* Margin lebih kecil */
+    margin-right: 0; /* Hilangkan margin kanan */
+    border-radius: 20px; /* Kurangi radius sudut */
+  }
+}
 
-    .article-content {
-      width: 100%;
-      max-width: 700px;
-      margin: 50px;
-      color: black;
-      /* background-color: #000;  */
-      font-size: 20px; /* Ukuran font lebih kecil */
-      font-weight: 400; /* Sedikit kurang tebal */
-      line-height: 27px; /* Ukuran lebih kecil */
-      letter-spacing: 1.5px;
-      text-align: justify;
-    }
+/* Smartphone Kecil (max-width: 576px) */
+@media (max-width: 576px) {
+  .profile-img-wrapper {
+    width: 200px; /* Ukuran lebih kecil untuk layar kecil */
+    height: 200px;
+    margin: 0 auto; /* Pusatkan elemen dengan margin otomatis */
+    border-radius: 10px; /* Radius sudut kecil */
+  }
+}
+
+
+
+/* Default untuk Desktop/Laptop */
+.profile-img {
+  width: 400px; /* Ukuran gambar besar untuk desktop */
+  height: 400px;
+  object-fit: cover; /* Gambar akan menyesuaikan area tanpa distorsi */
+  border-radius: 12px; /* Sudut melengkung */
+}
+
+/* Tablet Landscape (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .profile-img {
+    width: 300px; /* Kurangi ukuran untuk tablet */
+    height: 300px;
+    border-radius: 10px; /* Kurangi radius sudut */
+  }
+}
+
+/* Tablet Portrait (max-width: 992px) */
+@media (max-width: 992px) {
+  .profile-img {
+    width: 250px; /* Lebih kecil untuk tablet portrait */
+    height: 250px;
+    border-radius: 8px; /* Sudut melengkung lebih kecil */
+  }
+}
+
+/* Smartphone (max-width: 768px) */
+@media (max-width: 768px) {
+  .profile-img {
+    width: 200px; /* Ukuran lebih kecil untuk smartphone */
+    height: 200px;
+    border-radius: 6px; /* Kurangi radius sudut */
+  }
+}
+
+/* Smartphone Kecil (max-width: 576px) */
+@media (max-width: 576px) {
+  .profile-img {
+    width: 150px; /* Ukuran sangat kecil untuk layar kecil */
+    height: 150px;
+    border-radius: 4px; /* Radius minimal */
+  }
+}
+
+
+/* Default for desktop */
+.profile-info {
+  flex: 1;
+  color: black;
+  font-size: 22px; /* Ukuran font default */
+  font-weight: 500;
+  line-height: 30px; /* Jarak antar baris default */
+  text-align: justify;
+  margin-left: 10px;
+  margin-right: 100px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+/* Tablet landscape (1200px and below) */
+@media (max-width: 1200px) {
+  .profile-info {
+    font-size: 20px; /* Sedikit lebih kecil */
+    line-height: 28px; /* Sesuaikan jarak antar baris */
+    margin-right: 50px; /* Kurangi margin kanan */
+    padding-top: 8px;
+    padding-bottom: 8px;
+  }
+}
+
+/* Tablet portrait (992px and below) */
+@media (max-width: 992px) {
+  .profile-info {
+    font-size: 18px; /* Lebih kecil */
+    line-height: 26px;
+    margin-right: 30px; /* Kurangi margin kanan lebih jauh */
+    text-align: left; /* Ubah ke rata kiri untuk tampilan lebih alami */
+  }
+}
+
+/* Smartphone (768px and below) */
+@media (max-width: 768px) {
+  .profile-info {
+    font-size: 16px; /* Ukuran font lebih kecil */
+    line-height: 24px; /* Jarak antar baris lebih kecil */
+    margin-left: 5px; /* Margin kiri lebih kecil */
+    margin-right: 15px; /* Margin kanan lebih kecil */
+    padding-top: 6px;
+    padding-bottom: 6px;
+  }
+}
+
+/* Smartphone kecil (576px and below) */
+@media (max-width: 576px) {
+  .profile-info {
+    font-size: 14px; /* Ukuran font lebih kecil */
+    line-height: 22px; /* Jarak antar baris lebih kecil */
+    margin: 5px; /* Kurangi margin secara keseluruhan */
+    text-align: center; /* Teks di tengah untuk perangkat kecil */
+  }
+}
+
+/* Smartphone sangat kecil (320px and below) */
+@media (max-width: 320px) {
+  .profile-info {
+    font-size: 12px; /* Ukuran font terkecil */
+    line-height: 20px; /* Jarak antar baris kecil */
+    margin: 5px 2px; /* Margin minimum */
+    padding-top: 4px;
+    padding-bottom: 4px;
+    text-align: center; /* Teks tetap di tengah */
+  }
+}
+
+
+/* Default untuk Desktop */
+.article-content {
+  width: 100%;
+  max-width: 700px; /* Ukuran maksimum untuk desktop */
+  margin: 50px; /* Margin untuk memberi ruang di sekitar konten */
+  color: black;
+  font-size: 20px; /* Ukuran font lebih kecil */
+  font-weight: 400; /* Berat font normal */
+  line-height: 27px; /* Jarak antar baris */
+  letter-spacing: 1.5px; /* Spasi antar huruf */
+  text-align: justify; /* Teks diratakan */
+}
+
+/* Tablet Landscape (max-width: 1200px) */
+@media (max-width: 1200px) {
+  .article-content {
+    max-width: 600px; /* Lebar sedikit lebih kecil */
+    margin: 40px; /* Margin sedikit lebih kecil */
+    font-size: 18px; /* Ukuran font sedikit lebih kecil */
+    line-height: 24px; /* Jarak antar baris sedikit lebih kecil */
+  }
+}
+
+/* Tablet Portrait (max-width: 992px) */
+@media (max-width: 992px) {
+  .article-content {
+    max-width: 500px; /* Lebar lebih kecil untuk tablet portrait */
+    margin: 30px; /* Margin sedikit lebih kecil */
+    font-size: 16px; /* Ukuran font lebih kecil */
+    line-height: 22px; /* Jarak antar baris lebih kecil */
+    letter-spacing: 1.2px; /* Spasi antar huruf lebih kecil */
+  }
+}
+
+/* Smartphone (max-width: 768px) */
+@media (max-width: 768px) {
+  .article-content {
+    max-width: 100%; /* Lebar penuh untuk layar lebih kecil */
+    margin: 20px; /* Margin lebih kecil */
+    font-size: 14px; /* Ukuran font lebih kecil */
+    line-height: 20px; /* Jarak antar baris lebih kecil */
+    letter-spacing: 1px; /* Spasi antar huruf lebih kecil */
+  }
+}
+
+/* Smartphone Kecil (max-width: 576px) */
+@media (max-width: 576px) {
+  .article-content {
+    font-size: 12px; /* Ukuran font sangat kecil untuk smartphone kecil */
+    line-height: 18px; /* Jarak antar baris kecil */
+    letter-spacing: 0.8px; /* Spasi antar huruf lebih kecil */
+    margin: 10px; /* Margin minimal */
+  }
+}
+/* Smartphone Sangat Kecil (max-width: 320px) */
+@media (max-width: 320px) {
+  .article-content {
+    font-size: 10px; /* Ukuran font lebih kecil */
+    line-height: 16px; /* Jarak antar baris lebih kecil */
+    letter-spacing: 0.5px; /* Spasi antar huruf lebih kecil */
+    margin: 5px; /* Margin sangat minimal */
+    text-align: left; /* Justifikasi diubah ke kiri untuk membaca lebih mudah */
+  }
+}
+
 
     .sub-title {
       text-align: center;

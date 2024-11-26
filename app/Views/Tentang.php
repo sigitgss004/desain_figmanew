@@ -178,9 +178,9 @@
 
     .nav.active {
     display: flex; /* Tampilkan menu saat aktif */
-    gap: 15px; /* Tambahkan jarak antar item menu */
-    width: 30%; /* Kurangi lebar background */
-    height: 200px; /* Kurangi tinggi background */
+    gap: 10px; /* Tambahkan jarak antar item menu */
+    width: 40%; /* Kurangi lebar background */
+    height: 450px; /* Kurangi tinggi background */
 }
 
 
