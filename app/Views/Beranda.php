@@ -303,54 +303,9 @@
       /* Pastikan background berada di layer belakang */
     }
 
-    .car-img {
-      max-width: 50%;
-      height: auto;
-      object-fit: contain;
-      z-index: 2;
-      /* Z-index lebih tinggi untuk memastikan gambar ada di depan */
-      position: relative;
-      /* Aktifkan z-index dengan relative positioning */
-    }
 
-    @media (max-width: 1200px) {
-      .car-img {
-        max-width: 60%;
-        /* Sedikit lebih besar di layar besar */
-      }
-    }
 
-    @media (max-width: 992px) {
-      .car-img {
-        max-width: 70%;
-        /* Lebih besar untuk layar tablet */
-      }
-    }
-
-    @media (max-width: 768px) {
-      .car-img {
-        max-width: 80%;
-        /* Lebih besar untuk tablet kecil dan ponsel besar */
-      }
-    }
-
-    @media (max-width: 576px) {
-      .car-img {
-        max-width: 100%;
-        /* Full width untuk layar ponsel */
-      }
-    }
-
-    /* Tambahkan untuk layar ponsel kecil, maksimal 320px */
-    @media (max-width: 320px) {
-      .car-img {
-        max-width: 100%;
-        /* Tetap full width untuk layar ponsel yang sangat kecil */
-        padding: 0 10px;
-        /* Opsional: tambahkan padding untuk mencegah gambar menempel ke tepi */
-      }
-    }
-
+    
 
 
 
@@ -518,35 +473,26 @@
       top: 50px;
     }
 
-    @media (max-width: 1200px) {
-      .title-highlight {
-        font-size: 80px;
-        top: 40px;
-      }
-    }
-
-    @media (max-width: 992px) {
-      .title-highlight {
-        font-size: 60px;
-        top: 30px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      .title-highlight {
-        font-size: 40px;
-        top: 20px;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .title-highlight {
-        font-size: 30px;
-        top: 15px;
-      }
+    .description {
+      text-align: right;
+      /* Teks di dalam deskripsi akan rata ke kanan */
+      max-width: 500px;
+      color: #000000;
+      margin-left: 50px;
+      /* Sedikit margin kiri untuk jarak dari gambar */
     }
 
 
+    .car-img {
+      max-width: 50%;
+      height: auto;
+      object-fit: contain;
+      z-index: 2;
+      /* Z-index lebih tinggi untuk memastikan gambar ada di depan */
+      position: relative;
+      /* Aktifkan z-index dengan relative positioning */
+    }
+  
     .title-carwash {
       font-size: 100px;
       /* Ukuran default untuk layar besar */
@@ -559,64 +505,7 @@
       /* Geser teks sedikit ke bawah */
     }
 
-    /* Responsif untuk layar desktop kecil (max-width: 1200px) */
-    @media (max-width: 1200px) {
-      .title-carwash {
-        font-size: 80px;
-        /* Ukuran font lebih kecil untuk layar desktop kecil */
-        top: 25px;
-        /* Sesuaikan top agar tetap proporsional */
-      }
-    }
-
-    /* Responsif untuk layar tablet (max-width: 992px) */
-    @media (max-width: 992px) {
-      .title-carwash {
-        font-size: 60px;
-        /* Ukuran font lebih kecil untuk tablet */
-        top: 20px;
-        /* Kurangi top agar teks tetap di tengah */
-        margin: 5px;
-        /* Kurangi margin untuk menambah ruang */
-      }
-    }
-
-    /* Responsif untuk layar tablet kecil dan ponsel besar (max-width: 768px) */
-    @media (max-width: 768px) {
-      .title-carwash {
-        font-size: 40px;
-        /* Ukuran font lebih kecil untuk ponsel besar dan tablet kecil */
-        top: 15px;
-        /* Kurangi top agar tetap proporsional */
-        margin: 5px;
-        /* Sesuaikan margin untuk layar kecil */
-      }
-    }
-
-    /* Responsif untuk layar ponsel (max-width: 576px) */
-    @media (max-width: 576px) {
-      .title-carwash {
-        font-size: 30px;
-        /* Ukuran font lebih kecil untuk ponsel */
-        top: 10px;
-        /* Sesuaikan top untuk layar kecil */
-        margin: 3px;
-        /* Margin minimal */
-      }
-    }
-
-    /* Responsif untuk layar ponsel kecil (max-width: 320px) */
-    @media (max-width: 320px) {
-      .title-carwash {
-        font-size: 24px;
-        /* Ukuran font paling kecil untuk keterbacaan di layar kecil */
-        top: 5px;
-        /* Top minimum agar tetap terlihat rapi */
-        margin: 2px;
-        /* Margin minimal untuk layar kecil */
-      }
-    }
-
+    
 
 
     .description {
@@ -634,71 +523,7 @@
       /* Geser teks ke kiri */
     }
 
-    /* Responsif untuk layar desktop kecil (max-width: 1200px) */
-    @media (max-width: 1200px) {
-      .description {
-        font-size: 18px;
-        /* Ukuran font sedikit lebih kecil */
-        word-spacing: 25px;
-        /* Kurangi jarak antar kata */
-        top: 35px;
-        /* Sesuaikan posisi vertikal */
-      }
-    }
-
-    /* Responsif untuk layar tablet (max-width: 992px) */
-    @media (max-width: 992px) {
-      .description {
-        font-size: 16px;
-        /* Ukuran font lebih kecil untuk tablet */
-        word-spacing: 20px;
-        /* Kurangi spasi kata */
-        top: 30px;
-        /* Sesuaikan posisi vertikal */
-      }
-    }
-
-    /* Responsif untuk layar tablet kecil dan ponsel besar (max-width: 768px) */
-    @media (max-width: 768px) {
-      .description {
-        font-size: 14px;
-        /* Ukuran font lebih kecil untuk ponsel besar dan tablet kecil */
-        word-spacing: 15px;
-        /* Kurangi spasi kata */
-        top: 20px;
-        /* Sesuaikan posisi vertikal */
-        margin: 8px 0;
-        /* Kurangi margin */
-      }
-    }
-
-    /* Responsif untuk layar ponsel (max-width: 576px) */
-    @media (max-width: 576px) {
-      .description {
-        font-size: 12px;
-        /* Ukuran font lebih kecil untuk ponsel */
-        word-spacing: 10px;
-        /* Lebih rapat antar kata */
-        top: 15px;
-        /* Kurangi top */
-        margin: 5px 0;
-        /* Kurangi margin lebih lanjut */
-      }
-    }
-
-    /* Responsif untuk layar ponsel kecil (max-width: 320px) */
-    @media (max-width: 320px) {
-      .description {
-        font-size: 10px;
-        /* Ukuran font lebih kecil agar tetap terbaca */
-        word-spacing: 5px;
-        /* Spasi kata minimal */
-        top: 10px;
-        /* Sesuaikan posisi vertikal */
-        margin: 3px 0;
-        /* Margin minimal */
-      }
-    }
+    
 
 
 
@@ -1089,35 +914,6 @@
         /* Added padding for better mobile readability */
       }
 
-      /* Default untuk layar desktop besar */
-      .title-highlight {
-        font-size: 36px;
-        /* Ukuran font default untuk layar besar */
-      }
-
-      /* Tablet */
-      @media (max-width: 768px) {
-        .title-highlight {
-          font-size: 28px;
-          /* Ukuran font untuk tablet */
-        }
-      }
-
-      /* Mobile landscape */
-      @media (max-width: 576px) {
-        .title-highlight {
-          font-size: 24px;
-          /* Ukuran font untuk mobile landscape */
-        }
-      }
-
-      /* Mobile portrait */
-      @media (max-width: 400px) {
-        .title-highlight {
-          font-size: 20px;
-          /* Ukuran font untuk mobile portrait */
-        }
-      }
 
 
       .title-carwash {
@@ -1329,58 +1125,99 @@
 
 
 
-    .photo-grid {
-      display: grid;
-      grid-template-columns: repeat(2, 200px);
-      /* 2 kolom dengan lebar 200px */
-      gap: 50px;
-      /* Jarak antar foto */
-      margin-left: 100px;
-      /* Menggeser ke kiri */
-    }
+/* Gaya dasar untuk grid foto */
+.photo-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  /* 2 kolom dengan lebar 200px */
+  gap: 50px;
+  /* Jarak antar foto */
+  margin-left: 100px;
+  /* Menggeser ke kiri */
+}
 
-    @media (max-width: 1200px) {
-      .photo-grid {
-        grid-template-columns: repeat(2, 180px);
-        /* Lebar kolom sedikit lebih kecil */
-        gap: 30px;
-        /* Kurangi jarak antar foto */
-        margin-left: 50px;
-        /* Kurangi margin kiri */
-      }
-    }
+/* Responsif untuk layar 1200px */
+@media (max-width: 1200px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 180px);
+    /* Lebar kolom sedikit lebih kecil */
+    gap: 30px;
+    /* Kurangi jarak antar foto */
+    margin-left: 50px;
+    /* Kurangi margin kiri */
+  }
+}
 
-    @media (max-width: 992px) {
-      .photo-grid {
-        grid-template-columns: repeat(2, 150px);
-        /* Lebar kolom lebih kecil untuk tablet */
-        gap: 20px;
-        /* Kurangi jarak antar foto */
-        margin-left: 30px;
-        /* Kurangi margin kiri */
-      }
-    }
+/* Responsif untuk layar 992px */
+@media (max-width: 992px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 150px);
+    /* Lebar kolom lebih kecil untuk tablet */
+    gap: 20px;
+    /* Kurangi jarak antar foto */
+    margin-left: 30px;
+    /* Kurangi margin kiri */
+  }
+}
 
-    @media (max-width: 768px) {
-      .photo-grid {
-        grid-template-columns: repeat(1, 100%);
-        /* 1 kolom penuh di layar tablet kecil */
-        gap: 20px;
-        margin-left: 0;
-        /* Menghilangkan margin kiri pada layar kecil */
-      }
-    }
+/* Responsif untuk layar 768px (tablet kecil) - 2x2 layout */
+@media (max-width: 768px) {
+  .photo-grid {
+    grid-template-columns: repeat(2, 1fr); 
+    /* 2 kolom dengan lebar yang sama pada layar tablet kecil */
+    gap: 20px;
+    margin-left: 0;
+    /* Menghilangkan margin kiri pada layar kecil */
+  }
+}
 
-    @media (max-width: 576px) {
-      .photo-grid {
-        grid-template-columns: repeat(1, 100%);
-        /* 1 kolom penuh pada ponsel */
-        gap: 15px;
-        /* Mengurangi gap */
-        margin-left: 0;
-        /* Menghilangkan margin kiri */
-      }
-    }
+/* Responsif untuk layar 576px (ponsel) */
+@media (max-width: 576px) {
+  .photo-grid {
+    grid-template-columns: repeat(1, 100%);
+    /* 1 kolom penuh pada ponsel */
+    gap: 15px;
+    /* Mengurangi gap */
+    margin-left: 0;
+    /* Menghilangkan margin kiri */
+  }
+}
+
+/* Responsif untuk layar 425px (ponsel besar) */
+@media (max-width: 425px) {
+  .photo-grid {
+    grid-template-columns: repeat(1, 100%);
+    /* 1 kolom penuh pada ponsel besar */
+    gap: 15px;
+    /* Mengurangi gap */
+    margin-left: 0;
+    /* Menghilangkan margin kiri */
+  }
+}
+
+/* Responsif untuk layar 375px (ponsel kecil) */
+@media (max-width: 375px) {
+  .photo-grid {
+    grid-template-columns: repeat(1, 100%);
+    /* 1 kolom penuh pada ponsel kecil */
+    gap: 10px;
+    /* Mengurangi gap */
+    margin-left: 0;
+    /* Menghilangkan margin kiri */
+  }
+}
+
+/* Responsif untuk layar 320px (ponsel sangat kecil) */
+@media (max-width: 320px) {
+  .photo-grid {
+    grid-template-columns: repeat(1, 100%);
+    /* 1 kolom penuh pada ponsel sangat kecil */
+    gap: 8px;
+    /* Mengurangi gap lebih kecil */
+    margin-left: 0;
+    /* Menghilangkan margin kiri */
+  }
+}
 
 
     .photo-container {
@@ -1412,48 +1249,9 @@
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
     }
 
-    .description {
-      text-align: right;
-      /* Teks di dalam deskripsi akan rata ke kanan */
-      max-width: 500px;
-      color: #000000;
-      margin-left: 50px;
-      /* Sedikit margin kiri untuk jarak dari gambar */
-    }
 
-    @media (max-width: 1200px) {
-      .description {
-        max-width: 400px;
-        margin-left: 40px;
-        text-align: center;
-      }
-    }
 
-    @media (max-width: 992px) {
-      .description {
-        max-width: 350px;
-        margin-left: 30px;
-        text-align: center;
-      }
-    }
 
-    @media (max-width: 768px) {
-      .description {
-        max-width: 300px;
-        margin-left: 20px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .description {
-        max-width: 100%;
-        margin-left: 0;
-        /* Margin dihilangkan untuk layar kecil */
-        text-align: center;
-        /* Teks ditengah untuk perangkat kecil */
-      }
-    }
 
     .photo-info {
       position: absolute;
