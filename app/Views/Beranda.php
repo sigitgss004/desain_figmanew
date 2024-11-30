@@ -288,20 +288,7 @@
     }
 
 
-    .content-wrapper {
-      background-color: #BFE1F2;
-      /* Warna semi-transparan di belakang gambar */
-      padding: 20px;
-      border-radius: 10px;
-      /* Opsional untuk mempercantik */
-      width: 100%;
-      max-width: 100%;
-      box-sizing: border-box;
-      position: relative;
-      /* Tambahkan agar elemen ini bisa diatur z-index-nya */
-      z-index: 1;
-      /* Pastikan background berada di layer belakang */
-    }
+    
 
 
 
@@ -463,36 +450,89 @@
 
 
 
-    .title-highlight {
-      font-size: 100px;
-      font-weight: bold;
-      margin: 10px;
-      color: #000000;
-      word-spacing: 0px;
-      position: relative;
-      top: 50px;
-    }
+/* Default Style (untuk layar besar) */
+.title-highlight {
+  font-size: 100px;
+  font-weight: bold;
+  margin: 10px;
+  color: #000000;
+  word-spacing: 0px;
+  position: relative;
+  top: 50px;
+}
 
-    .description {
-      text-align: right;
-      /* Teks di dalam deskripsi akan rata ke kanan */
-      max-width: 500px;
-      color: #000000;
-      margin-left: 50px;
-      /* Sedikit margin kiri untuk jarak dari gambar */
-    }
+.description {
+  text-align: right; /* Tetap rata kanan */
+  max-width: 500px;
+  color: #000000;
+  margin-left: auto; /* Gunakan auto untuk menjaga posisi */
+  margin-right: 50px; /* Tetap beri jarak ke kanan */
+}
+
+.car-img {
+  width: 100%; /* Lebar gambar selalu penuh */
+  height: auto; /* Tinggi tetap proporsional */
+  object-fit: cover; /* Pastikan gambar tetap proporsional tanpa distorsi */
+  margin: 0 auto; /* Pusatkan gambar jika elemen induknya lebih kecil */
+  position: relative; /* Pastikan posisi relatif */
+  top: 90px; /* Gambar turun 70px pada default */
+}
+
+/* Layar 2560px */
+@media (max-width: 2560px) {
+  .car-img {
+    top: 50px; /* Sesuaikan posisi vertikal */
+  }
+}
+
+/* Layar 1440px */
+@media (max-width: 1440px) {
+  .car-img {
+    top: 40px; /* Gambar turun sedikit */
+  }
+}
+
+/* Layar 1024px */
+@media (max-width: 1024px) {
+  .car-img {
+    top: 30px; /* Kurangi jarak atas */
+  }
+}
+
+/* Layar 768px */
+@media (max-width: 768px) {
+  .car-img {
+    top: 20px; /* Gambar lebih mendekati elemen atas */
+  }
+}
+
+/* Layar 425px */
+@media (max-width: 425px) {
+  .car-img {
+    top: 15px; /* Gambar turun lebih kecil */
+  }
+}
+
+/* Layar 375px */
+@media (max-width: 375px) {
+  .car-img {
+    top: 10px; /* Jarak atas minimal */
+  }
+}
+
+/* Layar 320px */
+@media (max-width: 320px) {
+  .car-img {
+    top: 5px; /* Posisi gambar hampir menempel elemen atas */
+  }
+
+    
 
 
-    .car-img {
-      max-width: 50%;
-      height: auto;
-      object-fit: contain;
-      z-index: 2;
-      /* Z-index lebih tinggi untuk memastikan gambar ada di depan */
-      position: relative;
-      /* Aktifkan z-index dengan relative positioning */
-    }
-  
+
+
+
+
     .title-carwash {
       font-size: 100px;
       /* Ukuran default untuk layar besar */
@@ -897,11 +937,7 @@
 
 
 
-    @media (max-width: 768px) {
-      .content-wrapper {
-        flex-direction: column;
-        text-align: center;
-      }
+
 
       .car-img {
         max-width: 80%;
@@ -1931,11 +1967,7 @@
     <div class="overlay">
       <div class="content-wrapper">
         <img class="car-img" src="/upload/<?= $beranda->img_banner ?>" alt="Gambar Mobil" />
-        <div class="text-overlay">
-          <p class="title-highlight"><?= $beranda->title_banner; ?></p>
-          <!-- <p class="title-carwash">Car Wash</p> -->
-          <p class="description"><?= $beranda->deskripsi_banner; ?> </p>
-        </div>
+
       </div>
     </div>
 
