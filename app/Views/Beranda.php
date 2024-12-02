@@ -266,27 +266,6 @@
     }
 
 
-    .overlay {
-      width: 100vw;
-      /* Tetap full width */
-      height: 250px;
-      /* Ubah dari 400px ke 250px untuk mengurangi tinggi */
-      position: relative;
-      background: linear-gradient(90deg, #4D869C 50%, #BFE1F2 50%);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      z-index: 1;
-      margin-bottom: 50px;
-      padding: 0;
-      background-image: url('/upload/your-background-image.jpg');
-      /* Contoh jika ingin gambar */
-      background-size: cover;
-      /* Menyesuaikan gambar dengan ukuran elemen */
-      background-position: center;
-      /* Posisi gambar agar berada di tengah */
-    }
-
 
     
 
@@ -469,62 +448,7 @@
   margin-right: 50px; /* Tetap beri jarak ke kanan */
 }
 
-.car-img {
-  width: 100%; /* Lebar gambar selalu penuh */
-  height: auto; /* Tinggi tetap proporsional */
-  object-fit: cover; /* Pastikan gambar tetap proporsional tanpa distorsi */
-  margin: 0 auto; /* Pusatkan gambar jika elemen induknya lebih kecil */
-  position: relative; /* Pastikan posisi relatif */
-  top: 90px; /* Gambar turun 70px pada default */
-}
 
-/* Layar 2560px */
-@media (max-width: 2560px) {
-  .car-img {
-    top: 50px; /* Sesuaikan posisi vertikal */
-  }
-}
-
-/* Layar 1440px */
-@media (max-width: 1440px) {
-  .car-img {
-    top: 40px; /* Gambar turun sedikit */
-  }
-}
-
-/* Layar 1024px */
-@media (max-width: 1024px) {
-  .car-img {
-    top: 30px; /* Kurangi jarak atas */
-  }
-}
-
-/* Layar 768px */
-@media (max-width: 768px) {
-  .car-img {
-    top: 20px; /* Gambar lebih mendekati elemen atas */
-  }
-}
-
-/* Layar 425px */
-@media (max-width: 425px) {
-  .car-img {
-    top: 15px; /* Gambar turun lebih kecil */
-  }
-}
-
-/* Layar 375px */
-@media (max-width: 375px) {
-  .car-img {
-    top: 10px; /* Jarak atas minimal */
-  }
-}
-
-/* Layar 320px */
-@media (max-width: 320px) {
-  .car-img {
-    top: 5px; /* Posisi gambar hampir menempel elemen atas */
-  }
 
     
 
@@ -939,10 +863,7 @@
 
 
 
-      .car-img {
-        max-width: 80%;
-        margin-bottom: 20px;
-      }
+
 
       .text-box {
         padding-left: 0;
@@ -1008,7 +929,7 @@
         transform: scale(1.05);
         /* Efek zoom kecil saat hover */
       }
-    }
+    
 
     /* Hanya tambahkan styling ini agar aman dan tidak mengganggu konten lain */
     .image-card-container {
@@ -1945,6 +1866,85 @@
   }
 }
 
+.overlay-img {
+  width: 100%; /* Lebar penuh untuk semua layar */
+  height: auto; /* Tinggi proporsional */
+  object-fit: cover; /* Hindari distorsi */
+  margin: 0; /* Tidak ada margin */
+  padding: 0; /* Tidak ada padding */
+  max-height: 450px; /* Tinggi maksimal default untuk desktop besar */
+}
+
+/* Desktop Besar (2560px ke bawah) */
+@media (max-width: 2560px) {
+  .overlay-img {
+    max-height: 450px; /* Tinggi gambar disesuaikan untuk desktop besar */
+    width: 100%; /* Lebar tetap penuh */
+  }
+}
+
+/* Desktop Standar (1440px ke bawah) */
+@media (max-width: 1440px) {
+  .overlay-img {
+    max-height: 1000px; /* Tinggi disesuaikan untuk layar besar */
+    width: 100%; /* Lebar tetap penuh */
+  }
+}
+
+/* Laptop (1024px ke bawah) */
+@media (max-width: 1024px) {
+  .overlay-img {
+    max-height: 390px; /* Tinggi lebih kecil untuk laptop */
+    width: 100%; /* Lebar tetap penuh */
+  }
+}
+
+/* Tablet (768px ke bawah) */
+@media (max-width: 768px) {
+  .overlay-img {
+    max-height: 300px; /* Tinggi untuk tablet */
+    width: 100%; /* Lebar tetap penuh */
+  }
+}
+
+/* Mobile - 480px */
+@media (max-width: 480px) {
+  .overlay-img {
+    max-height: 220px; /* Tinggi gambar lebih kecil */
+    width: 100%; /* Lebar tetap penuh */
+  }
+}
+
+/* Mobile - 425px */
+@media (max-width: 425px) {
+  .overlay-img {
+    max-height: 200px; /* Tinggi lebih kecil untuk layar 425px */
+    width: 100%; /* Lebar tetap penuh */
+  }
+}
+
+/* Mobile - 375px */
+@media (max-width: 375px) {
+  .overlay-img {
+    max-height: 180px; /* Tinggi lebih kecil untuk layar 375px */
+    width: 100%; /* Lebar tetap penuh */
+  }
+}
+
+/* Mobile - 320px */
+@media (max-width: 320px) {
+  .overlay-img {
+    max-height: 160px; /* Tinggi lebih kecil untuk layar 320px */
+    width: 100%; /* Lebar tetap penuh */
+  }
+}
+
+
+
+
+
+
+
  </style>
 </head>
 
@@ -1965,10 +1965,10 @@
     </div>
 
     <div class="overlay">
-      <div class="content-wrapper">
-        <img class="car-img" src="/upload/<?= $beranda->img_banner ?>" alt="Gambar Mobil" />
-
-      </div>
+      <img class="overlay-img" src="/upload/beranda1.png" alt="Gambar Overlay" />
+      <div class="overlay-dark"></div>
+      <!-- <div class="breadcrumb">Beranda / Tentang</div>
+      <div class="article-label">Tentang Kami</div> -->
     </div>
 
 
