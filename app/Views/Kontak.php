@@ -288,158 +288,7 @@
         margin-bottom: 10px; /* Menyesuaikan margin */
     }
 }
-
-.contact-container {
-    display: flex;
-    justify-content: center;
-    align-items: flex-start;
-    padding: 20px;
-    flex-wrap: wrap; /* Agar elemen dapat berpindah baris pada perangkat kecil */
-}
-
-/* Untuk layar dengan lebar maksimal 768px (tablet dan ponsel) */
-@media screen and (max-width: 768px) {
-    .contact-container {
-        flex-direction: column; /* Mengubah layout menjadi vertikal */
-        align-items: center; /* Elemen rata tengah */
-    }
-}
-
-/* Untuk layar dengan lebar maksimal 480px (ponsel kecil) */
-@media screen and (max-width: 480px) {
-    .contact-container {
-        padding: 10px; /* Mengurangi padding untuk layar kecil */
-        flex-direction: column; /* Tetap vertikal */
-        justify-content: center; /* Elemen di tengah secara horizontal */
-        align-items: center; /* Elemen di tengah secara vertikal */
-    }
-}
-
-/* Untuk layar dengan lebar maksimal 425px (ponsel besar) */
-@media screen and (max-width: 425px) {
-    .contact-container {
-        padding: 10px; /* Padding lebih kecil */
-        flex-direction: column; /* Vertikal untuk ponsel besar */
-        justify-content: center; /* Elemen rata tengah horizontal */
-        align-items: center; /* Elemen rata tengah vertikal */
-        text-align: center; /* Teks rata tengah */
-    }
-}
-
-/* Untuk layar dengan lebar maksimal 375px (ponsel sedang) */
-@media screen and (max-width: 375px) {
-    .contact-container {
-        padding: 8px; /* Sedikit lebih kecil untuk perangkat 375px */
-        flex-direction: column; /* Tetap vertikal */
-        justify-content: center; /* Elemen rata tengah horizontal */
-        align-items: center; /* Elemen rata tengah vertikal */
-        text-align: center; /* Memastikan teks juga di tengah */
-    }
-}
-
-@media screen and (max-width: 320px) {
-    .contact-container {
-        padding: 5px; /* Kurangi padding untuk layar kecil */
-    }
-
-    .contact-info, .maps {
-        width: calc(100% - 20px); /* Kurangi lebar untuk memberi ruang */
-        margin: 10px auto; /* Ruang atas, bawah, kiri, dan kanan */
-        text-align: center; /* Teks tetap rata tengah */
-    }
-
-    .maps iframe {
-        width: 100%; /* Lebar penuh container */
-        max-width: 300px; /* Maksimal iframe */
-        margin: 0 auto; /* Pusatkan */
-    }
-}
-
-
-        .contact-info, .map {
-            background-color: #ffffff;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            padding: 20px;
-            margin: 10px;
-        }
-        .contact-info {
-    width: 40%; /* Ukuran default */
-    background-color: #e0f7fa;
-    text-align: center; /* Menyusun teks di tengah */
-    padding: 20px; /* Menambahkan padding untuk tampilan lebih baik */
-}
-
-/* Untuk perangkat yang lebih kecil seperti tablet */
-@media (max-width: 768px) {
-    .contact-info {
-        width: 60%; /* Menambah lebar agar elemen tidak terlalu kecil pada layar tablet */
-        text-align: left; /* Ubah alignment text jadi kiri untuk tablet */
-    }
-}
-
-/* Untuk perangkat yang sangat kecil seperti ponsel */
-@media (max-width: 480px) {
-    .contact-info {
-        width: 100%; /* Lebar penuh untuk ponsel */
-        text-align: left; /* Menjaga alignment tetap kiri pada layar kecil */
-    }
-}
-
-
-
-.article-label {
-  position: absolute;
-  top: 20px;
-  left: 20px;
-  color: #fff;
-  font-size: 32px;
-  font-weight: 700;
-  letter-spacing: 1px;
-  z-index: 2;
-}
-
-/* Tablet */
-@media (max-width: 768px) {
-  .article-label {
-    font-size: 24px; /* Mengurangi ukuran font */
-    top: 15px; /* Menurunkan jarak dari atas */
-    left: 15px; /* Menurunkan jarak dari kiri */
-  }
-}
-
-/* Mobile */
-@media (max-width: 480px) {
-  .article-label {
-    font-size: 18px; /* Mengurangi ukuran font lebih lanjut */
-    top: 10px; /* Menurunkan jarak dari atas */
-    left: 10px; /* Menurunkan jarak dari kiri */
-    letter-spacing: 0.5px; /* Mengurangi spasi antar huruf */
-  }
-}
-
-/* Ukuran layar 320px */
-@media (max-width: 320px) {
-  .article-label {
-    font-size: 14px; /* Ukuran font lebih kecil */
-    top: 5px; /* Menurunkan jarak dari atas */
-    left: 5px; /* Menurunkan jarak dari kiri */
-    letter-spacing: 0.2px; /* Mengurangi spasi antar huruf lebih jauh */
-  }
-}
-
-/* Ukuran layar 321px hingga 370px */
-@media (max-width: 370px) {
-  .article-label {
-    font-size: 16px; /* Ukuran font lebih kecil */
-    top: 8px; /* Menurunkan jarak dari atas */
-    left: 8px; /* Menurunkan jarak dari kiri */
-    letter-spacing: 0.3px; /* Mengurangi spasi antar huruf lebih jauh */
-  }
-}
-
-
-.contact-info ul {
+contact-info ul {
     list-style-type: none;
     padding: 0;
     text-align: center; /* Menambahkan text-align: left */
@@ -495,6 +344,140 @@
             border: none;
             border-radius: 10px;
         }
+
+
+/* Reset Margin dan Padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Kontainer Utama */
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 20px; /* Jarak antar elemen */
+    padding: 20px; /* Jarak ke tepi halaman */
+}
+
+/* Elemen Info Kontak */
+.contact-info {
+    width: 40%;
+    background-color: #e0f7fa;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin: 10px 0; /* Jarak antara elemen */
+}
+
+/* Elemen Peta */
+.map {
+    width: 50%;
+    height: 530px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin: 10px 0;
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .contact-info, .map {
+        width: 80%;
+        margin: 10px 0; /* Pastikan margin tidak terlalu besar */
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-info, .map {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .map {
+        height: 300px;
+    }
+}
+
+@media (max-width: 320px) {
+    .contact-info, .map {
+        width: 100%;
+        margin: 5px 0;
+    }
+
+    .map {
+        height: 250px;
+    }
+}
+
+
+.article-label {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  z-index: 2;
+}
+
+/* Tablet */
+@media (max-width: 768px) {
+  .article-label {
+    font-size: 24px; /* Mengurangi ukuran font */
+    top: 15px; /* Menurunkan jarak dari atas */
+    left: 15px; /* Menurunkan jarak dari kiri */
+  }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  .article-label {
+    font-size: 18px; /* Mengurangi ukuran font lebih lanjut */
+    top: 10px; /* Menurunkan jarak dari atas */
+    left: 10px; /* Menurunkan jarak dari kiri */
+    letter-spacing: 0.5px; /* Mengurangi spasi antar huruf */
+  }
+}
+
+/* Ukuran layar 320px */
+@media (max-width: 320px) {
+  .article-label {
+    font-size: 14px; /* Ukuran font lebih kecil */
+    top: 5px; /* Menurunkan jarak dari atas */
+    left: 5px; /* Menurunkan jarak dari kiri */
+    letter-spacing: 0.2px; /* Mengurangi spasi antar huruf lebih jauh */
+  }
+}
+
+/* Ukuran layar 321px hingga 370px */
+@media (max-width: 370px) {
+  .article-label {
+    font-size: 16px; /* Ukuran font lebih kecil */
+    top: 8px; /* Menurunkan jarak dari atas */
+    left: 8px; /* Menurunkan jarak dari kiri */
+    letter-spacing: 0.3px; /* Mengurangi spasi antar huruf lebih jauh */
+  }
+}
+
+
 
     .sub-title {
       text-align: center;
