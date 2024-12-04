@@ -23,6 +23,10 @@ class AktivitasController extends BaseController
 
                         $data['aktivitasdata']  = $aktivitasDataModel->FindAll();
                          
+
+                        $lang = session()->get('lang') ?? 'id';
+                        $data['lang'] = $lang;
+
                          // Kirim data ke view
                          return view('Aktivitas/index', $data);
     }
@@ -36,6 +40,10 @@ class AktivitasController extends BaseController
         if (!$aktivitas) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(); // Jika produk tidak ditemukan
         }
+
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
+
         $data['aktivitas'] = $aktivitas;
         return view('aktivitas/detail', ['aktivitas' => $aktivitas]);
     }

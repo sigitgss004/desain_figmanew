@@ -597,13 +597,13 @@
     <div class="header">
     <button class="nav-toggler">☰</button>
     <div class="nav">
-    <a href="http://localhost:8080" class="nav-item">Beranda</a>
-    <a href="http://localhost:8080/tentang" class="nav-item">Tentang</a>
-    <a href="http://localhost:8080/artikel" class="nav-item">Artikel</a>
-    <a href="http://localhost:8080/produk" class="nav-item">Produk</a>
-    <a href="http://localhost:8080/aktivitas" class="nav-item">Aktivitas</a>
-    <a href="http://localhost:8080/kontak" class="nav-item">Kontak</a>
-  </div>
+        <a href="/" class="nav-item">Beranda</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>" class="nav-item">Tentang</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>" class="nav-item">Artikel</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/produtc') : base_url('/id/produk') ?>" class="nav-item">Produk</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>" class="nav-item">Aktivitas</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>" class="nav-item">Kontak</a>
+      </div>
 
       <img class="logo" src="/upload/logo.png" alt="Logo">
     </div>
@@ -612,12 +612,12 @@
     <div class="overlay">
       <img class="overlay-img" src="/upload/fotocar.jpg" alt="Gambar Overlay" />
       <div class="overlay-dark"></div>
-      <div class="breadcrumb">Beranda / Artikel</div>
-      <div class="article-label">Artikel Kami</div>
+      <div class="breadcrumb"><?=lang('Blog.artikel');?></div>
+      <div class="article-label"><?=lang('Blog.artikelkami');?></div>
     </div>
 
     <!-- Judul Artikel -->
-    <div class="article-title">Artikel Kami</div>
+    <div class="article-title"><?=lang('Blog.artikelkami');?></div>
 
     <div class="main-wrapper">
     <?php 
@@ -631,16 +631,20 @@
 
                 <!-- Kotak Artikel -->
                 <div class="article-box">
-                    <img src="/upload/<?= $artikel->img_artikel ?>" alt="<?= $artikel->title_artikel ?>" class="article-img profile-img">
+                    <img src="/upload/<?= $artikel->img_artikel ?>" class="article-img profile-img">
                     <div class="article-text">
-                        <h3><?= $artikel->title_artikel ?></h3>
+                    <h3>
+    <?= ($lang == 'id') ? $artikel->title_artikel : $artikel->title_artikel_en ?>
+</h3>
                         <p class="custom-color">
-                            <?php 
-                            $deskripsi_pendek = substr($artikel->deskripsi_artikel, 0, 200);
-                            echo strlen($artikel->deskripsi_artikel) > 200 ? $deskripsi_pendek . '...' : $deskripsi_pendek;
-                            ?>
-                        </p>
-                        <a href="<?= site_url('artikel/' . $artikel->slug) ?>" class="read-more-btn">Baca Selengkapnya</a>
+    <?php 
+    $deskripsi = ($lang == 'id') ? $artikel->deskripsi_artikel : $artikel->deskripsi_artikel_en;
+    $deskripsi_pendek = substr($deskripsi, 0, 200);
+    echo strlen($deskripsi) > 200 ? $deskripsi_pendek . '...' : $deskripsi_pendek;
+    ?>
+</p>
+
+                        <a href="<?= site_url('artikel/' . $artikel->slug) ?>" class="read-more-btn"><?=lang('Blog.bacaselengkapnya');?></a>
                     </div>
                 </div>
 

@@ -23,7 +23,8 @@ class ProdukController extends BaseController
 
         $data['produkdata'] = $produkDataModel->findAll();
 
-        
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
          
          // Kirim data ke view
          return view('Produk/index', $data);
@@ -38,6 +39,10 @@ class ProdukController extends BaseController
         if (!$produk) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(); // Jika produk tidak ditemukan
         }
+
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
+
         $data['produk'] = $produk;
         return view('produk/detail', ['produk' => $produk]);
     }

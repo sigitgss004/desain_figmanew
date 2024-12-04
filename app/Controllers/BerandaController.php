@@ -17,6 +17,8 @@ class BerandaController extends BaseController
         // Ambil semua data, data akan dikembalikan sebagai object
         $data['beranda'] = $berandaModel->first();
 
+    
+
      
 
         // Kirim data ke view

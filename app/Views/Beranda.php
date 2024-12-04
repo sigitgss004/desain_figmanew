@@ -1954,18 +1954,18 @@
     <div class="header">
       <button class="nav-toggler">☰</button>
       <div class="nav">
-        <a href="http://localhost:8080" class="nav-item">Beranda</a>
-        <a href="http://localhost:8080/tentang" class="nav-item">Tentang</a>
-        <a href="http://localhost:8080/artikel" class="nav-item">Artikel</a>
-        <a href="http://localhost:8080/produk" class="nav-item">Produk</a>
-        <a href="http://localhost:8080/aktivitas" class="nav-item">Aktivitas</a>
-        <a href="http://localhost:8080/kontak" class="nav-item">Kontak</a>
+        <a href="/" class="nav-item">Beranda</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>" class="nav-item">Tentang</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>" class="nav-item">Artikel</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/produtc') : base_url('/id/produk') ?>" class="nav-item">Produk</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>" class="nav-item">Aktivitas</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>" class="nav-item">Kontak</a>
       </div>
       <img class="logo" src="/upload/<?= $beranda->img_logo ?>" alt="LuxeWash Auto Detail Logo">
     </div>
 
     <div class="overlay">
-      <img class="overlay-img" src="/upload/beranda1.png" alt="Gambar Overlay" />
+      <img class="overlay-img" src="/upload/<?= $beranda->img_banner?>" alt="Gambar Overlay" />
       <div class="overlay-dark"></div>
       <!-- <div class="breadcrumb">Beranda / Tentang</div>
       <div class="article-label">Tentang Kami</div> -->

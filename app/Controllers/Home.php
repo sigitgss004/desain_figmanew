@@ -27,6 +27,9 @@ class Home extends BaseController
         $produkModel = new ProdukModel();
         $data['produk'] = $produkModel->first();
 
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
+  
 
         // var_dump($data);
         // die();

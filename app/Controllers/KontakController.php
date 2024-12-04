@@ -17,6 +17,9 @@ class KontakController extends BaseController
                  // Ambil semua data, data akan dikembalikan sebagai object
                  $data['kontak'] = $kontakModel->first();
                  
+                 $lang = session()->get('lang') ?? 'id';
+                 $data['lang'] = $lang;
+
                  // Kirim data ke view
                  return view('Kontak', $data);
     }

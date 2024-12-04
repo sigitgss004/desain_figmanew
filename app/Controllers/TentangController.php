@@ -16,6 +16,9 @@ class TentangController extends BaseController
          // Ambil semua data, data akan dikembalikan sebagai object
          $data['tentang'] = $tentangModel->first();
          
+         $lang = session()->get('lang') ?? 'id';
+         $data['lang'] = $lang;
+
          // Kirim data ke view
          return view('Tentang', $data);
     }

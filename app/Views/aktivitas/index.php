@@ -595,14 +595,14 @@
     <!-- Header -->
     <div class="header">
     <button class="nav-toggler">☰</button>
-  <div class="nav">
-    <a href="http://localhost:8080" class="nav-item">Beranda</a>
-    <a href="http://localhost:8080/tentang" class="nav-item">Tentang</a>
-    <a href="http://localhost:8080/artikel" class="nav-item">Artikel</a>
-    <a href="http://localhost:8080/produk" class="nav-item">Produk</a>
-    <a href="http://localhost:8080/aktivitas" class="nav-item">Aktivitas</a>
-    <a href="http://localhost:8080/kontak" class="nav-item">Kontak</a>
-  </div>
+    <div class="nav">
+        <a href="/" class="nav-item">Beranda</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>" class="nav-item">Tentang</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>" class="nav-item">Artikel</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/produtc') : base_url('/id/produk') ?>" class="nav-item">Produk</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>" class="nav-item">Aktivitas</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>" class="nav-item">Kontak</a>
+      </div>
   <img class="logo" src="/upload/logo.png" alt="Logo">
 </div>
 

@@ -548,12 +548,12 @@
     <div class="header">
     <button class="nav-toggler">☰</button>
       <div class="nav">
-        <a href="http://localhost:8080" class="nav-item">Beranda</a>
-        <a href="http://localhost:8080/tentang" class="nav-item">Tentang</a>
-        <a href="http://localhost:8080/artikel" class="nav-item">Artikel</a>
-        <a href="http://localhost:8080/produk" class="nav-item">Produk</a>
-        <a href="http://localhost:8080/aktivitas" class="nav-item">Aktivitas</a>
-        <a href="http://localhost:8080/kontak" class="nav-item">Kontak</a>
+        <a href="/" class="nav-item">Beranda</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>" class="nav-item">Tentang</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>" class="nav-item">Artikel</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/produtc') : base_url('/id/produk') ?>" class="nav-item">Produk</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>" class="nav-item">Aktivitas</a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>" class="nav-item">Kontak</a>
       </div>
       <img class="logo" src="/upload/logo.png" alt="Logo">
     </div>
@@ -562,8 +562,8 @@
     <div class="overlay">
       <img class="overlay-img" src="/upload/fotocar.jpg" alt="Gambar Overlay" />
       <div class="overlay-dark"></div>
-      <div class="breadcrumb">Beranda / Tentang</div>
-      <div class="article-label">Tentang Kami</div>
+      <div class="breadcrumb"><?=lang('Blog.beranda');?></div>
+      <div class="article-label"><?=lang('Blog.tentangkamislider');?></div>
     </div>
 
     <!-- Tentang Kami Section -->
@@ -573,9 +573,14 @@
 
       </div>
       <div class="about-text">
-        <p>
-          <?= $tentang->deskripsi_tentang ?>
-        </p>
+      <p>
+    <?php if ($lang == 'id'): ?>
+        <?= $tentang->deskripsi_tentang ?>
+    <?php else: ?>
+        <?= $tentang->deskripsi_tentang_en ?>
+    <?php endif; ?>
+</p>
+
       </div>
       <div class="profile-img-wrapper">
         <img class="profile-img" src="/upload/<?= $tentang->img_tentang2; ?>" alt="Profile Image" />

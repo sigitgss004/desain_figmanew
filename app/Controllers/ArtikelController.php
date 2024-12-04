@@ -23,6 +23,9 @@ class ArtikelController extends BaseController
         
         $data['artikeldata']  = $artikelDataModel->FindAll();
 
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
+
         // Kirim data ke view
         return view('Artikel/index', $data);
     }
@@ -36,6 +39,10 @@ class ArtikelController extends BaseController
         if (!$artikel) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(); // Jika produk tidak ditemukan
         }
+
+        $lang = session()->get('lang') ?? 'id';
+        $data['lang'] = $lang;
+
         $data['artikel'] = $artikel;
         return view('artikel/detail', ['artikel' => $artikel]);
     }
