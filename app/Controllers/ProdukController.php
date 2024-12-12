@@ -12,10 +12,10 @@ class ProdukController extends BaseController
     public function index()
     {
         //  // Inisialisasi model
-        //  $produkModel = new ProdukModel();
-        
+          $produkModel = new ProdukModel();
+
         //  // Ambil semua data, data akan dikembalikan sebagai object
-        //  $data['produk'] = $produkModel->first();
+          $data['produk'] = $produkModel->first();
 
         $produkDataModel = new DataProdukModel();
 
@@ -25,9 +25,9 @@ class ProdukController extends BaseController
 
         $lang = session()->get('lang') ?? 'id';
         $data['lang'] = $lang;
-         
-         // Kirim data ke view
-         return view('Produk/index', $data);
+
+        // Kirim data ke view
+        return view('Produk/index', $data);
     }
 
     public function detail($slug)
@@ -44,8 +44,14 @@ class ProdukController extends BaseController
         $data['lang'] = $lang;
 
         $data['produk'] = $produk;
+        // Cek apakah slug sesuai dengan bahasa yang sedang aktif
+        if (($lang === 'id' && $slug !== $produk->slug) || ($lang === 'en' && $slug !== $produk->slug_en)) {
+            // Redirect ke URL slug yang benar sesuai bahasa
+            $correctSlug = $lang === 'id' ? $produk->slug : $produk->slug_en;
+            $correctulr = $lang === 'id' ? 'produk' : 'product';
+
+            return redirect()->to("$lang/$correctulr/$correctSlug");
+        }
         return view('produk/detail', ['produk' => $produk]);
     }
 }
-
-

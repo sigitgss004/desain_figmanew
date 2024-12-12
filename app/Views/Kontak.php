@@ -492,36 +492,52 @@ body {
   <div class="container">
     <div class="header">
     <div class="nav">
-        <a href="/" class="nav-item">Beranda</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>" class="nav-item">Tentang</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>" class="nav-item">Artikel</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/produtc') : base_url('/id/produk') ?>" class="nav-item">Produk</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>" class="nav-item">Aktivitas</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>" class="nav-item">Kontak</a>
-      </div>
-      <img class="logo" src="/upload/logo.png" alt="Logo">
-    </div>
+    <!-- Link Beranda yang menyesuaikan dengan bahasa yang dipilih -->
+    <a href="<?= ($lang == 'en') ? base_url('/en/') : base_url('/id/') ?>" class="nav-item"><?= ($lang == 'en') ? 'Home' : 'Beranda' ?></a>
+    
+    <!-- Link lainnya tetap sama seperti sebelumnya -->
+    <a href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>" class="nav-item"><?= ($lang == 'en') ? 'About' : 'Tentang' ?></a>
+    <a href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>" class="nav-item"><?= ($lang == 'en') ? 'Article' : 'Artikel' ?></a>
+    <a href="<?= ($lang == 'en') ? base_url('/en/product') : base_url('/id/produk') ?>" class="nav-item"><?= ($lang == 'en') ? 'Product' : 'Produk' ?></a>
+    <a href="<?= ($lang == 'en') ? base_url('/en/activity') : base_url('/id/aktivitas') ?>" class="nav-item"><?= ($lang == 'en') ? 'Activity' : 'Aktivitas' ?></a>
+    <a href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>" class="nav-item"><?= ($lang == 'en') ? 'Contact' : 'Kontak' ?></a>
+</div>
+
+<img class="logo" src="<?= base_url('upload/' . $kontak->logo); ?>" alt="Logo">
+</div>
     
     <!-- Gambar Tepat di Bawah Navbar -->
     <div class="overlay">
       <img class="overlay-img" src="/upload/fotocar.jpg" alt="Gambar Overlay" />
       <div class="overlay-dark"></div>
-      <div class="breadcrumb">Beranda / Kontak</div>
-      <div class="article-label">Kontak Kami</div>
+      <div class="breadcrumb"><?=lang('Blog.kontak2');?></div>
+      <div class="article-label"><?=lang('Blog.kontak1');?></div>
     </div>
 
     <div class="content">
     <button class="nav-toggler">☰</button>
-        <h1>KONTAK KAMI</h1>
+        <h1><?=lang('Blog.kontak3');?></h1>
         <div class="contact-container">
             <div class="contact-info">
-                <h2>Kontak Kami</h2>
-                <p><?= $kontak->kontak_kami?></p>
-                <h3>Informasi Kontak:</h3>
+                <h2><?=lang('Blog.kontak4');?></h2>
+                <?php if ($lang == 'id'): ?>
+    <p><?= $kontak->kontak_kami ?></p>
+<?php else: ?>
+    <p><?= $kontak->kontak_kami_en ?></p>
+<?php endif; ?>
+                <h3><?=lang('Blog.kontak5');?>:</h3>
                 <ul>
-                    <li><?=$kontak->info_kontak?></li>
-                <h3>Formulir Kontak:</h3>
-                <p><?=$kontak->form_kontak?></p>
+                <?php if ($lang === 'id'): ?>
+    <li><?=$kontak->info_kontak?></li>
+<?php else: ?>
+    <li><?=$kontak->info_kontak_en?></li>
+<?php endif; ?>
+                <h3><?=lang('Blog.kontak6');?>:</h3>
+                <?php if ($lang == 'id'): ?>
+    <p><?=$kontak->form_kontak?></p>
+<?php else: ?>
+    <p><?=$kontak->form_kontak_en?></p>
+<?php endif; ?>
             </div>
             <div class="map">
                 <iframe src=<?=$kontak->maps_kontak?> allowfullscreen="" loading="lazy"></iframe>

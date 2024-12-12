@@ -5,6 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GX4c9ud6XmSKsH8tBgn+ihT5CMJ5tb63kFIs1h6TuPvf5j03ZkGJ/fdBP+yo1L6c" crossorigin="anonymous">
+
+
+
   <style>
     body {
       margin: 0;
@@ -92,89 +98,106 @@
     }
 
     .logo-container {
-  display: flex; /* Menggunakan flexbox */
-  justify-content: flex-end; /* Mengatur konten ke kanan */
-  align-items: center; /* Menyelaraskan secara vertikal */
-  width: 100%; /* Lebar penuh */
-  padding: 0 20px; /* Padding untuk jarak */
-  box-sizing: border-box; /* Memastikan padding dihitung dalam lebar */
-}
+      display: flex;
+      /* Menggunakan flexbox */
+      justify-content: flex-end;
+      /* Mengatur konten ke kanan */
+      align-items: center;
+      /* Menyelaraskan secara vertikal */
+      width: 100%;
+      /* Lebar penuh */
+      padding: 0 20px;
+      /* Padding untuk jarak */
+      box-sizing: border-box;
+      /* Memastikan padding dihitung dalam lebar */
+    }
 
-.logo {
-  width: 30vw; /* Default pada layar kecil */
-  height: auto;
-  max-width: 106px;
-  margin-left: auto; /* Mendorong logo ke kanan */
-}
+    .logo {
+      width: 30vw;
+      /* Default pada layar kecil */
+      height: auto;
+      max-width: 106px;
+      margin-left: auto;
+      /* Mendorong logo ke kanan */
+    }
 
-/* Pada layar tablet */
-@media (min-width: 768px) {
-  .logo {
-    width: 20vw;
-  }
-}
+    /* Pada layar tablet */
+    @media (min-width: 768px) {
+      .logo {
+        width: 20vw;
+      }
+    }
 
-/* Pada layar desktop */
-@media (min-width: 1024px) {
-  .logo {
-    width: 10vw;
-  }
-}
+    /* Pada layar desktop */
+    @media (min-width: 1024px) {
+      .logo {
+        width: 10vw;
+      }
+    }
 
-/* Default: Tampilan Desktop */
-.nav {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 20px; /* Jarak antar item menu */
-}
-
-.nav-item {
-    color: white;
-    font-size: 16px;
-    font-weight: 800;
-    margin: 0; /* Tidak ada jarak antar item menu */
-    padding: 1px 1px;
-    cursor: pointer;
-    position: relative; /* Untuk efek garis bawah animatif */
-    transition: color 0.3s ease, background-color 0.3s ease;
-    text-decoration: none; /* Menghilangkan garis bawah */
-}
-
-/* Efek hover */
-.nav-item:hover {
-    background-color: #3B6A85; /* Warna latar belakang saat hover */
-    color: #FFF; /* Ubah warna teks */
-}
-
-.nav-item::after {
-    content: '';
-    position: absolute;
-    width: 0;
-    height: 3px;
-    background-color: white;
-    bottom: -6px;
-    left: 0;
-    transition: width 0.3s ease;
-}
-
-/* Efek hover: garis bawah */
-.nav-item:hover::after {
-    width: 100%;
-}
-
-/* Toggler: Desktop (disembunyikan) */
-.nav-toggler {
-    display: none;
-}
-
-/* Navigasi: Layar kecil */
-@media (max-width: 768px) {
+    /* Default: Tampilan Desktop */
     .nav {
-        display: none; /* Sembunyikan menu utama */
-        flex-direction: column; /* Menu akan vertikal saat diaktifkan */
+      display: flex;
+      justify-content: flex-start;
+      align-items: center;
+      gap: 20px;
+      /* Jarak antar item menu */
+    }
+
+    .nav-item {
+      color: white;
+      font-size: 16px;
+      font-weight: 800;
+      margin: 0;
+      /* Tidak ada jarak antar item menu */
+      padding: 1px 1px;
+      cursor: pointer;
+      position: relative;
+      /* Untuk efek garis bawah animatif */
+      transition: color 0.3s ease, background-color 0.3s ease;
+      text-decoration: none;
+      /* Menghilangkan garis bawah */
+    }
+
+    /* Efek hover */
+    .nav-item:hover {
+      background-color: #3B6A85;
+      /* Warna latar belakang saat hover */
+      color: #FFF;
+      /* Ubah warna teks */
+    }
+
+    .nav-item::after {
+      content: '';
+      position: absolute;
+      width: 0;
+      height: 3px;
+      background-color: white;
+      bottom: -6px;
+      left: 0;
+      transition: width 0.3s ease;
+    }
+
+    /* Efek hover: garis bawah */
+    .nav-item:hover::after {
+      width: 100%;
+    }
+
+    /* Toggler: Desktop (disembunyikan) */
+    .nav-toggler {
+      display: none;
+    }
+
+    /* Navigasi: Layar kecil */
+    @media (max-width: 768px) {
+      .nav {
+        display: none;
+        /* Sembunyikan menu utama */
+        flex-direction: column;
+        /* Menu akan vertikal saat diaktifkan */
         gap: 0;
-        background-color: #4D869C; /* Warna latar belakang */
+        background-color: #4D869C;
+        /* Warna latar belakang */
         position: absolute;
         top: 0;
         left: 0;
@@ -182,22 +205,29 @@
         max-height: 300px;
         overflow-y: auto;
         z-index: 1000;
-        padding: 90px 10px; /* Padding dalam menu */
+        padding: 90px 10px;
+        /* Padding dalam menu */
         box-shadow: 2px 0 5px rgba(0, 0, 0, 0.2);
         border-radius: 0 10px 10px 0;
-        transition: transform 0.3s ease-in-out; /* Animasi buka/tutup */
-    }
+        transition: transform 0.3s ease-in-out;
+        /* Animasi buka/tutup */
+      }
 
-    .nav.active {
-    display: flex; /* Tampilkan menu saat aktif */
-    gap: 15px; /* Tambahkan jarak antar item menu */
-    width: 30%; /* Kurangi lebar background */
-    height: 200px; /* Kurangi tinggi background */
-}
+      .nav.active {
+        display: flex;
+        /* Tampilkan menu saat aktif */
+        gap: 15px;
+        /* Tambahkan jarak antar item menu */
+        width: 30%;
+        /* Kurangi lebar background */
+        height: 200px;
+        /* Kurangi tinggi background */
+      }
 
 
-    .nav-toggler {
-        display: block; /* Tampilkan toggler */
+      .nav-toggler {
+        display: block;
+        /* Tampilkan toggler */
         background-color: transparent;
         border: none;
         font-size: 24px;
@@ -205,10 +235,12 @@
         cursor: pointer;
         position: absolute;
         top: 20px;
-        left: 20px; /* Posisi toggler */
-        z-index: 1001; /* Tetap di atas elemen lain */
+        left: 20px;
+        /* Posisi toggler */
+        z-index: 1001;
+        /* Tetap di atas elemen lain */
+      }
     }
-}
 
     .overlay {
       width: 100%;
@@ -504,70 +536,96 @@
     }
 
     .read-more-btn {
-    margin-top: 10px;
-    display: inline-block;
-    background-color: transparent; /* Atur warna latar belakang menjadi transparan jika diinginkan */
-    color: white;
-    padding: 0.5rem 1rem; /* Menggunakan rem untuk ukuran yang lebih responsif */
-    border: 2px solid white; /* Menambahkan border putih */
-    border-radius: 5px; /* Menjaga radius sudut */
-    text-decoration: none;
-    font-size: 1rem; /* Menggunakan rem untuk font size */
-    transition: background-color 0.3s ease; /* Transisi halus saat hover */
-}
-
-.read-more-btn:hover {
-    background-color: rgba(255, 255, 255, 0.1); /* Efek hover untuk memberi warna latar belakang saat di-hover */
-}
-
-/* Media Queries untuk layar besar (1024px) */
-@media (max-width: 1024px) {
-    .read-more-btn {
-        padding: 0.6rem 1.2rem; /* Sedikit menambah padding */
-        font-size: 1.1rem; /* Ukuran font lebih besar */
+      margin-top: 10px;
+      display: inline-block;
+      background-color: transparent;
+      /* Atur warna latar belakang menjadi transparan jika diinginkan */
+      color: white;
+      padding: 0.5rem 1rem;
+      /* Menggunakan rem untuk ukuran yang lebih responsif */
+      border: 2px solid white;
+      /* Menambahkan border putih */
+      border-radius: 5px;
+      /* Menjaga radius sudut */
+      text-decoration: none;
+      font-size: 1rem;
+      /* Menggunakan rem untuk font size */
+      transition: background-color 0.3s ease;
+      /* Transisi halus saat hover */
     }
-}
 
-/* Media Queries untuk layar tablet (768px) */
-@media (max-width: 768px) {
-    .read-more-btn {
-        padding: 0.75rem 1.5rem; /* Tambahkan padding untuk layar lebih kecil */
-        font-size: 1rem; /* Ukuran font tetap proporsional */
-        margin: 10px auto; /* Memastikan tombol tetap rata tengah */
+    .read-more-btn:hover {
+      background-color: rgba(255, 255, 255, 0.1);
+      /* Efek hover untuk memberi warna latar belakang saat di-hover */
     }
-}
 
-/* Media Queries untuk layar 425px */
-@media (max-width: 425px) {
-    .read-more-btn {
-        width: 60%; /* Tombol memenuhi sebagian lebar kontainer */
-        padding: 0.6rem 1.2rem; /* Kurangi padding sedikit */
-        font-size: 0.9rem; /* Mengurangi ukuran font */
-        margin: 0 auto; /* Rata tengah dengan margin auto */
-        display: block; /* Agar tombol tampil sebagai elemen blok */
+    /* Media Queries untuk layar besar (1024px) */
+    @media (max-width: 1024px) {
+      .read-more-btn {
+        padding: 0.6rem 1.2rem;
+        /* Sedikit menambah padding */
+        font-size: 1.1rem;
+        /* Ukuran font lebih besar */
+      }
     }
-}
 
-/* Media Queries untuk layar 375px */
-@media (max-width: 375px) {
-    .read-more-btn {
-        width: 70%; /* Tombol lebih besar untuk layar lebih kecil */
-        padding: 0.5rem 1rem; /* Kurangi padding sedikit */
-        font-size: 0.85rem; /* Ukuran font lebih kecil */
-        margin: 0 auto; /* Rata tengah */
+    /* Media Queries untuk layar tablet (768px) */
+    @media (max-width: 768px) {
+      .read-more-btn {
+        padding: 0.75rem 1.5rem;
+        /* Tambahkan padding untuk layar lebih kecil */
+        font-size: 1rem;
+        /* Ukuran font tetap proporsional */
+        margin: 10px auto;
+        /* Memastikan tombol tetap rata tengah */
+      }
     }
-}
 
-/* Media Queries untuk layar 320px */
-@media (max-width: 320px) {
-    .read-more-btn {
-        width: 80%; /* Tombol memenuhi sebagian besar lebar kontainer */
-        padding: 0.4rem; /* Menyesuaikan padding untuk ukuran lebih kecil */
-        font-size: 0.75rem; /* Ukuran font lebih kecil */
-        margin: 0 auto; /* Rata tengah */
-        display: block; /* Pastikan tombol tampil sebagai elemen blok */
+    /* Media Queries untuk layar 425px */
+    @media (max-width: 425px) {
+      .read-more-btn {
+        width: 60%;
+        /* Tombol memenuhi sebagian lebar kontainer */
+        padding: 0.6rem 1.2rem;
+        /* Kurangi padding sedikit */
+        font-size: 0.9rem;
+        /* Mengurangi ukuran font */
+        margin: 0 auto;
+        /* Rata tengah dengan margin auto */
+        display: block;
+        /* Agar tombol tampil sebagai elemen blok */
+      }
     }
-}
+
+    /* Media Queries untuk layar 375px */
+    @media (max-width: 375px) {
+      .read-more-btn {
+        width: 70%;
+        /* Tombol lebih besar untuk layar lebih kecil */
+        padding: 0.5rem 1rem;
+        /* Kurangi padding sedikit */
+        font-size: 0.85rem;
+        /* Ukuran font lebih kecil */
+        margin: 0 auto;
+        /* Rata tengah */
+      }
+    }
+
+    /* Media Queries untuk layar 320px */
+    @media (max-width: 320px) {
+      .read-more-btn {
+        width: 80%;
+        /* Tombol memenuhi sebagian besar lebar kontainer */
+        padding: 0.4rem;
+        /* Menyesuaikan padding untuk ukuran lebih kecil */
+        font-size: 0.75rem;
+        /* Ukuran font lebih kecil */
+        margin: 0 auto;
+        /* Rata tengah */
+        display: block;
+        /* Pastikan tombol tampil sebagai elemen blok */
+      }
+    }
 
 
     /* Gambar artikel */
@@ -577,54 +635,71 @@
     }
 
     .profile-container {
-    display: flex; /* Aktifkan Flexbox */
-    justify-content: center; /* Pusatkan secara horizontal */
-    align-items: center; /* Pusatkan secara vertikal */
-    flex-direction: column; /* Pastikan gambar dan konten di bawahnya vertikal */
-    padding: 10px; /* Tambahkan ruang di sekitar */
-    text-align: center; /* Teks di dalam rata tengah */
-}
+      display: flex;
+      /* Aktifkan Flexbox */
+      justify-content: center;
+      /* Pusatkan secara horizontal */
+      align-items: center;
+      /* Pusatkan secara vertikal */
+      flex-direction: column;
+      /* Pastikan gambar dan konten di bawahnya vertikal */
+      padding: 10px;
+      /* Tambahkan ruang di sekitar */
+      text-align: center;
+      /* Teks di dalam rata tengah */
+    }
 
-/* Gaya untuk gambar */
-.profile-img {
-    width: 150px; /* Ukuran default untuk desktop */
-    height: 150px; 
-    object-fit: cover; /* Pastikan gambar sesuai rasio */
-    border-radius: 12px; 
-    margin: 0 auto; /* Pusatkan gambar dalam container */
-}
-
-/* Tablet */
-@media (max-width: 768px) {
+    /* Gaya untuk gambar */
     .profile-img {
-        width: 120px; 
-        height: 120px; 
+      width: 150px;
+      /* Ukuran default untuk desktop */
+      height: 150px;
+      object-fit: cover;
+      /* Pastikan gambar sesuai rasio */
+      border-radius: 12px;
+      margin: 0 auto;
+      /* Pusatkan gambar dalam container */
     }
-}
 
-/* Mobile (425px) */
-@media (max-width: 425px) {
-    .profile-container {
-        padding: 5px; /* Kurangi padding untuk layar kecil */
+    /* Tablet */
+    @media (max-width: 768px) {
+      .profile-img {
+        width: 120px;
+        height: 120px;
+      }
     }
-    .profile-img {
-        width: 100px; /* Ukuran lebih kecil */
-        height: 100px; 
-        margin: 0 auto; /* Pusatkan gambar */
-    }
-}
 
-/* Very Small Mobile (320px) */
-@media (max-width: 320px) {
-    .profile-container {
-        padding: 5px; /* Pastikan ada ruang di sekitar */
+    /* Mobile (425px) */
+    @media (max-width: 425px) {
+      .profile-container {
+        padding: 5px;
+        /* Kurangi padding untuk layar kecil */
+      }
+
+      .profile-img {
+        width: 100px;
+        /* Ukuran lebih kecil */
+        height: 100px;
+        margin: 0 auto;
+        /* Pusatkan gambar */
+      }
     }
-    .profile-img {
-        width: 80px; /* Ukuran lebih kecil */
+
+    /* Very Small Mobile (320px) */
+    @media (max-width: 320px) {
+      .profile-container {
+        padding: 5px;
+        /* Pastikan ada ruang di sekitar */
+      }
+
+      .profile-img {
+        width: 80px;
+        /* Ukuran lebih kecil */
         height: 80px;
-        margin: 0 auto; /* Tetap rata tengah */
+        margin: 0 auto;
+        /* Tetap rata tengah */
+      }
     }
-}
 
 
     /* Responsive adjustments */
@@ -657,34 +732,196 @@
       color: white;
     }
   </style>
+  
+
+  </style>
+
+  <!-- start css lang -->
+  <style>
+    /* Wrapper posisi di pojok kanan bawah */
+    .floating-language {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      display: flex;
+      flex-direction: column-reverse;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Tombol utama (Translate) */
+    .main-btn {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      cursor: pointer;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .main-btn:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    /* Pilihan bahasa (ID dan EN) */
+    .language-options {
+      display: none;
+      /* Sembunyikan secara default */
+      flex-direction: column;
+      gap: 10px;
+      margin-bottom: 10px;
+      /* Jarak dari tombol utama */
+    }
+
+    .language-item {
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+      background-color: #ffffff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .language-item:hover {
+      transform: scale(1.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    }
+
+    .flag-icon {
+      width: 24px;
+      height: auto;
+    }
+  </style>
+  <!-- end css lang -->
+
 </head>
 
 <body>
+
+<?php
+  // Ambil bahasa yang disimpan di session
+  $lang = session()->get('lang') ?? 'id'; // Default ke 'en' jika tidak ada di session
+
+  $current_url = uri_string();
+
+  // Ambil query string (misalnya ?keyword=sukses)
+  $query_string = $_SERVER['QUERY_STRING']; // Mengambil query string dari URL
+
+  // Simpan segmen bahasa saat ini
+  $lang_segment = substr($current_url, 0, strpos($current_url, '/') + 1); // Menyimpan 'id/' atau 'en/'
+
+  // Definisikan tautan untuk setiap halaman berdasarkan bahasa
+  $homeLink = ($lang_segment === 'en/') ? '/' : '/';
+  $belajarEksporLink = ($lang_segment === 'en/') ? 'export-learning' : 'belajar-ekspor';
+  $pendaftaranLink = ($lang_segment === 'en/') ? 'registration' : 'pendaftaran';
+  $videoTutorialLink = ($lang_segment === 'en/') ? 'video-tutorial' : 'tutorial-video';
+  $memberLink = ($lang_segment === 'en/') ? 'data-member' : 'data-member';
+  $buyersLink = ($lang_segment === 'en/') ? 'data-buyers' : 'data-buyers';
+
+  // Buat array untuk menggantikan segmen berdasarkan bahasa
+  $replace_map = [
+    'tentang' => 'about',
+    'artikel' => 'article',
+    'produk' => 'product',
+    'aktivitas' => 'activity',
+    'kontak' => 'contact',
+
+  ];
+
+  // Ambil bagian dari URL tanpa segmen bahasa
+  $url_without_lang = substr($current_url, strlen($lang_segment));
+
+  // Tentukan bahasa yang ingin digunakan
+  $new_lang_segment = ($lang_segment === 'en/') ? 'id/' : 'en/';
+
+  // Gantikan setiap segmen dalam URL berdasarkan bahasa yang aktif
+  foreach ($replace_map as $indonesian_segment => $english_segment) {
+    if ($lang_segment === 'en/') {
+      // Jika bahasa yang dipilih adalah 'en', maka ganti segmen ID ke EN
+      $url_without_lang = str_replace($english_segment, $indonesian_segment, $url_without_lang);
+    } else {
+      // Jika bahasa yang dipilih adalah 'id', maka ganti segmen EN ke ID
+      $url_without_lang = str_replace($indonesian_segment, $english_segment, $url_without_lang);
+    }
+  }
+
+  // Tautan dengan bahasa yang baru
+  $clean_url = $new_lang_segment . ltrim($url_without_lang, '/');
+
+  // Gabungkan query string jika ada
+  if (!empty($query_string)) {
+    $clean_url .= '?' . $query_string;
+  }
+
+
+  // Tautan Bahasa Inggris
+  $english_url = base_url($clean_url);
+
+  // Tautan Bahasa Indonesia
+  $indonesia_url = base_url($clean_url);
+  ?>
+
+  <div class="floating-language">
+    <!-- Tombol Utama -->
+    <button class="main-btn" id="translateBtn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/<?= $lang === 'id' ? '9/9f/Flag_of_Indonesia' : 'a/a4/Flag_of_the_United_States'; ?>.svg" alt="Translate" class="flag-icon">
+    </button>
+
+    <!-- Opsi Bahasa -->
+    <div class="language-options" id="languageOptions">
+      <?php if ($lang === 'id'): ?>
+        <!-- Hanya tampilkan opsi English jika bahasa saat ini adalah Indonesia -->
+        <a href="<?= $english_url ?>" class="language-item" title="English">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="English" class="flag-icon">
+        </a>
+      <?php elseif ($lang === 'en'): ?>
+        <!-- Hanya tampilkan opsi Indonesian jika bahasa saat ini adalah English -->
+        <a href="<?= $indonesia_url ?>" class="language-item" title="Bahasa Indonesia">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" alt="Indonesian" class="flag-icon">
+        </a>
+      <?php endif; ?>
+    </div>
+  </div>
+  <!-- end opsi -->
+
   <div class="container">
     <!-- Header -->
     <div class="header">
-    <button class="nav-toggler">☰</button>
-    <div class="nav">
-        <a href="/" class="nav-item">Beranda</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>" class="nav-item">Tentang</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>" class="nav-item">Artikel</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/produtc') : base_url('/id/produk') ?>" class="nav-item">Produk</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>" class="nav-item">Aktivitas</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>" class="nav-item">Kontak</a>
+      <button class="nav-toggler">☰</button>
+      <div class="nav">
+        <!-- Link Beranda yang menyesuaikan dengan bahasa yang dipilih -->
+        <a href="<?= ($lang == 'en') ? base_url('/en/') : base_url('/id/') ?>" class="nav-item"><?= ($lang == 'en') ? 'Home' : 'Beranda' ?></a>
+
+        <!-- Link lainnya tetap sama seperti sebelumnya -->
+        <a href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>" class="nav-item"><?= ($lang == 'en') ? 'About' : 'Tentang' ?></a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>" class="nav-item"><?= ($lang == 'en') ? 'Article' : 'Artikel' ?></a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/product') : base_url('/id/produk') ?>" class="nav-item"><?= ($lang == 'en') ? 'Product' : 'Produk' ?></a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/activity') : base_url('/id/aktivitas') ?>" class="nav-item"><?= ($lang == 'en') ? 'Activity' : 'Aktivitas' ?></a>
+        <a href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>" class="nav-item"><?= ($lang == 'en') ? 'Contact' : 'Kontak' ?></a>
       </div>
-      <img class="logo" src="/upload/logo.png" alt="Logo">
+
+      <img class="logo" src="<?= base_url('upload/' . $produk->logo); ?>" alt="Logo">
     </div>
 
     <!-- Gambar Overlay -->
     <div class="overlay">
       <img class="overlay-img" src="/upload/fotocar.jpg" alt="Gambar Overlay" />
       <div class="overlay-dark"></div>
-      <div class="breadcrumb">Beranda / Produk</div>
-      <div class="article-label">Produk Kami</div>
+      <div class="breadcrumb"><?= lang('Blog.produk1'); ?></div>
+      <div class="article-label"><?= lang('Blog.produkkami'); ?></div>
     </div>
 
     <!-- Judul Artikel -->
-    <div class="article-title">Produk Kami</div>
+    <div class="article-title"><?= lang('Blog.produkkami'); ?></div>
 
     <!-- Kotak Artikel dengan 2 Konten -->
     <!-- Wrapper utama -->
@@ -705,13 +942,19 @@
                 <h3><?= $produk->title_produk ?></h3>
                 <p class="custom-color">
                   <?php
-                  $deskripsi_pendek = substr($produk->deskripsi_produk, 0, 200);
-                  echo strlen($produk->deskripsi_produk) > 200 ? $deskripsi_pendek . '...' : $deskripsi_pendek;
+                  if ($lang == 'id') {
+                    $deskripsi_pendek = substr($produk->deskripsi_produk, 0, 200);
+                    echo strlen($produk->deskripsi_produk) > 200 ? $deskripsi_pendek . '...' : $deskripsi_pendek;
+                  } else {
+                    $deskripsi_pendek = substr($produk->deskripsi_produk_en, 0, 200);
+                    echo strlen($produk->deskripsi_produk_en) > 200 ? $deskripsi_pendek . '...' : $deskripsi_pendek;
+                  }
                   ?>
                 </p>
 
-                <a href="<?= site_url('produk/' . $produk->slug) ?>" class="read-more-btn">Baca Selengkapnya</a>
-                </div>
+
+                <a href="<?= base_url(($lang === 'en' ? 'en/product' : 'id/produk') . '/' . ($lang === 'en' ? $produk->slug_en : $produk->slug));?>" class="read-more-btn"><?=lang('Blog.bacaselengkapnya');?></a>
+              </div>
             </div>
 
             <?php
@@ -739,34 +982,54 @@
 </div>
 </div>
 </body>
-<script>// Tunggu DOM selesai dimuat
-document.addEventListener('DOMContentLoaded', function () {
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-k7gTBuEJh2Vs6GOETtiFzZZPyHQoBr9I17PjA5iwBLkzvEeR/BgfZ13+7hl2tfto" crossorigin="anonymous"></script>
+<script>
+  // Tangkap elemen tombol dan opsi bahasa
+  const translateBtn = document.getElementById('translateBtn');
+  const languageOptions = document.getElementById('languageOptions');
+
+  // Tambahkan event untuk menampilkan/menyembunyikan opsi bahasa
+  translateBtn.addEventListener('click', () => {
+    // Toggle kelas untuk menampilkan/menyembunyikan opsi
+    languageOptions.style.display = languageOptions.style.display === 'flex' ? 'none' : 'flex';
+  });
+</script>
+<!-- end copy js -->
+
+<script>
+  // Tunggu DOM selesai dimuat
+  document.addEventListener('DOMContentLoaded', function() {
     const toggleButton = document.querySelector('.nav-toggler');
     const navMenu = document.querySelector('.nav');
 
     // Event klik pada toggler
-    toggleButton.addEventListener('click', function () {
-        navMenu.classList.toggle('active'); // Tampilkan atau sembunyikan menu
+    toggleButton.addEventListener('click', function() {
+      navMenu.classList.toggle('active'); // Tampilkan atau sembunyikan menu
 
-        // Ubah ikon toggler (contoh dari ☰ ke ✕)
-        if (navMenu.classList.contains('active')) {
-            toggleButton.innerHTML = '✕';
-        } else {
-            toggleButton.innerHTML = '☰';
-        }
+      // Ubah ikon toggler (contoh dari ☰ ke ✕)
+      if (navMenu.classList.contains('active')) {
+        toggleButton.innerHTML = '✕';
+      } else {
+        toggleButton.innerHTML = '☰';
+      }
     });
 
     // Menutup menu saat item diklik (opsional)
     const navItems = document.querySelectorAll('.nav-item');
     navItems.forEach(item => {
-        item.addEventListener('click', function () {
-            navMenu.classList.remove('active'); // Sembunyikan menu
-            toggleButton.innerHTML = '☰'; // Reset ikon toggler
-        });
+      item.addEventListener('click', function() {
+        navMenu.classList.remove('active'); // Sembunyikan menu
+        toggleButton.innerHTML = '☰'; // Reset ikon toggler
+      });
     });
-});
-function toggleNav() {
+  });
+
+  function toggleNav() {
     const nav = document.querySelector('.nav');
     nav.classList.toggle('active');
-}</script>
+  }
+</script>
+
 </html>

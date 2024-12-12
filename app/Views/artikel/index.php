@@ -4,6 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+
+<!-- Bootstrap CSS -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GX4c9ud6XmSKsH8tBgn+ihT5CMJ5tb63kFIs1h6TuPvf5j03ZkGJ/fdBP+yo1L6c" crossorigin="anonymous">
+
+
   <style>
     body {
       margin: 0;
@@ -589,24 +594,185 @@
       color: white;
     }
 
+    </style>
+
+<!-- start css lang -->
+<style>
+  /* Wrapper posisi di pojok kanan bawah */
+  .floating-language {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  /* Tombol utama (Translate) */
+  .main-btn {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .main-btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  /* Pilihan bahasa (ID dan EN) */
+  .language-options {
+    display: none;
+    /* Sembunyikan secara default */
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+    /* Jarak dari tombol utama */
+  }
+
+  .language-item {
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background-color: #ffffff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  .language-item:hover {
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+  }
+
+  .flag-icon {
+    width: 24px;
+    height: auto;
+  }
+</style>
+<!-- end css lang -->
+
+
   </style>
 </head>
 <body>
+
+<?php
+  // Ambil bahasa yang disimpan di session
+  $lang = session()->get('lang') ?? 'id'; // Default ke 'en' jika tidak ada di session
+
+  $current_url = uri_string();
+
+  // Ambil query string (misalnya ?keyword=sukses)
+  $query_string = $_SERVER['QUERY_STRING']; // Mengambil query string dari URL
+
+  // Simpan segmen bahasa saat ini
+  $lang_segment = substr($current_url, 0, strpos($current_url, '/') + 1); // Menyimpan 'id/' atau 'en/'
+
+  // Definisikan tautan untuk setiap halaman berdasarkan bahasa
+  $homeLink = ($lang_segment === 'en/') ? '/' : '/';
+  $belajarEksporLink = ($lang_segment === 'en/') ? 'export-learning' : 'belajar-ekspor';
+  $pendaftaranLink = ($lang_segment === 'en/') ? 'registration' : 'pendaftaran';
+  $videoTutorialLink = ($lang_segment === 'en/') ? 'video-tutorial' : 'tutorial-video';
+  $memberLink = ($lang_segment === 'en/') ? 'data-member' : 'data-member';
+  $buyersLink = ($lang_segment === 'en/') ? 'data-buyers' : 'data-buyers';
+
+  // Buat array untuk menggantikan segmen berdasarkan bahasa
+  $replace_map = [
+    'tentang' => 'about',
+    'artikel' => 'article',
+    'produk' => 'product',
+    'aktivitas' => 'activity',
+    'kontak' => 'contact',
+
+  ];
+
+  // Ambil bagian dari URL tanpa segmen bahasa
+  $url_without_lang = substr($current_url, strlen($lang_segment));
+
+  // Tentukan bahasa yang ingin digunakan
+  $new_lang_segment = ($lang_segment === 'en/') ? 'id/' : 'en/';
+
+  // Gantikan setiap segmen dalam URL berdasarkan bahasa yang aktif
+  foreach ($replace_map as $indonesian_segment => $english_segment) {
+    if ($lang_segment === 'en/') {
+      // Jika bahasa yang dipilih adalah 'en', maka ganti segmen ID ke EN
+      $url_without_lang = str_replace($english_segment, $indonesian_segment, $url_without_lang);
+    } else {
+      // Jika bahasa yang dipilih adalah 'id', maka ganti segmen EN ke ID
+      $url_without_lang = str_replace($indonesian_segment, $english_segment, $url_without_lang);
+    }
+  }
+
+  // Tautan dengan bahasa yang baru
+  $clean_url = $new_lang_segment . ltrim($url_without_lang, '/');
+
+  // Gabungkan query string jika ada
+  if (!empty($query_string)) {
+    $clean_url .= '?' . $query_string;
+  }
+
+
+  // Tautan Bahasa Inggris
+  $english_url = base_url($clean_url);
+
+  // Tautan Bahasa Indonesia
+  $indonesia_url = base_url($clean_url);
+  ?>
+
+  <div class="floating-language">
+    <!-- Tombol Utama -->
+    <button class="main-btn" id="translateBtn">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/<?= $lang === 'id' ? '9/9f/Flag_of_Indonesia' : 'a/a4/Flag_of_the_United_States'; ?>.svg" alt="Translate" class="flag-icon">
+    </button>
+
+    <!-- Opsi Bahasa -->
+    <div class="language-options" id="languageOptions">
+      <?php if ($lang === 'id'): ?>
+        <!-- Hanya tampilkan opsi English jika bahasa saat ini adalah Indonesia -->
+        <a href="<?= $english_url ?>" class="language-item" title="English">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/a/a4/Flag_of_the_United_States.svg" alt="English" class="flag-icon">
+        </a>
+      <?php elseif ($lang === 'en'): ?>
+        <!-- Hanya tampilkan opsi Indonesian jika bahasa saat ini adalah English -->
+        <a href="<?= $indonesia_url ?>" class="language-item" title="Bahasa Indonesia">
+          <img src="https://upload.wikimedia.org/wikipedia/commons/9/9f/Flag_of_Indonesia.svg" alt="Indonesian" class="flag-icon">
+        </a>
+      <?php endif; ?>
+    </div>
+  </div>
+  <!-- end opsi -->
+
   <div class="container">
     <!-- Header -->
     <div class="header">
     <button class="nav-toggler">☰</button>
     <div class="nav">
-        <a href="/" class="nav-item">Beranda</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>" class="nav-item">Tentang</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>" class="nav-item">Artikel</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/produtc') : base_url('/id/produk') ?>" class="nav-item">Produk</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/activities') : base_url('/id/aktivitas') ?>" class="nav-item">Aktivitas</a>
-        <a href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>" class="nav-item">Kontak</a>
-      </div>
+    <!-- Link Beranda yang menyesuaikan dengan bahasa yang dipilih -->
+    <a href="<?= ($lang == 'en') ? base_url('/en/') : base_url('/id/') ?>" class="nav-item"><?= ($lang == 'en') ? 'Home' : 'Beranda' ?></a>
+    
+    <!-- Link lainnya tetap sama seperti sebelumnya -->
+    <a href="<?= ($lang == 'en') ? base_url('/en/about') : base_url('/id/tentang') ?>" class="nav-item"><?= ($lang == 'en') ? 'About' : 'Tentang' ?></a>
+    <a href="<?= ($lang == 'en') ? base_url('/en/article') : base_url('/id/artikel') ?>" class="nav-item"><?= ($lang == 'en') ? 'Article' : 'Artikel' ?></a>
+    <a href="<?= ($lang == 'en') ? base_url('/en/product') : base_url('/id/produk') ?>" class="nav-item"><?= ($lang == 'en') ? 'Product' : 'Produk' ?></a>
+    <a href="<?= ($lang == 'en') ? base_url('/en/activity') : base_url('/id/aktivitas') ?>" class="nav-item"><?= ($lang == 'en') ? 'Activity' : 'Aktivitas' ?></a>
+    <a href="<?= ($lang == 'en') ? base_url('/en/contact') : base_url('/id/kontak') ?>" class="nav-item"><?= ($lang == 'en') ? 'Contact' : 'Kontak' ?></a>
+</div>
 
-      <img class="logo" src="/upload/logo.png" alt="Logo">
-    </div>
+
+<img class="logo" src="<?= base_url('upload/' . $artikel->logo); ?>" alt="Logo">
+</div>
 
     <!-- Gambar Overlay -->
     <div class="overlay">
@@ -644,9 +810,9 @@
     ?>
 </p>
 
-                        <a href="<?= site_url('artikel/' . $artikel->slug) ?>" class="read-more-btn"><?=lang('Blog.bacaselengkapnya');?></a>
-                    </div>
-                </div>
+<a href="<?= base_url(($lang === 'en' ? 'en/article' : 'id/artikel') . '/' . ($lang === 'en' ? $artikel->slug_en : $artikel->slug));?>" class="read-more-btn"><?=lang('Blog.bacaselengkapnya');?></a>
+</div>
+</div>
 
         <?php 
         $counter++;
@@ -674,6 +840,22 @@
     </div>
   </div>
 </body>
+
+<!-- Bootstrap JS Bundle with Popper -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-k7gTBuEJh2Vs6GOETtiFzZZPyHQoBr9I17PjA5iwBLkzvEeR/BgfZ13+7hl2tfto" crossorigin="anonymous"></script>
+<script>
+  // Tangkap elemen tombol dan opsi bahasa
+  const translateBtn = document.getElementById('translateBtn');
+  const languageOptions = document.getElementById('languageOptions');
+
+  // Tambahkan event untuk menampilkan/menyembunyikan opsi bahasa
+  translateBtn.addEventListener('click', () => {
+    // Toggle kelas untuk menampilkan/menyembunyikan opsi
+    languageOptions.style.display = languageOptions.style.display === 'flex' ? 'none' : 'flex';
+  });
+</script>
+<!-- end copy js -->
+
 <script>// Tunggu DOM selesai dimuat
 document.addEventListener('DOMContentLoaded', function () {
     const toggleButton = document.querySelector('.nav-toggler');

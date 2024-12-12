@@ -17,6 +17,8 @@ $routes->get('produk/(:segment)', 'ProdukController::detail/$1'); // Untuk halam
 $routes->get('aktivitas', 'AktivitasController::index');
 $routes->get('aktivitas/(:segment)', 'AktivitasController::detail/$1');
 $routes->get('kontak', 'KontakController::index');
+$routes->get('language/setLanguage/(:any)', 'LanguageController::setLanguage/$1');
+
 });
 
 $routes->group('en', function($routes) {
@@ -26,9 +28,11 @@ $routes->get('article', 'ArtikelController::index');
 $routes->get('article/(:segment)', 'ArtikelController::detail/$1');
 $routes->get('product', 'ProdukController::index'); // Untuk halaman daftar produk
 $routes->get('product/(:segment)', 'ProdukController::detail/$1'); // Untuk halaman detail produk berdasarkan slug
-$routes->get('activities', 'AktivitasController::index');
-$routes->get('activities/(:segment)', 'AktivitasController::detail/$1');
+$routes->get('activity', 'AktivitasController::index');
+$routes->get('activity/(:segment)', 'AktivitasController::detail/$1');
 $routes->get('contact', 'KontakController::index');
+$routes->get('language/setLanguage/(:any)', 'LanguageController::setLanguage/$1');
+
 });
 
 $routes->get('/', function () {

@@ -24,4 +24,3 @@ class TentangController extends BaseController
     }
 
 }
-

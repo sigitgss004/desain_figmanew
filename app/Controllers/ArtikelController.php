@@ -12,15 +12,15 @@ class ArtikelController extends BaseController
     public function index()
     {
         // // Inisialisasi model
-        // $artikelModel = new artikelModel();
+         $artikelModel = new artikelModel();
 
         // // Ambil semua data, data akan dikembalikan sebagai object
-        // $data['artikel'] = $artikelModel->first();
+         $data['artikel'] = $artikelModel->first();
 
         $artikelDataModel = new DataArtikelModel();
 
         $dataartikelmodel = new DataArtikelModel();
-        
+
         $data['artikeldata']  = $artikelDataModel->FindAll();
 
         $lang = session()->get('lang') ?? 'id';
@@ -34,7 +34,7 @@ class ArtikelController extends BaseController
     {
         // Menampilkan detail artikel berdasarkan slug
         $artikelModel = new DataArtikelModel();
-        $artikel = $artikelModel->where('slug', $slug)->first(); // Mengambil produk berdasarkan slug
+        $artikel = $artikelModel->where('slug', $slug)->orWhere('slug_en', $slug)->first(); // Mengambil produk berdasarkan slug
 
         if (!$artikel) {
             throw \CodeIgniter\Exceptions\PageNotFoundException::forPageNotFound(); // Jika produk tidak ditemukan
@@ -44,8 +44,15 @@ class ArtikelController extends BaseController
         $data['lang'] = $lang;
 
         $data['artikel'] = $artikel;
+
+        // Cek apakah slug sesuai dengan bahasa yang sedang aktif
+        if (($lang === 'id' && $slug !== $artikel->slug) || ($lang === 'en' && $slug !== $artikel->slug_en)) {
+            // Redirect ke URL slug yang benar sesuai bahasa
+            $correctSlug = $lang === 'id' ? $artikel->slug : $artikel->slug_en;
+            $correctulr = $lang === 'id' ? 'artikel' : 'article';
+
+            return redirect()->to("$lang/$correctulr/$correctSlug");
+        }
         return view('artikel/detail', ['artikel' => $artikel]);
     }
-
-
 }
