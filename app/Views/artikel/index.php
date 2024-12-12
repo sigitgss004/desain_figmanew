@@ -511,7 +511,7 @@
 /* Media Queries untuk layar 320px */
 @media (max-width: 320px) {
     .read-more-btn {
-        width: 80%; /* Tombol memenuhi sebagian besar lebar kontainer */
+        width: 60%; /* Tombol memenuhi sebagian besar lebar kontainer */
         padding: 0.4rem; /* Menyesuaikan padding untuk ukuran lebih kecil */
         font-size: 0.75rem; /* Ukuran font lebih kecil */
         margin: 0 auto; /* Rata tengah */
